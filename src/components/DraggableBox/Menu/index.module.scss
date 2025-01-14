@@ -338,6 +338,7 @@
     width: 95%; // Slightly wider on small screens
     max-width: none; // Remove max-width restriction for small screens
     padding: 8px; // Reduce padding for smaller screens
+    position: absolute;
 
     .sec_container {
       ul {
