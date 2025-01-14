@@ -25,6 +25,8 @@ const Menu = ({ isVideoPlaying, showNewMenu,
       onClick: () => {
         setCurrentState('Gallery');
         setShowNewMenu((prev) => !prev);
+        setQuestions(false);
+        setReadMore(false);
       },
     },
     {
@@ -33,6 +35,9 @@ const Menu = ({ isVideoPlaying, showNewMenu,
       onClick: () => {
         setCurrentState('LearnMore');
         setReadMore((prev) => !prev);
+        setShowNewMenu(false);
+        setQuestions(false);
+
       },
     },
     {
@@ -40,6 +45,9 @@ const Menu = ({ isVideoPlaying, showNewMenu,
       img: '/assets/svgs/navbar/mark.svg',
       onClick: () => {
         setQuestions((prev) => !prev);
+        setShowNewMenu(false);
+        setReadMore(false);
+
       },
     },
     {
