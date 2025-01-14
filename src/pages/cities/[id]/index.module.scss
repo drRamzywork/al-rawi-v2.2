@@ -1,0 +1,30 @@
+.location {
+  display: flex;
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  right: 0;
+
+  align-items: center;
+  z-index: 99;
+
+  background: #0000005f;
+  background-blend-mode: overlay;
+  width: 100%;
+  backdrop-filter: blur(10px);
+  gap: 8px;
+  padding: 16px 0px;
+
+  svg {
+    color: white;
+    width: 22.18px;
+    height: 24.65px;
+  }
+  p {
+    font-size: 18px;
+    font-weight: 600;
+
+    margin: 0;
+    color: white;
+  }
+}

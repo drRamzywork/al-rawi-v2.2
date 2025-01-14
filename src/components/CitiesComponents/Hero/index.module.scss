@@ -1,0 +1,80 @@
+section.hero {
+  margin-bottom: 250px;
+  .sec_container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .title {
+      margin-top: 120px;
+      position: relative;
+      margin-bottom: 60px;
+      h1 {
+        color: white;
+        font-weight: 600;
+        font-size: 30px;
+        text-align: center;
+      }
+
+      .shape {
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        img {
+          height: 10px;
+        }
+      }
+    }
+    .btn_container {
+      a {
+        text-decoration: none;
+        background-color: var(--main-red);
+        border: none;
+        display: flex;
+        align-items: center;
+        padding: 11.2px;
+        border: 1px solid #ffffff80;
+        border-radius: 60px;
+        gap: 14px;
+        padding-right: 44px;
+        padding-left: 27px;
+        color: white;
+        p {
+          margin: 0;
+          color: white;
+          font-weight: 600;
+          font-size: 16px;
+        }
+
+        .icon_container {
+          width: 32.29px;
+          height: 32.29px;
+          border-radius: 50%;
+          display: flex;
+          backdrop-filter: blur(60px);
+          border: 1px solid #ffffff80;
+          svg {
+            margin: auto;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  overflow: hidden;
+
+  .location {
+    display: flex;
+    background-color: red;
+    position: absolute;
+    bottom: 29px;
+    right: 0;
+    width: 100%;
+
+    svg {
+    }
+    p {
+      margin: 0;
+    }
+  }
+}

@@ -1,0 +1,235 @@
+// .img_container {
+//   width: 210px;
+//   margin-top: -40px;
+
+//   img {
+//     width: 100%;
+//     height: 100%;
+//   }
+// }
+
+// .layer {
+//   position: absolute;
+//   top: 0;
+//   right: 0;
+//   background-color: rgba(0, 0, 0, 0.084);
+//   backdrop-filter: blur(20px);
+//   width: 100%;
+//   height: 100%;
+// }
+
+// .container {
+//   background-color: rgb(181, 169, 169) !important;
+//   margin: 16px;
+// }
+
+// .menu_container {
+//   display: flex;
+//   flex-direction: column;
+//   padding: 0 16px;
+//   align-items: center;
+//   position: relative;
+//   z-index: 99;
+//   width: 100%;
+//   padding-bottom: 34px;
+
+//   .question {
+//     display: flex;
+//     align-items: center;
+//     flex-direction: column;
+
+//     span,
+//     h2 {
+//       color: #896e61;
+//       font-size: 32px;
+//       font-weight: bold;
+//       margin-bottom: 24px;
+//     }
+//   }
+
+//   .options {
+//     width: 100%;
+
+//     ul {
+//       padding: 0;
+
+//       li {
+//         list-style-type: none;
+//         margin-bottom: 8px;
+
+//         button {
+//           color: rgb(110, 94, 93);
+//           border: none;
+//           font-size: 24px;
+//           font-weight: 600;
+//           background-color: white;
+//           border-radius: 4px;
+//           width: 100%;
+//           transition: all 0.3s ease-in-out;
+//           line-height: 48px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+.img_container {
+  // width: 210px;
+  // margin-top: -40px;
+
+  // img {
+  //   width: 100%;
+  //   height: 100%;
+  // }
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.286);
+  backdrop-filter: blur(5px);
+  // background: #1a1a1a;
+  // backdrop-filter: blur(200px);
+
+  width: 100%;
+  height: 100%;
+}
+
+.container {
+  // background-color: rgb(181, 169, 169) !important;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+  .swiper_container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    margin: 16px;
+    .close_icon {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      height: 21.75px;
+      width: 21.75px;
+      z-index: 99;
+
+      background-color: #f7f7f9;
+      display: flex;
+      border-radius: 50%;
+      cursor: pointer;
+      svg {
+        margin: auto;
+        color: #000000;
+      }
+    }
+
+    .active_swiper {
+      margin-bottom: 20px;
+      img {
+        width: 100%;
+        height: 536.26px;
+        object-fit: cover;
+        border-radius: 20px;
+      }
+    }
+
+    .swiper_contain {
+      width: 100%;
+      background: #ffffff80;
+      border-radius: 24px;
+      padding: 8px;
+
+      .img_container {
+        img {
+          width: 53px;
+          height: 53px;
+          object-fit: cover;
+          border-radius: 20px;
+          transition: all 0.3s ease-in-out;
+        }
+
+        &.active {
+          img {
+            border: 1px solid #f49d41;
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu_container {
+  display: flex;
+  flex-direction: column;
+  padding: 0 16px;
+  align-items: center;
+  position: relative;
+  z-index: 99;
+  width: 100%;
+  padding-bottom: 34px;
+
+  .question {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    span,
+    h2 {
+      color: #896e61;
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 24px;
+    }
+  }
+
+  .options {
+    width: 100%;
+
+    ul {
+      padding: 0;
+
+      li {
+        list-style-type: none;
+        margin-bottom: 8px;
+        position: relative;
+
+        button {
+          color: rgb(110, 94, 93);
+          border: none;
+          font-size: 24px;
+          font-weight: 600;
+          background-color: white;
+          border-radius: 4px;
+          width: 100%;
+          transition: all 0.3s ease-in-out;
+          line-height: 48px;
+          position: relative;
+        }
+
+        .icon {
+          position: absolute;
+          right: 16px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+
+        .svgIcon {
+          width: 24px;
+          height: 24px;
+        }
+      }
+    }
+  }
+}
+
+.correct {
+  background-color: lightgreen !important;
+}
+
+.wrong {
+  background-color: #ffabab !important;
+}
