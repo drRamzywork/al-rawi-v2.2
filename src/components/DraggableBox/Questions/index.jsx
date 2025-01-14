@@ -76,12 +76,13 @@ const Questions = ({ questions,
         className={styles.container}
         transition={{
           type: 'spring',
-          damping: 40,
+          damping: 60,
           stiffness: 400,
+          duration: 4.5,
         }}
         variants={{
           visible: { y: '0%', opacity: 1 },
-          hidden: { y: '-100%', opacity: 0 },
+          hidden: { y: '-150%', opacity: 0 },
         }}
 
         id="menu2"
