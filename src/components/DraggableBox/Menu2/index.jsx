@@ -95,7 +95,6 @@ const Menu2 = ({ showNewMenu, setShowNewMenu, }) => {
             modules={[Navigation, FreeMode, Autoplay]}
             initialSlide={1}
             className={styles.swiper_contain}
-            centeredSlides={true}
             style={{ width: '100%' }}
             autoplay={{
               delay: 3000

@@ -119,10 +119,7 @@ const Menu = ({ isVideoPlaying, showNewMenu,
               <div className={styles.main_img}>
                 <img src="/assets/imgs/menu2/2.png" alt="" />
               </div>
-              {/* <div className={styles.sec_imgs}>
-                <img src="/assets/imgs/menu2/2.png" alt="" />
-                <img src="/assets/imgs/menu2/3.png" alt="" />
-              </div> */}
+
             </div>
 
             <div className={styles.title}>
