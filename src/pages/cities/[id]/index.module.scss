@@ -8,10 +8,13 @@
   align-items: center;
   z-index: 99;
 
-  background: #0000005f;
+  // background: #0000005f;
+  background: #00000080;
+  background-blend-mode: overlay;
+
   background-blend-mode: overlay;
   width: 100%;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(4px);
   gap: 8px;
   padding: 16px 0px;
 

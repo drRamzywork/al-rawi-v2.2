@@ -66,9 +66,9 @@ const Questions = ({ questions,
 
   return (
     <>
-      {questions && (
+      {/* {questions && (
         <div className={styles.layer} onClick={() => setQuestions(false)} />
-      )}
+      )} */}
 
       <motion.div
         initial="hidden"
@@ -98,20 +98,15 @@ const Questions = ({ questions,
           maxHeight: '700px',
           overflowY: 'auto',
           overflowX: 'unset',
-          border: '1px solid #E0E0E0',
-          boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.06), 0px 2px 13px rgba(0, 0, 0, 0.12)',
           borderRadius: '13px',
           zIndex: 55,
-          background: '#00000080',
           padding: '14px',
 
         }}
       >
         {questions &&
           <div className={styles.content}>
-            <div className={styles.title}>
-              <h1>قصور عروة</h1>
-            </div>
+
             <div className={styles.boxes_container}>
               <Link href='/cities/2/video' className={styles.box}>
                 <div className={styles.info_container}>

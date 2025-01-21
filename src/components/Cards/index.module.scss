@@ -1,4 +1,19 @@
 section.cards {
+  position: relative;
+  .shape_container {
+    // height: 167px;
+    // width: 100%;
+    width: 100%;
+    position: absolute;
+    top: -100px;
+    left: 0;
+    // z-index: -1;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
   .sec_container {
     .title {
       margin-bottom: 27px;
@@ -41,8 +56,8 @@ section.cards {
           gap: 7px;
 
           .img_container {
-            width: 122px;
-            height: 115px;
+            width: 104px;
+            height: 104px;
             overflow: hidden;
             border-radius: 15px;
 

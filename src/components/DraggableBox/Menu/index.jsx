@@ -68,9 +68,7 @@ const Menu = ({ isVideoPlaying, showNewMenu,
 
   return (
     <>
-      {/* Animated container */}
       <motion.div
-
         style={{
           position: 'fixed',
           top: '10%',
@@ -108,10 +106,10 @@ const Menu = ({ isVideoPlaying, showNewMenu,
       >
         {readMore &&
           <div className={styles.content}>
+            <div className={styles.close_icon} onClick={() => setReadMore(false)}>
 
-            <div className={styles.close_icon} onClick={() => setReadMore(false)}
-            >
               <IoClose />
+
             </div>
 
             <div className={styles.sec_title}>

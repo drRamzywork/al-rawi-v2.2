@@ -97,10 +97,10 @@ const Menu2 = ({ showNewMenu, setShowNewMenu, }) => {
             className={styles.swiper_contain}
             centeredSlides={true}
             style={{ width: '100%' }}
-            // autoplay={{
-            //   delay: 3000
-            // }}
-            // loop={true}
+            autoplay={{
+              delay: 3000
+            }}
+            loop={true}
             // slidesPerView={3}
             onSwiper={(swiper) => swiperRef.current = swiper}
             onSlideChange={handleSlideChange}
@@ -120,10 +120,8 @@ const Menu2 = ({ showNewMenu, setShowNewMenu, }) => {
                   <Image
                     src={box.img}
                     alt=""
-                    width={
-                      123.42}
-                    height={
-                      123.42}
+                    width={53}
+                    height={51}
                   />
                 </motion.div>
               </SwiperSlide>

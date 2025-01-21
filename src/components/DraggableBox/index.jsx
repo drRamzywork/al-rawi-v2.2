@@ -21,6 +21,7 @@ const DraggableBox = () => {
       {showNewMenu !== true && showElements !== true && !isVideoPlaying && (
         <Link href="/cities/2" className={styles.openShowMenu}>
           <IoChevronForwardOutline />
+
         </Link>
       )}
 

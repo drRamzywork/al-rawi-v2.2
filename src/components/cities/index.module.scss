@@ -65,7 +65,7 @@ section.cities {
           background: #00000080;
           background-blend-mode: overlay;
           width: 100%;
-          backdrop-filter: blur(10px);
+          backdrop-filter: blur(2px);
           gap: 6px;
           border-radius: 12px;
           padding: 12px;
@@ -123,17 +123,18 @@ section.cities {
         margin-top: auto;
         // height: 100%;
         align-self: flex-end;
-        background: #00000080;
-        background-blend-mode: overlay;
+        // background: #0000005f;
+
+        background: #0000008c;
         width: 100%;
-        backdrop-filter: blur(10px);
+        backdrop-filter: blur(16px);
         gap: 6px;
         border-radius: 12px;
         padding: 12px;
 
         display: flex;
         align-items: center;
-        flex-direction: row-reverse;
+        flex-direction: row;
         justify-content: space-between;
 
         .title {
@@ -146,9 +147,19 @@ section.cities {
             color: white;
             font-size: 14px;
             font-weight: 600;
+
+            span {
+              display: flex;
+              flex-direction: row-reverse;
+              margin-top: 6.2px;
+              align-items: center;
+              gap: 5.38px;
+            }
           }
           svg {
             color: white;
+            width: 15.38px;
+            height: 19.1px;
           }
         }
 

@@ -151,15 +151,12 @@ const Navbar = ({ isHome }) => {
                     pagination={{
                       clickable: true,
                     }}
-                    modules={[Pagination, Mousewheel, FreeMode, Scrollbar]}
+                    modules={[Pagination, Mousewheel, FreeMode,]}
                     mousewheel={true}
                     freeMode={true}
                     // scrollbar={true}
 
-                    scrollbar={{
-                      hide: false,
-                      draggable: true,
-                    }}
+
                     dir='rtl'
                     className={styles.swiper}
                   >

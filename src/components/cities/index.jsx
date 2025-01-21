@@ -9,7 +9,6 @@ import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, FreeMode } from 'swiper/modules';
 import { IoIosArrowBack } from "react-icons/io";
-import Link from 'next/link';
 import { motion } from "framer-motion";
 
 const Cities = () => {
@@ -41,7 +40,7 @@ const Cities = () => {
                 transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
                 <div className={styles.img_container}>
                   <Image
-                    src="/assets/imgs/bg1.png"
+                    src="/assets/imgs/cities/1.jpeg"
                     alt="Vercel logomark"
                     width={175.99}
                     height={265.06}
@@ -50,6 +49,47 @@ const Cities = () => {
 
                 <div className={styles.title}>
 
+                  <h6>
+                    حائل
+                  </h6>
+                  <IoLocationOutline />
+                </div>
+              </motion.a>
+
+
+              <motion.a initial={{ opacity: 0, translateY: -10 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
+                <div className={styles.img_container}>
+                  <Image
+                    src="/assets/imgs/cities/2.jpeg"
+                    alt="Vercel logomark"
+                    width={175.99}
+                    height={265.06}
+                  />
+                </div>
+
+                <div className={styles.title}>
+                  <h6>
+                    تبوك
+                  </h6>
+                  <IoLocationOutline />
+                </div>
+              </motion.a>
+
+              <motion.a initial={{ opacity: 0, translateY: -10 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
+                <div className={styles.img_container}>
+                  <Image
+                    src="/assets/imgs/cities/3.jpeg"
+                    alt="Vercel logomark"
+                    width={175.99}
+                    height={265.06}
+                  />
+                </div>
+
+                <div className={styles.title}>
                   <h6>
                     المدينة المنورة
                   </h6>
@@ -62,7 +102,7 @@ const Cities = () => {
                 transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
                 <div className={styles.img_container}>
                   <Image
-                    src="/assets/imgs/bg1.png"
+                    src="/assets/imgs/cities/4.jpeg"
                     alt="Vercel logomark"
                     width={175.99}
                     height={265.06}
@@ -71,7 +111,7 @@ const Cities = () => {
 
                 <div className={styles.title}>
                   <h6>
-                    المدينة المنورة
+                    الجوف
                   </h6>
                   <IoLocationOutline />
                 </div>
@@ -82,7 +122,7 @@ const Cities = () => {
                 transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
                 <div className={styles.img_container}>
                   <Image
-                    src="/assets/imgs/bg1.png"
+                    src="/assets/imgs/cities/5.jpeg"
                     alt="Vercel logomark"
                     width={175.99}
                     height={265.06}
@@ -91,7 +131,51 @@ const Cities = () => {
 
                 <div className={styles.title}>
                   <h6>
-                    المدينة المنورة
+                    الجوف
+                  </h6>
+                  <IoLocationOutline />
+                </div>
+              </motion.a>
+
+
+              <motion.a initial={{ opacity: 0, translateY: -10 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
+                <div className={styles.img_container}>
+                  <Image
+                    src="/assets/imgs/cities/6.png"
+                    alt="Vercel logomark"
+                    width={175.99}
+                    height={265.06}
+                  />
+                </div>
+
+                <div className={styles.title}>
+                  <h6>
+                    الطائف
+                  </h6>
+                  <IoLocationOutline />
+                </div>
+              </motion.a>
+
+
+
+
+              <motion.a initial={{ opacity: 0, translateY: -10 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
+                <div className={styles.img_container}>
+                  <Image
+                    src="/assets/imgs/cities/7.jpeg"
+                    alt="Vercel logomark"
+                    width={175.99}
+                    height={265.06}
+                  />
+                </div>
+
+                <div className={styles.title}>
+                  <h6>
+                    القصيم
                   </h6>
                   <IoLocationOutline />
                 </div>
@@ -102,7 +186,7 @@ const Cities = () => {
                 transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
                 <div className={styles.img_container}>
                   <Image
-                    src="/assets/imgs/bg1.png"
+                    src="/assets/imgs/cities/8.jpeg"
                     alt="Vercel logomark"
                     width={175.99}
                     height={265.06}
@@ -111,7 +195,7 @@ const Cities = () => {
 
                 <div className={styles.title}>
                   <h6>
-                    المدينة المنورة
+                    الرياض
                   </h6>
                   <IoLocationOutline />
                 </div>
@@ -148,9 +232,9 @@ const Cities = () => {
 
           <Swiper
             spaceBetween={13}
-            slidesPerView={1.2}
+            slidesPerView={1.4}
             pagination={{ clickable: true }}
-            dir="ltr"
+            dir="rtl"
             modules={[Navigation, FreeMode]}
             initialSlide={1}
             className={styles.swiper_contain}
@@ -167,7 +251,7 @@ const Cities = () => {
                     <p>معالم</p>
                   </div>
                   <Image
-                    src="/assets/imgs/bg1.png"
+                    src="/assets/imgs/cities/9.png"
                     alt="Vercel logomark"
                     width={271.91}
                     height={384.14}
@@ -180,9 +264,14 @@ const Cities = () => {
                     <h6>
                       <strong>قصر عروة</strong>
                       <br />
-                      المدينة المنورة
+
+                      <span>
+                        المدينة المنورة
+                        <IoLocationOutline />
+
+                      </span>
+
                     </h6>
-                    <IoLocationOutline />
                   </div>
 
                   <div className={styles.explore}>
@@ -199,16 +288,17 @@ const Cities = () => {
               </motion.div>
 
             </SwiperSlide>
+
             <SwiperSlide>
               <motion.div initial={{ opacity: 0, }}
                 whileInView={{ opacity: 1, }}
                 transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
                 <div className={styles.img_container}>
                   <div className={styles.card_top}>
-                    <p>معالم</p>
+                    <p> معالم</p>
                   </div>
                   <Image
-                    src="/assets/imgs/bg1.png"
+                    src="/assets/imgs/6.jpeg"
                     alt="Vercel logomark"
                     width={271.91}
                     height={384.14}
@@ -219,7 +309,7 @@ const Cities = () => {
                   <div className={styles.title}>
 
                     <h6>
-                      <strong>قصر عروة</strong>
+                      <strong> بئر الفقير</strong>
                       <br />
                       المدينة المنورة
                     </h6>
@@ -240,6 +330,7 @@ const Cities = () => {
               </motion.div>
 
             </SwiperSlide>
+
             <SwiperSlide>
               <motion.div initial={{ opacity: 0, }}
                 whileInView={{ opacity: 1, }}
