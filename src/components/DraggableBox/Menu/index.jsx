@@ -80,7 +80,6 @@ const Menu = ({ isVideoPlaying, showNewMenu,
           maxHeight: '700px',
           overflowY: 'auto',
           overflowX: 'unset',
-          border: '1px solid #E0E0E0',
           boxShadow: '0px 2px 5px rgba(0, 0, 0, 0.06), 0px 2px 13px rgba(0, 0, 0, 0.12)',
           borderRadius: '13px',
           zIndex: 55,
@@ -107,9 +106,7 @@ const Menu = ({ isVideoPlaying, showNewMenu,
         {readMore &&
           <div className={styles.content}>
             <div className={styles.close_icon} onClick={() => setReadMore(false)}>
-
               <IoClose />
-
             </div>
 
             <div className={styles.sec_title}>
