@@ -68,3 +68,19 @@ a {
     left: 0 !important ;
   }
 }
+
+#hero {
+  .swiper {
+    overflow: unset;
+  }
+  .swiper-pagination {
+    top: unset;
+    bottom: -100px;
+  }
+  .swiper-pagination-bullet {
+    width: 27px;
+    height: 6px;
+    border-radius: 2px;
+    background: #ffffff80;
+  }
+}

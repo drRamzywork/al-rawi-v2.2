@@ -24,7 +24,6 @@ const Cards = () => {
             </div>
 
             <div className={styles.boxes_container}>
-
               <a href="/cities/2/video">
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -96,6 +95,7 @@ const Cards = () => {
                   </div>
                 </motion.div>
               </a>
+
               <a href="/cities/2/video">
                 <motion.div
                   initial={{ opacity: 0 }}
@@ -131,8 +131,6 @@ const Cards = () => {
                   </div>
                 </motion.div>
               </a>
-
-
             </div>
           </div>
         </div>

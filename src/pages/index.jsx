@@ -122,7 +122,6 @@ export default function Home() {
           </div>
           {showSplash ? (
             <>
-
               <div className={styles.logo}>
                 <Image
                   src="/assets/imgs/rawi.png"
@@ -150,7 +149,7 @@ export default function Home() {
 
               <Cities />
 
-              <div className={styles.layer_bg}>
+              {/* <div className={styles.layer_bg}>
                 <div className={styles.layer} />
                 <Image
                   src="/assets/imgs/bg1.png"
@@ -158,7 +157,7 @@ export default function Home() {
                   width={100}
                   height={100}
                 />
-              </div>
+              </div> */}
             </div>
           )}
 

@@ -1,4 +1,8 @@
-nav {
+nav.navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  background: linear-gradient(#035746, hsla(0, 0%, 100%, 0));
   .nav_container {
     display: flex;
     justify-content: center;

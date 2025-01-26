@@ -28,7 +28,7 @@ const Navbar = ({ isHome }) => {
 
   return (
     <>
-      <nav>
+      <nav className={styles.navbar}>
         <div className="container">
 
           <div className={styles.nav_container}>
