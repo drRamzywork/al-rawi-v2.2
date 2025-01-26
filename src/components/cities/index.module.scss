@@ -27,10 +27,12 @@ section.cities {
       }
     }
     .boxes_container {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
+      flex-wrap: wrap;
+      // grid-template-columns: repeat(2, 1fr);
       gap: 12.7px;
-
+      justify-content: center;
+      justify-items: center;
       margin-bottom: 50px;
 
       .box {
