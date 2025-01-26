@@ -230,152 +230,156 @@ const Cities = () => {
 
 
 
-          <Swiper
-            spaceBetween={13}
-            slidesPerView={1.4}
-            pagination={{ clickable: true }}
-            dir="rtl"
-            modules={[Navigation, FreeMode]}
-            initialSlide={1}
-            className={styles.swiper_contain}
-            centeredSlides={false}
-            style={{ width: '100%' }}
+          <div className={`container ${styles.container}`}>
 
-          >
-            <SwiperSlide>
-              <motion.div initial={{ opacity: 0, }}
-                whileInView={{ opacity: 1, }}
-                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
-                <div className={styles.img_container}>
-                  <div className={styles.card_top}>
-                    <p>معالم</p>
+            <Swiper
+              spaceBetween={13}
+              slidesPerView={1.3}
+              pagination={{ clickable: true }}
+              dir="rtl"
+              modules={[Navigation, FreeMode]}
+              initialSlide={1}
+              className={styles.swiper_contain}
+              centeredSlides={false}
+              style={{ width: '100%' }}
+
+            >
+              <SwiperSlide>
+                <motion.div initial={{ opacity: 0, }}
+                  whileInView={{ opacity: 1, }}
+                  transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                  <div className={styles.img_container}>
+                    <div className={styles.card_top}>
+                      <p>معالم</p>
+                    </div>
+                    <Image
+                      src="/assets/imgs/cities/9.png"
+                      alt="Vercel logomark"
+                      width={271.91}
+                      height={384.14}
+                    />
                   </div>
-                  <Image
-                    src="/assets/imgs/cities/9.png"
-                    alt="Vercel logomark"
-                    width={271.91}
-                    height={384.14}
-                  />
-                </div>
 
-                <div className={styles.card_bottom}>
-                  <div className={styles.title}>
+                  <div className={styles.card_bottom}>
+                    <div className={styles.title}>
 
-                    <h6>
-                      <strong>قصر عروة</strong>
-                      <br />
+                      <h6>
+                        <strong>قصر عروة</strong>
+                        <br />
 
-                      <span>
+                        <span>
+                          المدينة المنورة
+                          <IoLocationOutline />
+
+                        </span>
+
+                      </h6>
+                    </div>
+
+                    <div className={styles.explore}>
+                      <div className={styles.icon_container}>
+                        <IoIosArrowBack />
+                      </div>
+                      <p>استكشف</p>
+
+                    </div>
+                  </div>
+
+
+
+                </motion.div>
+
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <motion.div initial={{ opacity: 0, }}
+                  whileInView={{ opacity: 1, }}
+                  transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                  <div className={styles.img_container}>
+                    <div className={styles.card_top}>
+                      <p> معالم</p>
+                    </div>
+                    <Image
+                      src="/assets/imgs/6.jpeg"
+                      alt="Vercel logomark"
+                      width={271.91}
+                      height={384.14}
+                    />
+                  </div>
+
+                  <div className={styles.card_bottom}>
+                    <div className={styles.title}>
+
+                      <h6>
+                        <strong> بئر الفقير</strong>
+                        <br />
                         المدينة المنورة
-                        <IoLocationOutline />
-
-                      </span>
-
-                    </h6>
-                  </div>
-
-                  <div className={styles.explore}>
-                    <div className={styles.icon_container}>
-                      <IoIosArrowBack />
+                      </h6>
+                      <IoLocationOutline />
                     </div>
-                    <p>استكشف</p>
 
-                  </div>
-                </div>
+                    <div className={styles.explore}>
+                      <div className={styles.icon_container}>
+                        <IoIosArrowBack />
+                      </div>
+                      <p>استكشف</p>
 
-
-
-              </motion.div>
-
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <motion.div initial={{ opacity: 0, }}
-                whileInView={{ opacity: 1, }}
-                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
-                <div className={styles.img_container}>
-                  <div className={styles.card_top}>
-                    <p> معالم</p>
-                  </div>
-                  <Image
-                    src="/assets/imgs/6.jpeg"
-                    alt="Vercel logomark"
-                    width={271.91}
-                    height={384.14}
-                  />
-                </div>
-
-                <div className={styles.card_bottom}>
-                  <div className={styles.title}>
-
-                    <h6>
-                      <strong> بئر الفقير</strong>
-                      <br />
-                      المدينة المنورة
-                    </h6>
-                    <IoLocationOutline />
-                  </div>
-
-                  <div className={styles.explore}>
-                    <div className={styles.icon_container}>
-                      <IoIosArrowBack />
                     </div>
-                    <p>استكشف</p>
-
-                  </div>
-                </div>
-
-
-
-              </motion.div>
-
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <motion.div initial={{ opacity: 0, }}
-                whileInView={{ opacity: 1, }}
-                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
-                <div className={styles.img_container}>
-                  <div className={styles.card_top}>
-                    <p>معالم</p>
-                  </div>
-                  <Image
-                    src="/assets/imgs/bg1.png"
-                    alt="Vercel logomark"
-                    width={271.91}
-                    height={384.14}
-                  />
-                </div>
-
-                <div className={styles.card_bottom}>
-                  <div className={styles.title}>
-
-                    <h6>
-                      <strong>قصر عروة</strong>
-                      <br />
-                      المدينة المنورة
-                    </h6>
-                    <IoLocationOutline />
                   </div>
 
-                  <div className={styles.explore}>
-                    <div className={styles.icon_container}>
-                      <IoIosArrowBack />
+
+
+                </motion.div>
+
+              </SwiperSlide>
+
+              <SwiperSlide>
+                <motion.div initial={{ opacity: 0, }}
+                  whileInView={{ opacity: 1, }}
+                  transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                  <div className={styles.img_container}>
+                    <div className={styles.card_top}>
+                      <p>معالم</p>
                     </div>
-                    <p>استكشف</p>
-
+                    <Image
+                      src="/assets/imgs/bg1.png"
+                      alt="Vercel logomark"
+                      width={271.91}
+                      height={384.14}
+                    />
                   </div>
-                </div>
+
+                  <div className={styles.card_bottom}>
+                    <div className={styles.title}>
+
+                      <h6>
+                        <strong>قصر عروة</strong>
+                        <br />
+                        المدينة المنورة
+                      </h6>
+                      <IoLocationOutline />
+                    </div>
+
+                    <div className={styles.explore}>
+                      <div className={styles.icon_container}>
+                        <IoIosArrowBack />
+                      </div>
+                      <p>استكشف</p>
+
+                    </div>
+                  </div>
 
 
 
-              </motion.div>
+                </motion.div>
 
-            </SwiperSlide>
+              </SwiperSlide>
 
 
 
-          </Swiper>
+            </Swiper>
+
+          </div>
         </motion.div>
       </section>
     </>
