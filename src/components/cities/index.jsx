@@ -368,26 +368,32 @@ const Cities = () => {
 
 
 
+
                   <div className={styles.card_bottom}>
                     <div className={styles.title}>
 
                       <h6>
-                        <strong>قصر عروة </strong>
+                        <strong>قصر عروة</strong>
                         <br />
-                        المدينة المنورة
+
+                        <span>
+                          المدينة المنورة
+                          <IoLocationOutline />
+
+                        </span>
+
                       </h6>
-                      <IoLocationOutline />
                     </div>
 
                     <div className={styles.explore}>
-
                       <p>استكشف</p>
+
                       <div className={styles.icon_container}>
                         <IoIosArrowBack />
                       </div>
+
                     </div>
                   </div>
-
 
                 </motion.div>
 
