@@ -48,6 +48,9 @@ const Navbar = ({ isHome }) => {
                   <IoChevronForwardOutline />
                 </Link>
               }
+
+
+
             </div>
 
 
@@ -60,7 +63,7 @@ const Navbar = ({ isHome }) => {
                 height={100}
               />
             </div>
-            <div className={styles.icon_container}>
+            <div className={styles.icon_container2}>
               {isHome &&
                 <Image
                   src="/assets/svgs/langs.svg"

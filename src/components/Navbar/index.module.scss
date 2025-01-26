@@ -1,10 +1,15 @@
 nav {
   .nav_container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     width: 100%;
+    position: relative;
+    .icon_container2,
     .icon_container {
+      position: absolute;
+      right: 0;
+
       img {
         width: 24px;
         height: 24px;
@@ -22,6 +27,11 @@ nav {
           color: #6f6f6f;
         }
       }
+    }
+
+    .icon_container2 {
+      right: unset;
+      left: 0;
     }
 
     .logo {
@@ -102,9 +112,9 @@ nav {
 
   .box_container {
     border-radius: 12px;
-    border: 1px solid white;
+    border: 1px solid rgba(255, 255, 255, 0.46);
     backdrop-filter: blur(18px);
-    background-color: rgba(82, 82, 82, 0.324);
+    background-color: rgba(255, 255, 255, 0.041);
     display: flex;
     flex-direction: column;
     align-items: center;

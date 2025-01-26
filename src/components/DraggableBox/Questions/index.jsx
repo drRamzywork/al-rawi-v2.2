@@ -141,11 +141,13 @@ const Questions = ({ questions,
 
                   <div className={styles.text_container}>
                     <div className={styles.title}>
-                      <h3>المقدمة</h3>
+                      <h3>إلى أي العصور يعود قصر عروة؟</h3>
                     </div>
 
                     <div className={styles.desc}>
-                      <p>يعود تاريخ قصور عروة بن الزبير إلى العصر الأُمَوي..</p>
+                      <p>
+                        يعود تاريخ قصر عروة بن الزبير إلى العصر الأُمَوي..
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -166,11 +168,11 @@ const Questions = ({ questions,
 
                   <div className={styles.text_container}>
                     <div className={styles.title}>
-                      <h3>المقدمة</h3>
+                      <h3>أين تقع قصور عروة بن الزبير؟</h3>
                     </div>
 
                     <div className={styles.desc}>
-                      <p>يعود تاريخ قصور عروة بن الزبير إلى العصر الأُمَوي..</p>
+                      <p>على بعد حوالي 3.5 كلم من المسجد النبوي الشريف</p>
                     </div>
                   </div>
                 </div>
@@ -191,11 +193,11 @@ const Questions = ({ questions,
 
                   <div className={styles.text_container}>
                     <div className={styles.title}>
-                      <h3>المقدمة</h3>
+                      <h3>ماهي أهم المعالم الأثرية في القصور</h3>
                     </div>
 
                     <div className={styles.desc}>
-                      <p>يعود تاريخ قصور عروة بن الزبير إلى العصر الأُمَوي..</p>
+                      <p>من أهم معالم قصور عروة بن الزبير: القلعة التاريخية والبئر المجاورة لها</p>
                     </div>
                   </div>
                 </div>
