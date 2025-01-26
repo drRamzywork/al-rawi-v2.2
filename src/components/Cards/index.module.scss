@@ -37,6 +37,7 @@ section.cards {
       a {
         color: unset;
         text-decoration: none;
+        width: 100%;
       }
       .box {
         display: flex;
@@ -52,7 +53,7 @@ section.cards {
         .details {
           display: flex;
           align-items: flex-start;
-          gap: 7px;
+          gap: 8px;
 
           .img_container {
             width: 104px;

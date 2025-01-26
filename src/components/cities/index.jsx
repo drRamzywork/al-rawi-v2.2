@@ -234,11 +234,19 @@ const Cities = () => {
 
             <Swiper
               spaceBetween={13}
-              slidesPerView={1.3}
+
+              breakpoints={{
+                1: {
+                  slidesPerView: 1.3
+                },
+                400: {
+                  slidesPerView: 1.4
+
+                }
+              }}
               pagination={{ clickable: true }}
               dir="rtl"
               modules={[Navigation, FreeMode]}
-              initialSlide={1}
               className={styles.swiper_contain}
               centeredSlides={false}
               style={{ width: '100%' }}
@@ -277,10 +285,11 @@ const Cities = () => {
                     </div>
 
                     <div className={styles.explore}>
+                      <p>استكشف</p>
+
                       <div className={styles.icon_container}>
                         <IoIosArrowBack />
                       </div>
-                      <p>استكشف</p>
 
                     </div>
                   </div>
@@ -307,27 +316,34 @@ const Cities = () => {
                     />
                   </div>
 
+
+
+
                   <div className={styles.card_bottom}>
                     <div className={styles.title}>
 
                       <h6>
-                        <strong> بئر الفقير</strong>
+                        <strong>بئر الفقير </strong>
                         <br />
-                        المدينة المنورة
+
+                        <span>
+                          المدينة المنورة
+                          <IoLocationOutline />
+
+                        </span>
+
                       </h6>
-                      <IoLocationOutline />
                     </div>
 
                     <div className={styles.explore}>
+                      <p>استكشف</p>
+
                       <div className={styles.icon_container}>
                         <IoIosArrowBack />
                       </div>
-                      <p>استكشف</p>
 
                     </div>
                   </div>
-
-
 
                 </motion.div>
 
@@ -349,11 +365,14 @@ const Cities = () => {
                     />
                   </div>
 
+
+
+
                   <div className={styles.card_bottom}>
                     <div className={styles.title}>
 
                       <h6>
-                        <strong>قصر عروة</strong>
+                        <strong>قصر عروة </strong>
                         <br />
                         المدينة المنورة
                       </h6>
@@ -361,14 +380,13 @@ const Cities = () => {
                     </div>
 
                     <div className={styles.explore}>
+
+                      <p>استكشف</p>
                       <div className={styles.icon_container}>
                         <IoIosArrowBack />
                       </div>
-                      <p>استكشف</p>
-
                     </div>
                   </div>
-
 
 
                 </motion.div>

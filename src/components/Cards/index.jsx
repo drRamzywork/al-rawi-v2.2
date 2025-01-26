@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 import { motion } from "framer-motion";
 import Image from 'next/image';
 
-const Cards = ({ bgurl }) => {
+const Cards = () => {
   return (
     <>
       <section id='cards' className={styles.cards}>
