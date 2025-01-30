@@ -53,7 +53,7 @@
     width: 37.51px;
     height: 37.51px;
     display: flex;
-    margin-left: auto; /* Pushes the button to the right */
+    margin-left: auto;
     svg {
       margin: auto;
       color: #6f6f6f;
@@ -61,9 +61,9 @@
   }
   .logo2,
   .logo {
-    flex: 1; /* Takes up remaining space to center the logo */
+    flex: 1;
     display: flex;
-    justify-content: center; /* Center logo within its flex space */
+    justify-content: center;
     margin-left: 38px;
   }
 

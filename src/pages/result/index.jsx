@@ -50,9 +50,7 @@ const Celebration = ({ onResult }) => {
         <link rel="canonical" href={videoURL} />
       </Head>
       <motion.div
-        initial={{ opacity: 0, translateY: -100 }}
-        whileInView={{ opacity: 1, translateY: 0 }}
-        transition={{ duration: 0.7, type: "tween" }}
+
         className={styles2.header}
         id={styles2.header2}
       >
@@ -85,12 +83,15 @@ const Celebration = ({ onResult }) => {
           </div>
 
           <div className={styles2.box_container}>
-            <motion.div
-              className={styles.celebrationContainer}
-              initial={{ scale: 0.5, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.8, ease: "easeOut" }}
-            >
+            <div className={styles.celebrationContainer}>
+
+              <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+              </motion.div>
+
               <motion.img
                 src="/assets/imgs/quiez/1.png"
                 alt="Trophy"
@@ -112,6 +113,16 @@ const Celebration = ({ onResult }) => {
               >
                 3/2
               </motion.h2>
+
+
+
+              <motion.div
+                initial={{ scale: 0.5, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
+              >
+              </motion.div>
+
               <div className={styles3.resultContainer}>
                 <p>ملخص الأجوبة</p>
                 <hr />
@@ -194,7 +205,7 @@ const Celebration = ({ onResult }) => {
                   العودة للرئيسية
                 </motion.button>
               </div>
-            </motion.div>
+            </div>
           </div>
         </div>
 
