@@ -59,12 +59,16 @@
       color: #6f6f6f;
     }
   }
-
+  .logo2,
   .logo {
     flex: 1; /* Takes up remaining space to center the logo */
     display: flex;
     justify-content: center; /* Center logo within its flex space */
     margin-left: 38px;
+  }
+
+  .logo2 {
+    margin: auto !important;
   }
 
   .box_container {

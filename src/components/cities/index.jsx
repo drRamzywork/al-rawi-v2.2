@@ -253,7 +253,7 @@ const Cities = () => {
 
             >
               <SwiperSlide>
-                <motion.div initial={{ opacity: 0, }}
+                <motion.a href='/cities/2' initial={{ opacity: 0, }}
                   whileInView={{ opacity: 1, }}
                   transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
                   <div className={styles.img_container}>
@@ -296,12 +296,12 @@ const Cities = () => {
 
 
 
-                </motion.div>
+                </motion.a>
 
               </SwiperSlide>
 
               <SwiperSlide>
-                <motion.div initial={{ opacity: 0, }}
+                <motion.a href='/cities/2' initial={{ opacity: 0, }}
                   whileInView={{ opacity: 1, }}
                   transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
                   <div className={styles.img_container}>
@@ -345,12 +345,12 @@ const Cities = () => {
                     </div>
                   </div>
 
-                </motion.div>
+                </motion.a>
 
               </SwiperSlide>
 
               <SwiperSlide>
-                <motion.div initial={{ opacity: 0, }}
+                <motion.a href='/cities/2' initial={{ opacity: 0, }}
                   whileInView={{ opacity: 1, }}
                   transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
                   <div className={styles.img_container}>
@@ -395,7 +395,7 @@ const Cities = () => {
                     </div>
                   </div>
 
-                </motion.div>
+                </motion.a>
 
               </SwiperSlide>
 

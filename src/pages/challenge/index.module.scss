@@ -59,12 +59,19 @@
       color: #6f6f6f;
     }
   }
-
   .logo {
+    margin-bottom: 8px;
+
     flex: 1; /* Takes up remaining space to center the logo */
     display: flex;
     justify-content: center; /* Center logo within its flex space */
     margin-left: 38px;
+
+    img {
+      width: 100px;
+      height: 60px;
+      object-fit: contain;
+    }
   }
 
   .box_container {

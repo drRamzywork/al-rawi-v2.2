@@ -1,5 +1,5 @@
 {
-  "name": "holoolak",
+  "name": "alrawi",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
-    "eslint": "^9",
-    "eslint-config-next": "15.1.1"
+    "eslint": "^9.19.0",
+    "eslint-config-next": "^15.1.6"
   }
 }

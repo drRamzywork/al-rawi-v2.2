@@ -65,7 +65,7 @@ export default function FullScreenVideo() {
       <Head>
         <title>{siteName}</title>
         <meta charSet="UTF-8" />
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href={imagePath} />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
@@ -93,7 +93,6 @@ export default function FullScreenVideo() {
 
         <link rel="canonical" href={videoURL} />
       </Head>
-
 
       <div className={styles.videoContainer}>
         <video

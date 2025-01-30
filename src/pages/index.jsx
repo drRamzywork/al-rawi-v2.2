@@ -15,11 +15,9 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setShowSplash(false);
-    }, 3000); // Adjust the time (3000ms = 3 seconds)
-
-    return () => clearTimeout(timer); // Cleanup the timer
+    }, 2000);
+    return () => clearTimeout(timer);
   }, []);
-
 
 
   const siteName = ' الراوي';

@@ -190,7 +190,7 @@ const Menu3 = ({ isVideoPlaying, showNewMenu, handleCloseAndPlay }) => {
                 <p>هل انت مستعد لتتحدى نفسك؟</p>
               </div>
               <div className={styles.btns_container}>
-                <Link href={`#`} onClick={handleCloseAndPlay}><p>لا</p></Link>
+                <Link href={`/cities/2`} onClick={handleCloseAndPlay}><p>لا</p></Link>
                 <Link href='/challenge'><p>تحدى الآن</p></Link>
               </div>
             </motion.div>
