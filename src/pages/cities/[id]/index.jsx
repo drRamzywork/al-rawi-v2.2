@@ -14,6 +14,10 @@ import { motion } from "framer-motion";
 const Cities = () => {
   return (
     <>
+
+
+
+
       <div className={`${styles2.page}  `}>
         <main className={styles2.main}>
           <div className={styles2.homeContent2}>

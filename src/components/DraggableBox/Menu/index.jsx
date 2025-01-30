@@ -10,11 +10,38 @@ const Menu = ({ isVideoPlaying, showNewMenu,
   const [readMore, setReadMore] = useState(false);
   const [questions, setQuestions] = useState(false);
   const [currentState, setCurrentState] = useState('');
-  const controls = useAnimation();
+  const [isClient, setIsClient] = useState(false);
+  const videoURL = 'https://suwa.com.sa/v/rawai/f.mp4';
 
+  const controls = useAnimation();
+  useEffect(() => {
+    setIsClient(typeof window !== "undefined");
+  }, []);
   useEffect(() => {
     controls.start(readMore ? 'visible' : 'hidden');
   }, [readMore, controls]);
+
+  const handleShare = async () => {
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Check this out!',
+          url: window.location.href,
+        });
+      } catch (error) {
+        console.error('Error sharing:', error);
+      }
+    } else {
+      // Fallback: Copy the URL to clipboard
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        alert('Link copied to clipboard! You can share it manually.');
+      }).catch(err => {
+        console.error('Could not copy link:', err);
+      });
+    }
+  };
+
+
 
 
 
@@ -60,11 +87,10 @@ const Menu = ({ isVideoPlaying, showNewMenu,
     {
       title: 'المشاركة',
       img: '/assets/svgs/navbar/share.svg',
-      onClick: () => {
-        setCurrentState('Share');
-      },
+      onClick: handleShare,
     },
   ];
+
 
   return (
     <>
