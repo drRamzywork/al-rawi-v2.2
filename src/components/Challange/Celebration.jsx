@@ -13,7 +13,7 @@ const Celebration = ({ onResult }) => {
         initial={{ opacity: 0, translateY: -100 }}
         whileInView={{ opacity: 1, translateY: 0 }}
         transition={{ duration: 0.7, type: "tween" }} className={styles2.header} id={styles2.header2}>
-        <div className="container">
+        <div className="container d-flex flex-column justify-content-center align-items-center">
           <div className={styles2.header_container}>
             <button onClick={() => setLangsWindow(false)} className={styles2.back_btn}>
               <IoChevronForwardOutline />

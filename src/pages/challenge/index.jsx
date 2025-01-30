@@ -2,9 +2,9 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import styles from "@/styles/quiz.module.scss";
 import styles2 from "./index.module.scss";
-import Celebration from "./Celebration";
-import Question from "./Question";
-import ProgressCircle from "./ProgressCircle";
+import Celebration from "../../components/Challange/Celebration";
+import Question from "../../components/Challange/Question";
+import ProgressCircle from "../../components/Challange/ProgressCircle";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { IoChevronForwardOutline } from "react-icons/io5";
@@ -54,7 +54,7 @@ export default function Quiz() {
             height={100}
           />
         </div>
-        <div className="container">
+        <div className="container ">
 
           <div className={styles2.header_container}>
             <button onClick={() => setLangsWindow(false)} className={styles2.back_btn}>
