@@ -180,7 +180,7 @@ const Menu3 = ({ isVideoPlaying, showNewMenu, handleCloseAndPlay }) => {
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0 }}
-              transition={{ duration: 1, type: 'tween' }}
+              transition={{ duration: 0.5, type: 'tween' }}
               className={styles.box_container}
             >
               <div onClick={handleCloseAndPlay} className={styles.close_icon}>
