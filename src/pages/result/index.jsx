@@ -92,14 +92,17 @@ const Celebration = ({ onResult }) => {
               >
               </motion.div>
 
-              <motion.img
+              {/* <motion.img
                 src="/assets/imgs/quiez/1.png"
                 alt="Trophy"
                 className={styles.trophy}
                 animate={{ rotate: [0, 10, -10, 0], scale: [1, 1.1, 1] }}
                 transition={{ repeat: Infinity, duration: 2 }}
-              />
-
+              /> */}
+              <div class={styles3.pyro}>
+                <div class={styles3.before}></div>
+                <div class={styles3.after}></div>
+              </div>
               <img
                 src="/assets/imgs/quiez/3.gif"
                 alt="Trophy"
@@ -219,6 +222,7 @@ const Celebration = ({ onResult }) => {
             height={100}
           />
         </div>
+
       </motion.div>
 
     </>
