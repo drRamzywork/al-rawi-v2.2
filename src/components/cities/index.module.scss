@@ -82,6 +82,119 @@ section.cities {
           }
         }
       }
+
+      .card {
+        position: relative;
+        width: 168.99px;
+        height: 252.06px;
+        overflow: hidden;
+        border-radius: 12px;
+        display: flex;
+
+        text-decoration: none;
+        color: unset;
+
+        .card_top {
+          background-color: var(--main-yellow);
+          position: absolute;
+          left: 11px;
+          top: 11px;
+          border-radius: 6px;
+
+          p {
+            font-weight: 600;
+            color: white;
+            font-size: 12px;
+            margin: 0;
+            padding: 4px 8px;
+          }
+        }
+        .img_container {
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 100%;
+          height: 100%;
+          img {
+            width: 271.91px;
+            height: 384.14px;
+            object-fit: cover;
+          }
+        }
+        .card_bottom {
+          position: relative;
+          z-index: 2;
+          text-align: right;
+
+          margin-top: auto;
+          // height: 100%;
+          align-self: flex-end;
+          // background: #0000005f;
+
+          background: #00000080;
+          background-blend-mode: overlay;
+          width: 100%;
+          backdrop-filter: blur(2px);
+          gap: 6px;
+          border-radius: 12px;
+          padding: 12px;
+
+          display: flex;
+          align-items: center;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .title {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-end;
+            gap: 8px;
+            h6 {
+              margin: 0;
+              color: white;
+              font-size: 14px;
+              font-weight: 400;
+
+              span {
+                display: flex;
+                flex-direction: row-reverse;
+                margin-top: 6.2px;
+                align-items: center;
+                gap: 5.38px;
+              }
+            }
+            svg {
+              color: white;
+              width: 15.38px;
+              height: 19.1px;
+            }
+          }
+
+          .explore {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            p {
+              margin: 0;
+              font-weight: 600;
+              font-size: 14px;
+              color: white;
+            }
+
+            .icon_container {
+              border-radius: 50%;
+              background-color: white;
+              width: 28px;
+              height: 28px;
+              display: flex;
+
+              svg {
+                margin: auto;
+              }
+            }
+          }
+        }
+      }
     }
   }
   .swiper_container {
@@ -92,6 +205,9 @@ section.cities {
       overflow: hidden;
       border-radius: 12px;
       display: flex;
+      text-decoration: none;
+      color: unset;
+
       .card_top {
         background-color: var(--main-yellow);
         position: absolute;

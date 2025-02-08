@@ -28,177 +28,168 @@ const Cities = () => {
             initial={{ opacity: 0, translateY: -10 }}
             whileInView={{ opacity: 1, translateY: 0 }}
             transition={{ duration: 0.7, type: "tween" }} className={styles.sec_title}>
-            <h3>أهم المدن التراثية</h3>
+            <h3>أهم المواقع التاريخية </h3>
 
           </motion.div>
 
 
           <div className="container">
             <div className={styles.boxes_container}>
-              <motion.a initial={{ opacity: 0, translateY: -10 }}
+
+
+
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, translateY: -10 }}
                 whileInView={{ opacity: 1, translateY: 0 }}
-                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
                 <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p>المدينة المنورة</p>
+                  </div>
                   <Image
-                    src="/assets/imgs/cities/1.jpeg"
+                    src="/assets/imgs/cities/9.png"
                     alt="Vercel logomark"
-                    width={175.99}
-                    height={265.06}
+                    width={271.91}
+                    height={384.14}
                   />
                 </div>
 
-                <div className={styles.title}>
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
 
-                  <h6>
-                    حائل
-                  </h6>
-                  <IoLocationOutline />
+                    <h6>
+                      <strong>الجوف</strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
                 </div>
+
+
+
               </motion.a>
 
 
-              <motion.a initial={{ opacity: 0, translateY: -10 }}
-                whileInView={{ opacity: 1, translateY: 0 }}
-                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1, }}
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
                 <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p> الرياض</p>
+                  </div>
                   <Image
-                    src="/assets/imgs/cities/2.jpeg"
+                    src="/assets/imgs/6.jpeg"
                     alt="Vercel logomark"
-                    width={175.99}
-                    height={265.06}
+                    width={271.91}
+                    height={384.14}
                   />
                 </div>
 
-                <div className={styles.title}>
-                  <h6>
-                    تبوك
-                  </h6>
-                  <IoLocationOutline />
+
+
+
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
+
+                    <h6>
+                      <strong>بئر الفقير </strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
                 </div>
+
+              </motion.a>
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1, }}
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p>تبوك</p>
+                  </div>
+                  <Image
+                    src="/assets/imgs/bg1.png"
+                    alt="Vercel logomark"
+                    width={271.91}
+                    height={384.14}
+                  />
+                </div>
+
+
+
+
+
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
+
+                    <h6>
+                      <strong>قصر عروة</strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
+                </div>
+
               </motion.a>
 
-              <motion.a initial={{ opacity: 0, translateY: -10 }}
-                whileInView={{ opacity: 1, translateY: 0 }}
-                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1, }}
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
                 <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p>حائل</p>
+                  </div>
                   <Image
-                    src="/assets/imgs/cities/3.jpeg"
+                    src="/assets/imgs/bg1.png"
                     alt="Vercel logomark"
-                    width={175.99}
-                    height={265.06}
+                    width={271.91}
+                    height={384.14}
                   />
                 </div>
 
-                <div className={styles.title}>
-                  <h6>
-                    المدينة المنورة
-                  </h6>
-                  <IoLocationOutline />
-                </div>
-              </motion.a>
 
-              <motion.a initial={{ opacity: 0, translateY: -10 }}
-                whileInView={{ opacity: 1, translateY: 0 }}
-                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
-                <div className={styles.img_container}>
-                  <Image
-                    src="/assets/imgs/cities/4.jpeg"
-                    alt="Vercel logomark"
-                    width={175.99}
-                    height={265.06}
-                  />
-                </div>
 
-                <div className={styles.title}>
-                  <h6>
-                    الجوف
-                  </h6>
-                  <IoLocationOutline />
-                </div>
-              </motion.a>
 
-              <motion.a initial={{ opacity: 0, translateY: -10 }}
-                whileInView={{ opacity: 1, translateY: 0 }}
-                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
-                <div className={styles.img_container}>
-                  <Image
-                    src="/assets/imgs/cities/5.jpeg"
-                    alt="Vercel logomark"
-                    width={175.99}
-                    height={265.06}
-                  />
+
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
+
+                    <h6>
+                      <strong>جبل جبة</strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
                 </div>
 
-                <div className={styles.title}>
-                  <h6>
-                    الجوف
-                  </h6>
-                  <IoLocationOutline />
-                </div>
-              </motion.a>
-
-
-              <motion.a initial={{ opacity: 0, translateY: -10 }}
-                whileInView={{ opacity: 1, translateY: 0 }}
-                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
-                <div className={styles.img_container}>
-                  <Image
-                    src="/assets/imgs/cities/6.png"
-                    alt="Vercel logomark"
-                    width={175.99}
-                    height={265.06}
-                  />
-                </div>
-
-                <div className={styles.title}>
-                  <h6>
-                    الطائف
-                  </h6>
-                  <IoLocationOutline />
-                </div>
-              </motion.a>
-
-
-
-
-              <motion.a initial={{ opacity: 0, translateY: -10 }}
-                whileInView={{ opacity: 1, translateY: 0 }}
-                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
-                <div className={styles.img_container}>
-                  <Image
-                    src="/assets/imgs/cities/7.jpeg"
-                    alt="Vercel logomark"
-                    width={175.99}
-                    height={265.06}
-                  />
-                </div>
-
-                <div className={styles.title}>
-                  <h6>
-                    القصيم
-                  </h6>
-                  <IoLocationOutline />
-                </div>
-              </motion.a>
-
-              <motion.a initial={{ opacity: 0, translateY: -10 }}
-                whileInView={{ opacity: 1, translateY: 0 }}
-                transition={{ duration: 0.7, type: "tween" }} href={'/cities/1'} className={styles.box}>
-                <div className={styles.img_container}>
-                  <Image
-                    src="/assets/imgs/cities/8.jpeg"
-                    alt="Vercel logomark"
-                    width={175.99}
-                    height={265.06}
-                  />
-                </div>
-
-                <div className={styles.title}>
-                  <h6>
-                    الرياض
-                  </h6>
-                  <IoLocationOutline />
-                </div>
               </motion.a>
             </div>
           </div>
