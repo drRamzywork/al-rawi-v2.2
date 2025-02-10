@@ -114,6 +114,7 @@ const Cities = () => {
                 </div>
 
               </motion.a>
+
               <motion.a href='/cities/2/video' initial={{ opacity: 0, }}
                 whileInView={{ opacity: 1, }}
                 transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
@@ -191,6 +192,320 @@ const Cities = () => {
                 </div>
 
               </motion.a>
+
+
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, translateY: -10 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p>المدينة المنورة</p>
+                  </div>
+                  <Image
+                    src="/assets/imgs/cities/9.png"
+                    alt="Vercel logomark"
+                    width={271.91}
+                    height={384.14}
+                  />
+                </div>
+
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
+
+                    <h6>
+                      <strong>الجوف</strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+              </motion.a>
+
+
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1, }}
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p> الرياض</p>
+                  </div>
+                  <Image
+                    src="/assets/imgs/6.jpeg"
+                    alt="Vercel logomark"
+                    width={271.91}
+                    height={384.14}
+                  />
+                </div>
+
+
+
+
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
+
+                    <h6>
+                      <strong>بئر الفقير </strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
+                </div>
+
+              </motion.a>
+
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1, }}
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p>تبوك</p>
+                  </div>
+                  <Image
+                    src="/assets/imgs/bg1.png"
+                    alt="Vercel logomark"
+                    width={271.91}
+                    height={384.14}
+                  />
+                </div>
+
+
+
+
+
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
+
+                    <h6>
+                      <strong>قصر عروة</strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
+                </div>
+
+              </motion.a>
+
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1, }}
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p>حائل</p>
+                  </div>
+                  <Image
+                    src="/assets/imgs/bg1.png"
+                    alt="Vercel logomark"
+                    width={271.91}
+                    height={384.14}
+                  />
+                </div>
+
+
+
+
+
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
+
+                    <h6>
+                      <strong>جبل جبة</strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
+                </div>
+
+              </motion.a>
+
+
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, translateY: -10 }}
+                whileInView={{ opacity: 1, translateY: 0 }}
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p>المدينة المنورة</p>
+                  </div>
+                  <Image
+                    src="/assets/imgs/cities/9.png"
+                    alt="Vercel logomark"
+                    width={271.91}
+                    height={384.14}
+                  />
+                </div>
+
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
+
+                    <h6>
+                      <strong>الجوف</strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
+                </div>
+
+
+
+              </motion.a>
+
+
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1, }}
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p> الرياض</p>
+                  </div>
+                  <Image
+                    src="/assets/imgs/6.jpeg"
+                    alt="Vercel logomark"
+                    width={271.91}
+                    height={384.14}
+                  />
+                </div>
+
+
+
+
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
+
+                    <h6>
+                      <strong>بئر الفقير </strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
+                </div>
+
+              </motion.a>
+
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1, }}
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p>تبوك</p>
+                  </div>
+                  <Image
+                    src="/assets/imgs/bg1.png"
+                    alt="Vercel logomark"
+                    width={271.91}
+                    height={384.14}
+                  />
+                </div>
+
+
+
+
+
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
+
+                    <h6>
+                      <strong>قصر عروة</strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
+                </div>
+
+              </motion.a>
+
+              <motion.a href='/cities/2/video' initial={{ opacity: 0, }}
+                whileInView={{ opacity: 1, }}
+                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+                <div className={styles.img_container}>
+                  <div className={styles.card_top}>
+                    <p>حائل</p>
+                  </div>
+                  <Image
+                    src="/assets/imgs/bg1.png"
+                    alt="Vercel logomark"
+                    width={271.91}
+                    height={384.14}
+                  />
+                </div>
+
+
+
+
+
+                <div className={styles.card_bottom}>
+                  <div className={styles.title}>
+
+                    <h6>
+                      <strong>جبل جبة</strong>
+
+
+                    </h6>
+                  </div>
+
+                  <div className={styles.explore}>
+                    <div className={styles.icon_container}>
+                      <IoIosArrowBack />
+                    </div>
+
+                  </div>
+                </div>
+
+              </motion.a>
+
+
             </div>
           </div>
 
