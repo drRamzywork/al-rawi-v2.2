@@ -987,6 +987,10 @@ const Cities = () => {
                   <div className={styles.img_container}>
                     <img src={city.imgSrc} alt={city.name} />
                   </div>
+
+                  <div className={styles.card_top}>
+                    <p>{city.name}</p>
+                  </div>
                   <div className={styles.title}>
                     <h5>{city.location}</h5>
                   </div>

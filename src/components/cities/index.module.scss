@@ -291,7 +291,21 @@ section.cities {
         margin-bottom: 16px;
 
         // width: 100%;
+        .card_top {
+          background-color: var(--main-yellow);
+          position: absolute;
+          left: 11px;
+          top: 11px;
+          border-radius: 6px;
 
+          p {
+            font-weight: 600;
+            color: white;
+            font-size: 12px;
+            margin: 0;
+            padding: 4px 8px;
+          }
+        }
         &::after {
           content: "";
           position: absolute;
