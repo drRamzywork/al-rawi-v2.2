@@ -988,7 +988,7 @@ const Cities = () => {
                     <img src={city.imgSrc} alt={city.name} />
                   </div>
                   <div className={styles.title}>
-                    <h5>{city.name}</h5>
+                    <h5>{city.location}</h5>
                   </div>
                 </motion.a>
               ))}
