@@ -23,7 +23,6 @@ export default function Home() {
   const siteName = ' الراوي';
   const imagePath = '/assets/imgs/rawi.png';
   const siteDescrription = 'استكشف عالم الجمال في المملكة';
-
   const siteURL = 'https://alrawi2.suwa.com.sa/';
 
 

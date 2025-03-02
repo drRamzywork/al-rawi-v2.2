@@ -839,12 +839,11 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, FreeMode } from 'swiper/modules';
+import { Navigation, FreeMode, Autoplay } from 'swiper/modules';
 import { IoIosArrowBack } from "react-icons/io";
 import { motion } from "framer-motion";
 import Link from 'next/link';
 import { CiGrid32, CiGrid2V } from "react-icons/ci";
-
 const cityData = [
   {
     id: 1,
@@ -1051,19 +1050,20 @@ const Cities = () => {
 
           <Swiper
             spaceBetween={13}
+            autoplay={{ delay: 5000, disableOnInteraction: false }}
 
             breakpoints={{
               1: {
-                slidesPerView: 1.3
+                slidesPerView: 1.1
               },
               400: {
-                slidesPerView: 1.4
+                slidesPerView: 1.1
 
               }
             }}
             pagination={{ clickable: true }}
             dir="rtl"
-            modules={[Navigation, FreeMode]}
+            modules={[Navigation, FreeMode, Autoplay]}
             className={styles.swiper_contain}
             centeredSlides={false}
             style={{ width: '100%' }}
@@ -1089,12 +1089,11 @@ const Cities = () => {
                   <div className={styles.title}>
 
                     <h6>
-                      <strong>قصر عروة</strong>
+                      <strong>بيت البيعة..</strong>
                       <br />
 
                       <span>
-                        المدينة المنورة
-                        <IoLocationOutline />
+                        شاهد تاريخي علي مبايعة الملك المؤسس
 
                       </span>
 
@@ -1140,12 +1139,11 @@ const Cities = () => {
                   <div className={styles.title}>
 
                     <h6>
-                      <strong>بئر الفقير </strong>
+                      <strong>بيت البيعة.. </strong>
                       <br />
 
                       <span>
-                        المدينة المنورة
-                        <IoLocationOutline />
+                        شاهد تاريخي علي مبايعة الملك المؤسس
 
                       </span>
 
@@ -1190,12 +1188,11 @@ const Cities = () => {
                   <div className={styles.title}>
 
                     <h6>
-                      <strong>قصر عروة</strong>
+                      <strong>بيت البيعة..</strong>
                       <br />
 
                       <span>
-                        المدينة المنورة
-                        <IoLocationOutline />
+                        شاهد تاريخي علي مبايعة الملك المؤسس
 
                       </span>
 
