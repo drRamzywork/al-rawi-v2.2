@@ -19,7 +19,7 @@ const DraggableBox = () => {
   return (
     <div className={styles.main_container}>
       {showNewMenu !== true && showElements !== true && !isVideoPlaying && (
-        <Link href="/cities/2" className={styles.openShowMenu}>
+        <Link href="/" className={styles.openShowMenu}>
           <IoChevronForwardOutline />
 
         </Link>
