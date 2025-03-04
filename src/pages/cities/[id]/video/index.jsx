@@ -108,7 +108,7 @@ export default function FullScreenVideo() {
               )}
             </AnimatePresence>
 
-            <Menu isVideoPlaying={isPlaying} setPause={setPause} showNewMenu={showNewMenu} setShowNewMenu={setShowNewMenu} />
+            <Menu id={id} isVideoPlaying={isPlaying} setPause={setPause} showNewMenu={showNewMenu} setShowNewMenu={setShowNewMenu} />
             <Menu2 showNewMenu={showNewMenu} setShowNewMenu={setShowNewMenu} />
 
             {!isPlaying && !showNewMenu && (

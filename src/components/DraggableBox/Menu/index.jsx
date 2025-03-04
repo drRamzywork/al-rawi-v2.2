@@ -5,7 +5,7 @@ import styles from './index.module.scss';
 import { IoClose } from 'react-icons/io5';
 import Questions from '../Questions';
 
-const Menu = ({ isVideoPlaying, showNewMenu,
+const Menu = ({ isVideoPlaying, showNewMenu, id,
   setShowNewMenu }) => {
   const [readMore, setReadMore] = useState(false);
   const [questions, setQuestions] = useState(false);
@@ -206,7 +206,7 @@ const Menu = ({ isVideoPlaying, showNewMenu,
         </div >
       }
 
-      <Questions questions={questions}
+      <Questions questions={questions} id={id}
         setQuestions={setQuestions} />
 
     </>
