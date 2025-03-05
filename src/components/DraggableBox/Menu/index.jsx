@@ -11,7 +11,6 @@ const Menu = ({ isVideoPlaying, showNewMenu, id, setPause, setIsPlaying,
   const [questions, setQuestions] = useState(false);
   const [currentState, setCurrentState] = useState('');
   const [isClient, setIsClient] = useState(false);
-  const videoURL = 'https://suwa.com.sa/v/rawai/f.mp4';
 
   const controls = useAnimation();
   useEffect(() => {
@@ -82,6 +81,8 @@ const Menu = ({ isVideoPlaying, showNewMenu, id, setPause, setIsPlaying,
       img: '/assets/svgs/navbar/location.svg',
       onClick: () => {
         setCurrentState('Location');
+        window.open('https://maps.app.goo.gl/v3QPUKopn2EwjFqi7', '_blank');
+
       },
     },
     {
@@ -136,23 +137,38 @@ const Menu = ({ isVideoPlaying, showNewMenu, id, setPause, setIsPlaying,
             </div>
 
             <div className={styles.sec_title}>
-              <h1>قصور عروة</h1>
+              <h1>بيت البيعة</h1>
             </div>
             <div className={styles.imgs_container}>
               <div className={styles.main_img}>
-                <img src="/assets/imgs/menu2/2.png" alt="" />
+                <img src="/assets/imgs/menu2/2.webp" alt="" />
               </div>
 
             </div>
 
             <div className={styles.title}>
-              <h3>إلى أي العصور يعود قصر عروة؟</h3>
+              <h3>في قلب مدينة الهفوف بمنطقة الأحساء، وتحديدًا في حي الكوت، يقع بيت البيعة (بيت الملَّا)، الذي يعد من أهم المعالم التي شهدت أحداثًا تتعلق بتاريخ المملكة العربية السعودية.</h3>
             </div>
-
 
             <div className={styles.desc}>
-              <p>يعود تاريخ قصر عروة بن الزبير إلى العصر الأُمَوي، وكان هذا القصر أحسنَ القصور وأجملها في ذلك العهد، وتذكر المصادر أن الذي بناهُ هو الزبير بن العوام رضي الله عنه، ثم سكن فيه ابنُه عروة.</p>
+              <p>      ففي يوم الأحد، ليلة الاثنين 28 / 5 / 1331هـ، استقبل هذا البيت الملكَ المؤسس عبدالعزيز بن عبدالرحمن آل سعود رحمه الله، بعد وصوله إلى الأحساء، وجرت فيه مبايعة أهالي الأحساء له.</p>
             </div>
+
+
+            <div className={styles.title}>
+              <h3>
+                ويعود تاريخ بناء "بيت البيعة" إلى عام 1203هـ، وقد قام ببنائه الشيخ عبدالرحمن بن عمر بن محمد بن عمر المُلَّا، الذي كان يشغل منصِب قاضي الأحساء في تلك الفترة.</h3>
+            </div>
+
+            <div className={styles.desc}>
+              <p>
+
+                ويمتد هذا البيت على مساحةٍ تزيد على 705م2، وهو يحتوي على العديد من الغرف، ويضم مقتنياتٍ أثرية ومخطوطاتٍ قديمة، مما يجعله شاهدًا على الحقبة التاريخية التي بُني فيها.
+                وبجهود من هيئة التراث، تم ترميم بيت البيعة، وتحويله إلى موقعٍ تاريخي، وأصبح اليوم معلَمًا أثريًّا وسياحيًّا بارزًا من معالم الأحساء، يجذب الزوار الراغبين في التعرف على تلك المرحلة من تاريخ المنطقة.</p>
+            </div>
+
+
+            {/* 
 
 
             <div className={styles.title}>
@@ -161,14 +177,14 @@ const Menu = ({ isVideoPlaying, showNewMenu, id, setPause, setIsPlaying,
 
             <div className={styles.desc}>
               <p>تقع قصور عُروة بن الزبير على بعد حوالي 3.5 كلم من المسجد النبوي الشريف، على امتداد الطريق المؤدية إلى مسجد ذي الحُلَيفة وهو ميقات أهل المدينة، وهذه القصور جزءٌ من التاريخ الحافل للمدينة المنورة، وقد ذُكرت في العديد من المصادر التاريخية.</p>
-            </div>
+            </div> */}
 
 
-            <div className={styles.title}>
+            {/* <div className={styles.title}>
               <h3>
                 ما هي أهم المعالم الأثرية في قصور عروة بن الزبير؟
               </h3>
-            </div>
+            </div> */}
 
           </div>
 
@@ -178,13 +194,15 @@ const Menu = ({ isVideoPlaying, showNewMenu, id, setPause, setIsPlaying,
 
       {readMore && (
         <div className={styles.layer} onClick={() => setReadMore(false)} />
-      )}
+      )
+      }
 
 
 
 
       {/* Navigation links */}
-      {!isVideoPlaying && !showNewMenu &&
+      {
+        !isVideoPlaying && !showNewMenu &&
 
         <div className={styles.nav_container} >
           <div className="container">

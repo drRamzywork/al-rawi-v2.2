@@ -180,9 +180,9 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Cities from "@/components/cities";
 import Footer from "@/components/Footer";
-import cityData from "@/data/cities"; // ✅ استيراد بيانات المدن
+import cityData from "@/data/cities";
 
-export default function Home({ cities }) { // ✅ استقبال البيانات كـ props
+export default function Home({ cities }) {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
@@ -231,7 +231,7 @@ export default function Home({ cities }) { // ✅ استقبال البيانا�
             <div className={styles.homeContent}>
               <Navbar isHome={true} />
               <Hero />
-              <Cities cities={cities} /> {/* ✅ تمرير البيانات إلى مكون Cities */}
+              <Cities cities={cities} />
             </div>
           )}
 
@@ -242,11 +242,10 @@ export default function Home({ cities }) { // ✅ استقبال البيانا�
   );
 }
 
-// ✅ getStaticProps لجلب البيانات أثناء البناء (Build time)
 export async function getStaticProps() {
   return {
     props: {
-      cities: cityData, // تمرير بيانات المدن كـ props
+      cities: cityData,
     },
   };
 }

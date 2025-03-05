@@ -9,6 +9,8 @@ import Link from "next/link";
 import { IoChevronForwardOutline } from "react-icons/io5";
 import Head from "next/head";
 import cityData from "@/data/cities";
+import Menu3 from "@/components/DraggableBox/Menu3";
+import Dialog from "@/components/Challange/Dialog";
 
 export default function FullScreenVideo() {
   const router = useRouter();
@@ -17,6 +19,8 @@ export default function FullScreenVideo() {
   const [isPlaying, setIsPlaying] = useState(false);
   const [pause, setPause] = useState(false);
   const [showNewMenu, setShowNewMenu] = useState(false);
+
+  const [isDialog, setIsDialog] = useState(false);
 
   const city = cityData.find((c) => c.id.toString() === id);
   const notFound = !city;
@@ -71,7 +75,7 @@ export default function FullScreenVideo() {
   const siteDescrription = city ? `استكشف ${city.name} في منطقة ${city.region}` : "لم يتم العثور على الفيديو";
   const videoURL = city ? city.videoURL : "";
   const siteURL = "https://alrawi2.suwa.com.sa/";
-
+  console.log(isDialog, "isDialog")
   return (
     <>
       <Head>
@@ -131,11 +135,18 @@ export default function FullScreenVideo() {
 
             <Menu setIsPlaying={setIsPlaying} id={id} isVideoPlaying={isPlaying} setPause={setPause} showNewMenu={showNewMenu} setShowNewMenu={setShowNewMenu} />
             <Menu2 showNewMenu={showNewMenu} setShowNewMenu={setShowNewMenu} />
+            {/* <Menu3 isDialog={isDialog} /> */}
+
+            {isDialog &&
+              <Dialog setIsDialog={setIsDialog} />
+            }
+
+
 
             {!isPlaying && !showNewMenu && (
-              <Link href={`/cities/${id}/video/challenge`} className={styles.openShowMenu}>
+              <div className={styles.openShowMenu} onClick={() => setIsDialog(true)}>
                 <IoChevronForwardOutline />
-              </Link>
+              </div>
             )}
 
             {!showNewMenu && (

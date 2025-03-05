@@ -27,10 +27,11 @@ const Menu2 = ({ showNewMenu, setShowNewMenu, }) => {
   // Swiper Logic
 
   const data = [
-    { img: '/assets/imgs/menu2/1.png' },
-    { img: '/assets/imgs/menu2/2.png' },
-    { img: '/assets/imgs/menu2/3.png' },
-    { img: '/assets/imgs/menu2/4.png' },
+    { img: '/assets/imgs/menu2/1.jpg' },
+    { img: '/assets/imgs/menu2/2.webp' },
+    { img: '/assets/imgs/menu2/3.jpg' },
+    { img: '/assets/imgs/menu2/4.jpg' },
+    { img: '/assets/imgs/menu2/5.webp' },
   ]
 
   const swiperRef = useRef(null);

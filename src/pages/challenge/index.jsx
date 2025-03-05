@@ -12,9 +12,9 @@ import Link from "next/link";
 import Head from "next/head";
 
 const questions = [
-  { question: "أين تقع قصور عروة؟", options: ["مكة المكرمة", "الاحساء", "في الرياض", "في المدينة المنورة"], correct: 0 },
-  { question: "إلى أي العصور يعود قصر عروة؟", options: ["عصر ما قبل الإسلام", "العصر الحديث", "العصر الأموي", "العصر العباسي"], correct: 1 },
-  { question: "لأي غرض استخدمت القلعة التاريخية قديمًا؟", options: ["استُخدمت القلعة التاريخية قديمًا للحماية العسكرية", "استُخدمت القلعة التاريخية قديمًا للتجارة", "استُخدمت القلعة التاريخية قديمًا للزيارة", "جميع ما ذكر"], correct: 1 },
+  { question: "أين يقع بيت البيعة؟", options: ["الاحساء ", "مكة", " الرياض",], correct: 0 },
+  { question: "متى بُني بيت البيعة؟", options: ["1203هـ", "1320هـ ", "1100هـ "], correct: 1 },
+  { question: "ما الحدث التاريخي الذي جرى في بيت البيعة؟", options: ["مبايعة الملك عبدالعزيز", " تأسيس المملكة", "افتتاح الأحساء"], correct: 1 },
 ];
 
 export default function Quiz() {
@@ -41,7 +41,7 @@ export default function Quiz() {
   if (currentStep === "celebration") {
     return <Celebration onResult={() => router.push("/result")} />;
   }
-  const siteName = '  الراوي | تحدي قصور عروة  ';
+  const siteName = '  الراوي | تحدي  بيت البيعة';
   const imagePath = '/assets/imgs/rawi.png';
   const siteDescrription = 'استكشف عالم الجمال في المملكة';
 
