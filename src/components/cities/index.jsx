@@ -508,7 +508,7 @@ import { CiGrid32, CiGrid2V } from "react-icons/ci";
 const getRandomWidth = (min, max) => Math.floor(Math.random() * (max - min + 40)) + min;
 
 const Cities = ({ cities }) => {
-  const [changeShapes, setChangeShapes] = useState(false);
+  const [changeShapes, setChangeShapes] = useState(true);
 
   return (
     <section id="cities" className={styles.cities}>
@@ -554,10 +554,10 @@ const Cities = ({ cities }) => {
                         <Image src={city.imgSrc} alt={city.name} width={205} height={`${getRandomWidth(144, 340)}`} />
                       </div>
                       <div className={styles.card_top}>
-                        <p>{city.name}</p>
+                        <p>{city.region}</p>
                       </div>
                       <div className={styles.title}>
-                        <h5>{city.region}</h5>
+                        <h5>{city.name}</h5>
                       </div>
                     </motion.a> :
                     <motion.div
@@ -697,7 +697,7 @@ const Cities = ({ cities }) => {
                       <br />
 
                       <span>
-                        شاهد تاريخي علي مبايعة الملك المؤسس
+                        شاهد تاريخي على مبايعة الملك المؤسس
 
                       </span>
 
@@ -747,7 +747,7 @@ const Cities = ({ cities }) => {
                       <br />
 
                       <span>
-                        شاهد تاريخي علي مبايعة الملك المؤسس
+                        شاهد تاريخي على مبايعة الملك المؤسس
 
                       </span>
 
@@ -796,7 +796,7 @@ const Cities = ({ cities }) => {
                       <br />
 
                       <span>
-                        شاهد تاريخي علي مبايعة الملك المؤسس
+                        شاهد تاريخي على مبايعة الملك المؤسس
 
                       </span>
 
@@ -846,7 +846,7 @@ const Cities = ({ cities }) => {
                       <br />
 
                       <span>
-                        شاهد تاريخي علي مبايعة الملك المؤسس
+                        شاهد تاريخي على مبايعة الملك المؤسس
 
                       </span>
 
@@ -895,7 +895,7 @@ const Cities = ({ cities }) => {
                       <br />
 
                       <span>
-                        شاهد تاريخي علي مبايعة الملك المؤسس
+                        شاهد تاريخي على مبايعة الملك المؤسس
 
                       </span>
 

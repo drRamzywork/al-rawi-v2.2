@@ -135,7 +135,6 @@ export default function FullScreenVideo() {
 
             <Menu setIsPlaying={setIsPlaying} id={id} isVideoPlaying={isPlaying} setPause={setPause} showNewMenu={showNewMenu} setShowNewMenu={setShowNewMenu} />
             <Menu2 showNewMenu={showNewMenu} setShowNewMenu={setShowNewMenu} />
-            {/* <Menu3 isDialog={isDialog} /> */}
 
             {isDialog &&
               <Dialog setIsDialog={setIsDialog} />

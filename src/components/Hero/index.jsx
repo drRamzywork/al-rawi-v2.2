@@ -166,7 +166,6 @@ const Hero = () => {
   };
 
 
-  console.log(sliders[0].videoUrl, 'sliders[0].videoUrl')
   const pagination = {
     clickable: true,
     type: 'bullets',

@@ -232,7 +232,6 @@ section.cities {
     .boxes_container_mobile {
       .box {
         margin-left: 0px;
-        cursor: pointer;
 
         a {
           text-decoration: none;
@@ -274,6 +273,9 @@ section.cities {
       width: 100%;
       display: block;
       margin-top: 16px !important;
+      a.box {
+        cursor: pointer;
+      }
 
       .box {
         text-decoration: none;
@@ -293,7 +295,6 @@ section.cities {
         padding: 16px;
         margin-left: 0px;
         margin-bottom: 16px;
-        cursor: pointer;
         // width: 100%;
         .card_top {
           background-color: var(--main-yellow);
