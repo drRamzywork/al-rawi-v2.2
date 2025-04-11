@@ -12,9 +12,9 @@ import Link from "next/link";
 import Head from "next/head";
 
 const questions = [
-  { question: "أين يقع بيت البيعة؟", options: ["الاحساء ", "مكة", " الرياض",], correct: 0 },
-  { question: "متى بُني بيت البيعة؟", options: ["1203هـ", "1320هـ ", "1100هـ "], correct: 1 },
-  { question: "ما الحدث التاريخي الذي جرى في بيت البيعة؟", options: ["مبايعة الملك عبدالعزيز", " تأسيس المملكة", "افتتاح الأحساء"], correct: 1 },
+  { question: "أين يقع بيت البيعة؟", options: ["الأحساء ", "مكة", " الرياض",], correct: 0 },
+  { question: "متى بُني بيت البيعة؟", options: ["1203هـ - 1788م", "1320هـ - 1902م ", "1100هـ - 1688م "], correct: 1 },
+  { question: "ما الحدث التاريخي الذي جرى في بيت البيعة؟", options: ["مبايعة الملك عبدالعزيز -رحمه الله", " تأسيس المملكة", "افتتاح الأحساء"], correct: 1 },
 ];
 
 export default function Quiz() {

@@ -110,7 +110,7 @@ const Celebration = ({ onResult }) => {
               >
                 تهانيناً
               </motion.h2>
-              <p>لقد أتممت التحدي</p>
+              <p>لقد أتممت الأسئلة</p>
               <div className={styles.buttons}>
                 <motion.button
                   whileHover={{ scale: 1.1 }}

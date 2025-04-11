@@ -66,7 +66,7 @@
 //           </div>
 
 //           <div className="title">
-//             <p>هل انت مستعد لتتحدى نفسك؟</p>
+//             <p>استكشف معلوماتك حول هذا المعلم؟</p>
 //           </div>
 
 
@@ -131,7 +131,7 @@
 //               </div>
 
 //               <div className={styles.title}>
-//                 <p>هل انت مستعد لتتحدى نفسك؟</p>
+//                 <p>استكشف معلوماتك حول هذا المعلم؟</p>
 //               </div>
 
 //               <div className={styles.btns_container}>
@@ -187,11 +187,11 @@ const Menu3 = ({ isVideoPlaying, showNewMenu, handleCloseAndPlay }) => {
                 <IoClose />
               </div>
               <div className={styles.title}>
-                <p>هل انت مستعد لتتحدى نفسك؟</p>
+                <p>استكشف معلوماتك حول هذا المعلم؟</p>
               </div>
               <div className={styles.btns_container}>
                 <Link href={`/`} onClick={handleCloseAndPlay}><p>لا</p></Link>
-                <Link href='/challenge'><p>تحدى الآن</p></Link>
+                <Link href='/challenge'><p>نعم</p></Link>
               </div>
             </motion.div>
           </motion.div>
