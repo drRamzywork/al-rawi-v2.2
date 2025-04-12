@@ -74,7 +74,7 @@ const Questions = ({ questions, id, setQuestions, setShowNewMenu, setPause, setI
                   </div>
                   <div className={styles.text_container}>
                     <div className={styles.title}>
-                      <h3>  قصة حي الكوت (00:00)</h3>
+                      <h3>  في قلب الهفوف (00:00)</h3>
                     </div>
                   </div>
                 </div>
@@ -100,7 +100,7 @@ const Questions = ({ questions, id, setQuestions, setShowNewMenu, setPause, setI
                   </div>
                   <div className={styles.text_container}>
                     <div className={styles.title}>
-                      <h3>قصة بيعة المؤسس (00:20)</h3>
+                      <h3>  حدث تاريخي (00:20)</h3>
                     </div>
                   </div>
                 </div>
@@ -126,7 +126,7 @@ const Questions = ({ questions, id, setQuestions, setShowNewMenu, setPause, setI
                   </div>
                   <div className={styles.text_container}>
                     <div className={styles.title}>
-                      <h3>قصة بيت البيعة  (01:48)</h3>
+                      <h3>  1203هـ.. البداية (01:48)</h3>
                     </div>
                   </div>
                 </div>
