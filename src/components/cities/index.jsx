@@ -635,7 +635,7 @@ const Cities = ({ cities }) => {
                     >
                       <div className={styles.img_container}>
                         <div className={styles.card_top}>
-                          <p>{city.region}</p>
+                          <p>{city.name}</p>
                         </div>
                         <Image
                           src={city.imgSrc}
@@ -647,7 +647,7 @@ const Cities = ({ cities }) => {
                       <div className={styles.card_bottom}>
                         <div className={styles.title}>
                           <h6>
-                            <strong>{city.name}</strong>
+                            <strong>{city.region}</strong>
                           </h6>
                         </div>
                         <div className={styles.explore}>
