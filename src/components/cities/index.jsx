@@ -578,10 +578,10 @@ const Cities = ({ cities }) => {
                         />
                       </div>
                       <div className={styles.card_top}>
-                        <p>{city.name}</p>
+                        <p>{city.region}</p>
                       </div>
                       <div className={styles.title}>
-                        <h5>{city.region}</h5>
+                        <h5>{city.name}</h5>
                       </div>
                     </motion.div>
                   )}
@@ -635,7 +635,7 @@ const Cities = ({ cities }) => {
                     >
                       <div className={styles.img_container}>
                         <div className={styles.card_top}>
-                          <p>{city.name}</p>
+                          <p>{city.region}</p>
                         </div>
                         <Image
                           src={city.imgSrc}
@@ -647,7 +647,7 @@ const Cities = ({ cities }) => {
                       <div className={styles.card_bottom}>
                         <div className={styles.title}>
                           <h6>
-                            <strong>{city.region}</strong>
+                            <strong>{city.name}</strong>
                           </h6>
                         </div>
                         <div className={styles.explore}>
