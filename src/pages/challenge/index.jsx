@@ -12,9 +12,25 @@ import Link from "next/link";
 import Head from "next/head";
 
 const questions = [
-  { question: "أين يقع بيت البيعة؟", options: ["الأحساء ", "مكة", " الرياض",], correct: 0 },
-  { question: "متى بُني بيت البيعة؟", options: ["1203هـ - 1788م", "1320هـ - 1902م ", "1100هـ - 1688م "], correct: 1 },
-  { question: "ما الحدث التاريخي الذي جرى في بيت البيعة؟", options: ["مبايعة الملك عبدالعزيز -رحمه الله", " تأسيس المملكة", "افتتاح الأحساء"], correct: 1 },
+  {
+    question: "أين يقع بيت البيعة؟",
+    options: ["الأحساء ", "مكة", " الرياض"],
+    correct: 0,
+  },
+  {
+    question: "متى بُني بيت البيعة؟",
+    options: ["1203هـ - 1788م", "1320هـ - 1902م ", "1100هـ - 1688م "],
+    correct: 1,
+  },
+  {
+    question: "ما الحدث التاريخي الذي جرى في بيت البيعة؟",
+    options: [
+      "مبايعة الملك عبدالعزيز -رحمه الله",
+      " تأسيس المملكة",
+      "افتتاح الأحساء",
+    ],
+    correct: 1,
+  },
 ];
 
 export default function Quiz() {
@@ -30,7 +46,7 @@ export default function Quiz() {
     if (currentStep < questions.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
-      setCurrentStep("celebration");
+      router.push("/result");
     }
   };
 
@@ -38,24 +54,23 @@ export default function Quiz() {
     if (currentStep > 0) setCurrentStep(currentStep - 1);
   };
 
-  if (currentStep === "celebration") {
-    return <Celebration onResult={() => router.push("/result")} />;
-  }
-  const siteName = '  الراوي | تحدي  بيت البيعة';
-  const imagePath = '/assets/imgs/rawi.png';
-  const siteDescrription = 'استكشف عالم الجمال في المملكة';
+  const siteName = "  الراوي | تحدي  بيت البيعة";
+  const imagePath = "/assets/imgs/rawi.png";
+  const siteDescrription = "استكشف عالم الجمال في المملكة";
 
-  const siteURL = 'https://alrawi2.suwa.com.sa/';
-  const videoURL = 'https://suwa.com.sa/v/rawai/f.mp4';
+  const siteURL = "https://alrawi2.suwa.com.sa/";
+  const videoURL = "https://suwa.com.sa/v/rawai/f.mp4";
 
   return (
     <>
-
       <Head>
         <title>{siteName}</title>
         <meta charSet="UTF-8" />
         <link rel="icon" href={imagePath} />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
         <meta name="title" content={siteName} />
@@ -82,11 +97,15 @@ export default function Quiz() {
 
         <link rel="canonical" href={videoURL} />
       </Head>
-      <motion.div initial={{ opacity: 0, translateY: -100 }}
+
+      <motion.div
+        initial={{ opacity: 0, translateY: -100 }}
         whileInView={{ opacity: 1, translateY: 0 }}
-        transition={{ duration: 0.7, type: "tween" }} className={styles2.header} id='header'>
-        <div
-          className={styles2.shape_container}>
+        transition={{ duration: 0.7, type: "tween" }}
+        className={styles2.header}
+        id="header"
+      >
+        <div className={styles2.shape_container}>
           <Image
             src="/assets/svgs/shape.svg"
             alt="Vercel logomark"
@@ -95,15 +114,12 @@ export default function Quiz() {
           />
         </div>
         <div className="container ">
-
           <div className={styles2.header_container}>
-            <Link href='/cities/2/video/challenge' className={styles2.back_btn}>
+            <Link href="/cities/2/video/challenge" className={styles2.back_btn}>
               <IoChevronForwardOutline />
             </Link>
 
-
-            <Link href='/' className={styles2.logo}>
-
+            <Link href="/" className={styles2.logo}>
               <Image
                 src="/assets/svgs/logoColored.svg"
                 alt="Vercel logomark"
@@ -111,32 +127,23 @@ export default function Quiz() {
                 height={100}
               />
             </Link>
-
-
-
           </div>
 
-
-
           <div className={styles2.box_container}>
-
-
             <div className={styles2.header_box}>
-              <ProgressCircle current={currentStep + 1} total={questions.length} />
-
-
+              <ProgressCircle
+                current={currentStep + 1}
+                total={questions.length}
+              />
             </div>
 
-
             <div className={styles2.boxes_container}>
-
               <div className={styles.quizContainer}>
-
                 <Question
                   question={questions[currentStep].question}
                   options={questions[currentStep].options}
                   onSelect={handleSelect}
-                  audioSrc={'/assets/audio/select.m4a'}
+                  audioSrc={"/assets/audio/select.m4a"}
                   selectedAnswer={selectedAnswers[currentStep]}
                 />
                 <div className={styles.buttons}>
@@ -144,19 +151,9 @@ export default function Quiz() {
                   <button onClick={nextQuestion}>التالي</button>
                 </div>
               </div>
-
             </div>
-
-
-
-
           </div>
-
-
         </div>
-
-
-
 
         <div className={styles2.shape_container2}>
           <Image
@@ -167,8 +164,6 @@ export default function Quiz() {
           />
         </div>
       </motion.div>
-
     </>
-
   );
 }

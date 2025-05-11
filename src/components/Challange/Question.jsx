@@ -74,15 +74,14 @@ const Question = ({
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
-            {/* Animated Checkbox */}
-            <motion.div
+            {/* <motion.div
               className={styles.checkbox}
               initial={{ scale: 0 }}
               animate={{ scale: selectedAnswer === index ? 1 : 0 }}
               transition={{ duration: 0.2 }}
             >
               <FaCheck className={styles.checkIcon} />
-            </motion.div>
+            </motion.div> */}
 
             {option}
           </motion.div>

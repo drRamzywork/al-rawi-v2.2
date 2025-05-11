@@ -1,4 +1,3 @@
-
 // import Image from 'next/image';
 // import React, { useState } from 'react';
 // import { IoLocationOutline } from "react-icons/io5";
@@ -99,7 +98,6 @@
 //   }
 // ];
 
-
 // const getRandomWidth = (min, max) => Math.floor(Math.random() * (max - min + 40)) + min;
 
 // const Cities = () => {
@@ -121,7 +119,6 @@
 //           <h3>أهم المواقع التاريخية</h3>
 //         </motion.div>
 
-
 //         <div className={styles.icons_container}>
 //           <div className={`${styles.icon} ${changeShapes === true ? styles.active : ''}`} onClick={() => setChangeShapes(true)} >
 //             <CiGrid32 />
@@ -134,7 +131,6 @@
 //         </div>
 
 //         <div className="container">
-
 
 //           {changeShapes === true ?
 
@@ -199,9 +195,6 @@
 //           }
 //         </div>
 //       </div>
-
-
-
 
 // <motion.div initial={{ opacity: 0, translateX: 40 }}
 //   whileInView={{ opacity: 1, translateX: 0 }}
@@ -268,8 +261,6 @@
 //             </div>
 //           </div>
 
-
-
 //         </motion.a>
 
 //       </SwiperSlide>
@@ -289,9 +280,6 @@
 //               height={384.14}
 //             />
 //           </div>
-
-
-
 
 //           <div className={styles.card_bottom}>
 //             <div className={styles.title}>
@@ -338,10 +326,6 @@
 //             />
 //           </div>
 
-
-
-
-
 //           <div className={styles.card_bottom}>
 //             <div className={styles.title}>
 
@@ -371,8 +355,6 @@
 
 //       </SwiperSlide>
 
-
-
 //     </Swiper>
 
 //   </div>
@@ -382,8 +364,6 @@
 // };
 
 // export default Cities;
-
-
 
 // import Image from "next/image";
 // import React, { useState } from "react";
@@ -487,25 +467,23 @@
 
 // export default Cities;
 
-
-
-import Image from 'next/image';
-import React, { useState } from 'react';
+import Image from "next/image";
+import React, { useState } from "react";
 import { IoLocationOutline } from "react-icons/io5";
-import styles from './index.module.scss';
-import homeStyles from '@/styles/Home.module.scss';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Navigation, FreeMode, Autoplay } from 'swiper/modules';
+import styles from "./index.module.scss";
+import homeStyles from "@/styles/Home.module.scss";
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, FreeMode, Autoplay } from "swiper/modules";
 import { IoIosArrowBack } from "react-icons/io";
 import { motion } from "framer-motion";
-import Link from 'next/link';
+import Link from "next/link";
 import { CiGrid32, CiGrid2V } from "react-icons/ci";
 
-
-const getRandomWidth = (min, max) => Math.floor(Math.random() * (max - min + 40)) + min;
+const getRandomWidth = (min, max) =>
+  Math.floor(Math.random() * (max - min + 40)) + min;
 
 const Cities = ({ cities }) => {
   const [changeShapes, setChangeShapes] = useState(true);
@@ -513,7 +491,12 @@ const Cities = ({ cities }) => {
   return (
     <section id="cities" className={styles.cities}>
       <div className={homeStyles.shape_container3}>
-        <Image src="/assets/svgs/shape.svg" alt="Shape" width={100} height={100} />
+        <Image
+          src="/assets/svgs/shape.svg"
+          alt="Shape"
+          width={100}
+          height={100}
+        />
       </div>
 
       <div className={styles.sec_container}>
@@ -527,10 +510,16 @@ const Cities = ({ cities }) => {
         </motion.div>
 
         <div className={styles.icons_container}>
-          <div className={`${styles.icon} ${changeShapes ? styles.active : ""}`} onClick={() => setChangeShapes(true)}>
+          <div
+            className={`${styles.icon} ${changeShapes ? styles.active : ""}`}
+            onClick={() => setChangeShapes(true)}
+          >
             <CiGrid32 />
           </div>
-          <div className={`${styles.icon} ${!changeShapes ? styles.active : ""}`} onClick={() => setChangeShapes(false)}>
+          <div
+            className={`${styles.icon} ${!changeShapes ? styles.active : ""}`}
+            onClick={() => setChangeShapes(false)}
+          >
             <CiGrid2V />
           </div>
         </div>
@@ -540,36 +529,26 @@ const Cities = ({ cities }) => {
             <div className={styles.boxes_container_mobile}>
               {cities.map((city) => (
                 <>
-                  {city.id === 13 ?
+                  {city.id === 13 ? (
                     <motion.a
                       key={city.id}
                       href={`/cities/${city?.id}/video`}
                       className={styles.box}
-                      style={{ width: `100%`, height: `${getRandomWidth(144, 340)}px` }}
+                      style={{
+                        width: `100%`,
+                        height: `${getRandomWidth(144, 340)}px`,
+                      }}
                       initial={{ opacity: 0 }}
                       whileInView={{ opacity: 1 }}
                       transition={{ duration: 0.7, type: "tween" }}
                     >
                       <div className={styles.img_container}>
-                        <Image src={city.imgSrc} alt={city.name} width={205} height={`${getRandomWidth(144, 340)}`} />
-                      </div>
-                      <div className={styles.card_top}>
-                        <p>{city.region}</p>
-                      </div>
-                      <div className={styles.title}>
-                        <h5>{city.name}</h5>
-                      </div>
-                    </motion.a> :
-                    <motion.div
-                      key={city.id}
-                      className={styles.box}
-                      style={{ width: `100%`, height: `${getRandomWidth(144, 340)}px` }}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.7, type: "tween" }}
-                    >
-                      <div className={styles.img_container}>
-                        <Image src={city.imgSrc} alt={city.name} width={205} height={`${getRandomWidth(144, 340)}`} />
+                        <Image
+                          src={city.imgSrc}
+                          alt={city.name}
+                          width={205}
+                          height={`${getRandomWidth(144, 340)}`}
+                        />
                       </div>
                       <div className={styles.card_top}>
                         <p>{city.name}</p>
@@ -577,8 +556,35 @@ const Cities = ({ cities }) => {
                       <div className={styles.title}>
                         <h5>{city.region}</h5>
                       </div>
-                    </motion.div>}
-
+                    </motion.a>
+                  ) : (
+                    <motion.div
+                      key={city.id}
+                      className={styles.box}
+                      style={{
+                        width: `100%`,
+                        height: `${getRandomWidth(144, 340)}px`,
+                      }}
+                      initial={{ opacity: 0 }}
+                      whileInView={{ opacity: 1 }}
+                      transition={{ duration: 0.7, type: "tween" }}
+                    >
+                      <div className={styles.img_container}>
+                        <Image
+                          src={city.imgSrc}
+                          alt={city.name}
+                          width={205}
+                          height={`${getRandomWidth(144, 340)}`}
+                        />
+                      </div>
+                      <div className={styles.card_top}>
+                        <p>{city.name}</p>
+                      </div>
+                      <div className={styles.title}>
+                        <h5>{city.region}</h5>
+                      </div>
+                    </motion.div>
+                  )}
                 </>
               ))}
             </div>
@@ -586,8 +592,7 @@ const Cities = ({ cities }) => {
             <div className={styles.boxes_container}>
               {cities.map((city) => (
                 <>
-                  {city.id === 13 ?
-
+                  {city.id === 13 ? (
                     <motion.a
                       key={city.id}
                       href={`/cities/${city?.id}/video`}
@@ -600,11 +605,18 @@ const Cities = ({ cities }) => {
                         <div className={styles.card_top}>
                           <p>{city.region}</p>
                         </div>
-                        <Image src={city.imgSrc} alt={city.name} width={271.91} height={384.14} />
+                        <Image
+                          src={city.imgSrc}
+                          alt={city.name}
+                          width={271.91}
+                          height={384.14}
+                        />
                       </div>
                       <div className={styles.card_bottom}>
                         <div className={styles.title}>
-                          <h6><strong>{city.name}</strong></h6>
+                          <h6>
+                            <strong>{city.name}</strong>
+                          </h6>
                         </div>
                         <div className={styles.explore}>
                           <div className={styles.icon_container}>
@@ -613,7 +625,7 @@ const Cities = ({ cities }) => {
                         </div>
                       </div>
                     </motion.a>
-                    :
+                  ) : (
                     <motion.div
                       key={city.id}
                       className={styles.card}
@@ -625,11 +637,18 @@ const Cities = ({ cities }) => {
                         <div className={styles.card_top}>
                           <p>{city.region}</p>
                         </div>
-                        <Image src={city.imgSrc} alt={city.name} width={271.91} height={384.14} />
+                        <Image
+                          src={city.imgSrc}
+                          alt={city.name}
+                          width={271.91}
+                          height={384.14}
+                        />
                       </div>
                       <div className={styles.card_bottom}>
                         <div className={styles.title}>
-                          <h6><strong>{city.name}</strong></h6>
+                          <h6>
+                            <strong>{city.name}</strong>
+                          </h6>
                         </div>
                         <div className={styles.explore}>
                           <div className={styles.icon_container}>
@@ -638,45 +657,47 @@ const Cities = ({ cities }) => {
                         </div>
                       </div>
                     </motion.div>
-
-                  }
+                  )}
                 </>
-
               ))}
             </div>
           )}
         </div>
       </div>
 
-
-      <motion.div initial={{ opacity: 0, translateX: 40 }}
+      <motion.div
+        initial={{ opacity: 0, translateX: 40 }}
         whileInView={{ opacity: 1, translateX: 0 }}
-        transition={{ duration: 0.7, type: "tween" }} className={styles.swiper_container}>
+        transition={{ duration: 0.7, type: "tween" }}
+        className={styles.swiper_container}
+      >
         <div className={`container ${styles.container}`}>
           <Swiper
             spaceBetween={13}
             autoplay={{ delay: 5000, disableOnInteraction: false }}
             breakpoints={{
               1: {
-                slidesPerView: 1.1
+                slidesPerView: 1.1,
               },
               400: {
-                slidesPerView: 1.1
-
-              }
+                slidesPerView: 1.1,
+              },
             }}
             pagination={{ clickable: true }}
             dir="rtl"
             modules={[Navigation, FreeMode, Autoplay]}
             className={styles.swiper_contain}
             centeredSlides={false}
-            style={{ width: '100%' }}
-
+            style={{ width: "100%" }}
           >
             <SwiperSlide>
-              <motion.a href='/cities/13/video' initial={{ opacity: 0, }}
-                whileInView={{ opacity: 1, }}
-                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+              <motion.a
+                href="/cities/13/video"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.7, type: "tween" }}
+                className={styles.card}
+              >
                 <div className={styles.img_container}>
                   <div className={styles.card_top}>
                     <p>معالم</p>
@@ -691,16 +712,11 @@ const Cities = ({ cities }) => {
 
                 <div className={styles.card_bottom}>
                   <div className={styles.title}>
-
                     <h6>
                       <strong>بيت البيعة..</strong>
                       <br />
 
-                      <span>
-                        شاهد تاريخي على مبايعة الملك المؤسس
-
-                      </span>
-
+                      <span>شاهد تاريخي على مبايعة الملك المؤسس</span>
                     </h6>
                   </div>
 
@@ -710,20 +726,19 @@ const Cities = ({ cities }) => {
                     <div className={styles.icon_container}>
                       <IoIosArrowBack />
                     </div>
-
                   </div>
                 </div>
-
-
-
               </motion.a>
-
             </SwiperSlide>
 
             <SwiperSlide>
-              <motion.a href='/cities/13/video' initial={{ opacity: 0, }}
-                whileInView={{ opacity: 1, }}
-                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+              <motion.a
+                href="/cities/13/video"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.7, type: "tween" }}
+                className={styles.card}
+              >
                 <div className={styles.img_container}>
                   <div className={styles.card_top}>
                     <p> معالم</p>
@@ -736,21 +751,13 @@ const Cities = ({ cities }) => {
                   />
                 </div>
 
-
-
-
                 <div className={styles.card_bottom}>
                   <div className={styles.title}>
-
                     <h6>
                       <strong>بيت البيعة.. </strong>
                       <br />
 
-                      <span>
-                        شاهد تاريخي على مبايعة الملك المؤسس
-
-                      </span>
-
+                      <span>شاهد تاريخي على مبايعة الملك المؤسس</span>
                     </h6>
                   </div>
 
@@ -760,18 +767,19 @@ const Cities = ({ cities }) => {
                     <div className={styles.icon_container}>
                       <IoIosArrowBack />
                     </div>
-
                   </div>
                 </div>
-
               </motion.a>
-
             </SwiperSlide>
 
             <SwiperSlide>
-              <motion.a href='/cities/13/video' initial={{ opacity: 0, }}
-                whileInView={{ opacity: 1, }}
-                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+              <motion.a
+                href="/cities/13/video"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.7, type: "tween" }}
+                className={styles.card}
+              >
                 <div className={styles.img_container}>
                   <div className={styles.card_top}>
                     <p>معالم</p>
@@ -784,22 +792,13 @@ const Cities = ({ cities }) => {
                   />
                 </div>
 
-
-
-
-
                 <div className={styles.card_bottom}>
                   <div className={styles.title}>
-
                     <h6>
                       <strong>بيت البيعة..</strong>
                       <br />
 
-                      <span>
-                        شاهد تاريخي على مبايعة الملك المؤسس
-
-                      </span>
-
+                      <span>شاهد تاريخي على مبايعة الملك المؤسس</span>
                     </h6>
                   </div>
 
@@ -809,19 +808,19 @@ const Cities = ({ cities }) => {
                     <div className={styles.icon_container}>
                       <IoIosArrowBack />
                     </div>
-
                   </div>
                 </div>
-
               </motion.a>
-
             </SwiperSlide>
 
-
             <SwiperSlide>
-              <motion.a href='/cities/13/video' initial={{ opacity: 0, }}
-                whileInView={{ opacity: 1, }}
-                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+              <motion.a
+                href="/cities/13/video"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.7, type: "tween" }}
+                className={styles.card}
+              >
                 <div className={styles.img_container}>
                   <div className={styles.card_top}>
                     <p>معالم</p>
@@ -834,22 +833,13 @@ const Cities = ({ cities }) => {
                   />
                 </div>
 
-
-
-
-
                 <div className={styles.card_bottom}>
                   <div className={styles.title}>
-
                     <h6>
                       <strong>بيت البيعة..</strong>
                       <br />
 
-                      <span>
-                        شاهد تاريخي على مبايعة الملك المؤسس
-
-                      </span>
-
+                      <span>شاهد تاريخي على مبايعة الملك المؤسس</span>
                     </h6>
                   </div>
 
@@ -859,18 +849,19 @@ const Cities = ({ cities }) => {
                     <div className={styles.icon_container}>
                       <IoIosArrowBack />
                     </div>
-
                   </div>
                 </div>
-
               </motion.a>
-
             </SwiperSlide>
 
             <SwiperSlide>
-              <motion.a href='/cities/13/video' initial={{ opacity: 0, }}
-                whileInView={{ opacity: 1, }}
-                transition={{ duration: 0.7, type: "tween" }} className={styles.card}>
+              <motion.a
+                href="/cities/13/video"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                transition={{ duration: 0.7, type: "tween" }}
+                className={styles.card}
+              >
                 <div className={styles.img_container}>
                   <div className={styles.card_top}>
                     <p>معالم</p>
@@ -883,22 +874,13 @@ const Cities = ({ cities }) => {
                   />
                 </div>
 
-
-
-
-
                 <div className={styles.card_bottom}>
                   <div className={styles.title}>
-
                     <h6>
                       <strong>بيت البيعة..</strong>
                       <br />
 
-                      <span>
-                        شاهد تاريخي على مبايعة الملك المؤسس
-
-                      </span>
-
+                      <span>شاهد تاريخي على مبايعة الملك المؤسس</span>
                     </h6>
                   </div>
 
@@ -908,15 +890,11 @@ const Cities = ({ cities }) => {
                     <div className={styles.icon_container}>
                       <IoIosArrowBack />
                     </div>
-
                   </div>
                 </div>
-
               </motion.a>
-
             </SwiperSlide>
           </Swiper>
-
         </div>
       </motion.div>
     </section>
