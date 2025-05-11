@@ -327,7 +327,9 @@ export default function ResultPage() {
               <p className="text-white">إجاباتك كاملة! 🎉</p>
             )}
             {correctCount < questions.length && correctCount > 0 && (
-              <p className="text-warning">أحسنت، يمكنك المحاولة مرة أخرى!</p>
+              <p className="text-warning">
+                حاول مرة أخرى لديك بعض الإجابات خاطئة
+              </p>
             )}
             {correctCount === 0 && (
               <p className="text-danger">لم توفق، جرّب مرة أخرى.</p>
