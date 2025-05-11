@@ -551,10 +551,10 @@ const Cities = ({ cities }) => {
                         />
                       </div>
                       <div className={styles.card_top}>
-                        <p>{city.name}</p>
+                        <p>{city.region}</p>
                       </div>
                       <div className={styles.title}>
-                        <h5>{city.region}</h5>
+                        <h5>{city.name}</h5>
                       </div>
                     </motion.a>
                   ) : (

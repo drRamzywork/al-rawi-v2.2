@@ -46,7 +46,12 @@ export default function Quiz() {
     if (currentStep < questions.length - 1) {
       setCurrentStep(currentStep + 1);
     } else {
-      router.push("/result");
+      router.push({
+        pathname: "/result",
+        query: {
+          answers: JSON.stringify(selectedAnswers),
+        },
+      });
     }
   };
 

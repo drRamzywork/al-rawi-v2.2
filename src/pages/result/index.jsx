@@ -8,13 +8,35 @@ import { CiCircleCheck } from "react-icons/ci";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import Head from "next/head";
 
-const Celebration = ({ onResult }) => {
-  const siteName = '  الراوي | نـتـيـجـة تحدي بيت البيعة  ';
-  const imagePath = '/assets/imgs/rawi.png';
-  const siteDescrription = 'استكشف عالم الجمال في المملكة';
+const questions = [
+  {
+    question: "أين يقع بيت البيعة؟",
+    options: ["الأحساء", "مكة", "الرياض"],
+    correct: 0,
+  },
+  {
+    question: "متى بُني بيت البيعة؟",
+    options: ["1203هـ - 1788م", "1320هـ - 1902م", "1100هـ - 1688م"],
+    correct: 1,
+  },
+  {
+    question: "ما الحدث التاريخي الذي جرى في بيت البيعة؟",
+    options: [
+      "مبايعة الملك عبدالعزيز -رحمه الله",
+      "تأسيس المملكة",
+      "افتتاح الأحساء",
+    ],
+    correct: 0,
+  },
+];
 
-  const siteURL = 'https://alrawi2.suwa.com.sa/';
-  const videoURL = 'https://suwa.com.sa/v/rawai/f.mp4';
+const Result = ({ onResult }) => {
+  const siteName = "  الراوي | نـتـيـجـة تحدي بيت البيعة  ";
+  const imagePath = "/assets/imgs/rawi.png";
+  const siteDescrription = "استكشف عالم الجمال في المملكة";
+
+  const siteURL = "https://alrawi2.suwa.com.sa/";
+  const videoURL = "https://suwa.com.sa/v/rawai/f.mp4";
 
   return (
     <>
@@ -22,7 +44,10 @@ const Celebration = ({ onResult }) => {
         <title>{siteName}</title>
         <meta charSet="UTF-8" />
         <link rel="icon" href={imagePath} />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
         <meta name="title" content={siteName} />
@@ -49,10 +74,7 @@ const Celebration = ({ onResult }) => {
 
         <link rel="canonical" href={videoURL} />
       </Head>
-      <motion.div
-        className={styles2.header}
-        id={styles2.header2}
-      >
+      <motion.div className={styles2.header} id={styles2.header2}>
         <div className={styles2.shape_container}>
           <Image
             src="/assets/svgs/shape.svg"
@@ -82,13 +104,11 @@ const Celebration = ({ onResult }) => {
 
           <div className={styles2.box_container}>
             <div className={styles.celebrationContainer}>
-
               <motion.div
                 initial={{ scale: 0.5, opacity: 0 }}
                 animate={{ scale: 1, opacity: 1 }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
-              >
-              </motion.div>
+              ></motion.div>
 
               <div class={styles3.pyro}>
                 <div class={styles3.before}></div>
@@ -131,7 +151,6 @@ const Celebration = ({ onResult }) => {
                       <p>2- متى بُني بيت البيعة؟</p>
                       <div className={styles3.user_answer}>
                         <p>1203هـ - 1788م</p>
-
                         ["م", "1320هـ - 1902م ", "1100هـ - 1688م "]
                       </div>
                     </div>
@@ -185,8 +204,10 @@ const Celebration = ({ onResult }) => {
           />
         </div>
       </motion.div>
+      ;
     </>
   );
 };
 
-export default Celebration;
+export default Result;
+
