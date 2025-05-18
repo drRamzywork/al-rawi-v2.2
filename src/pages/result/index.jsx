@@ -324,7 +324,7 @@ export default function ResultPage() {
             </motion.h2>
 
             {correctCount === questions.length && (
-              <p className="text-white">إجاباتك كاملة! 🎉</p>
+              <p className="text-white">تهانينا إجاباتك صحيحة! 🎉</p>
             )}
             {correctCount < questions.length && correctCount > 0 && (
               <p className="text-warning">
