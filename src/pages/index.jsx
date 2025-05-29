@@ -7,22 +7,20 @@ import Hero from "@/components/Hero";
 import Cities from "@/components/cities";
 import Footer from "@/components/Footer";
 import cityData from "@/data/cities";
+import Home from "@/components/Home";
 
-export default function Home({ cities }) {
-  const [showSplash, setShowSplash] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
-
+export default function HomePage({
+  cities,
+  dataSlider,
+  dataHistoricalSites,
+  dataAllLandmarks,
+}) {
   const siteName = "الراوي";
   const imagePath = "/assets/imgs/rawi.png";
   const siteDescrription = "استكشف عالم الجمال في المملكة";
   const siteURL = "https://alrawi2.suwa.com.sa/";
 
+  console.log(dataAllLandmarks, "dataHistoricalSites 33");
   return (
     <>
       <Head>
@@ -41,55 +39,50 @@ export default function Home({ cities }) {
         <meta property="og:image" content={`${siteURL}${imagePath}`} />
       </Head>
 
-      <div className={styles.page}>
-        <main className={styles.main}>
-          <div className={styles.shape_container}>
-            <Image
-              src="/assets/svgs/shape.svg"
-              alt="Shape"
-              width={100}
-              height={100}
-            />
-          </div>
-
-          {showSplash ? (
-            <>
-              <div className={styles.logo}>
-                <Image
-                  src="/assets/imgs/rawi.png"
-                  alt="Logo"
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div className={styles.logo2}>
-                <Image
-                  src="/assets/svgs/logoColored.svg"
-                  alt="Colored Logo"
-                  width={100}
-                  height={100}
-                />
-              </div>
-            </>
-          ) : (
-            <div className={styles.homeContent}>
-              <Navbar isHome={true} />
-              <Hero />
-              <Cities cities={cities} />
-            </div>
-          )}
-
-          <Footer />
-        </main>
-      </div>
+      <Home
+        cities={cities}
+        sliders={dataSlider}
+        dataHistoricalSites={dataHistoricalSites}
+        dataAllLandmarks={dataAllLandmarks}
+      />
     </>
   );
 }
 
-export async function getStaticProps() {
+// export async function getStaticProps() {
+
+//   return {
+//     props: {
+//       cities: cityData,
+
+//     },
+//   };
+// }
+
+export async function getStaticProps({ locale }) {
+  const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
+
+  const resSlider = await fetch(`${apiDomain}/sliders`, {
+    headers: { "Accept-Language": locale },
+  });
+  const dataSlider = await resSlider.json();
+  const resHistoricalSites = await fetch(`${apiDomain}/historical-sites`, {
+    headers: { "Accept-Language": locale },
+  });
+  const dataHistoricalSites = await resHistoricalSites.json();
+
+  const resAllLandmarks = await fetch(`${apiDomain}/landmarks`, {
+    headers: { "Accept-Language": locale },
+  });
+  const dataAllLandmarks = await resAllLandmarks.json();
+
   return {
     props: {
       cities: cityData,
+      dataSlider: dataSlider?.data || null,
+      dataHistoricalSites: dataHistoricalSites?.data || null,
+      dataAllLandmarks: dataAllLandmarks?.data || null,
     },
+    revalidate: 10,
   };
 }

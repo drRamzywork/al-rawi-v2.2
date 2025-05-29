@@ -485,7 +485,7 @@ import { CiGrid32, CiGrid2V } from "react-icons/ci";
 const getRandomWidth = (min, max) =>
   Math.floor(Math.random() * (max - min + 40)) + min;
 
-const Cities = ({ cities }) => {
+const Cities = ({ cities, dataHistoricalSites, dataAllLandmarks }) => {
   const [changeShapes, setChangeShapes] = useState(true);
 
   return (
@@ -527,137 +527,74 @@ const Cities = ({ cities }) => {
         <div className="container">
           {changeShapes ? (
             <div className={styles.boxes_container_mobile}>
-              {cities.map((city) => (
+              {dataHistoricalSites.map((city) => (
                 <>
-                  {city.id === 13 ? (
-                    <motion.a
-                      key={city.id}
-                      href={`/cities/${city?.id}/video`}
-                      className={styles.box}
-                      style={{
-                        width: `100%`,
-                        height: `${getRandomWidth(144, 340)}px`,
-                      }}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.7, type: "tween" }}
-                    >
-                      <div className={styles.img_container}>
-                        <Image
-                          src={city.imgSrc}
-                          alt={city.name}
-                          width={205}
-                          height={`${getRandomWidth(144, 340)}`}
-                        />
-                      </div>
-                      <div className={styles.card_top}>
-                        <p>{city.region}</p>
-                      </div>
-                      <div className={styles.title}>
-                        <h5>{city.name}</h5>
-                      </div>
-                    </motion.a>
-                  ) : (
-                    <motion.div
-                      key={city.id}
-                      className={styles.box}
-                      style={{
-                        width: `100%`,
-                        height: `${getRandomWidth(144, 340)}px`,
-                      }}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.7, type: "tween" }}
-                    >
-                      <div className={styles.img_container}>
-                        <Image
-                          src={city.imgSrc}
-                          alt={city.name}
-                          width={205}
-                          height={`${getRandomWidth(144, 340)}`}
-                        />
-                      </div>
-                      <div className={styles.card_top}>
-                        <p>{city.region}</p>
-                      </div>
-                      <div className={styles.title}>
-                        <h5>{city.name}</h5>
-                      </div>
-                    </motion.div>
-                  )}
+                  <motion.a
+                    key={city.id}
+                    href={`/cities/video/${city?.id}`}
+                    className={styles.box}
+                    style={{
+                      width: `100%`,
+                      height: `${getRandomWidth(144, 340)}px`,
+                    }}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.7, type: "tween" }}
+                  >
+                    <div className={styles.img_container}>
+                      <Image
+                        src={city.media}
+                        alt={city.title}
+                        width={205}
+                        height={`${getRandomWidth(144, 340)}`}
+                      />
+                    </div>
+                    <div className={styles.card_top}>
+                      <p>{city?.location?.title}</p>
+                    </div>
+                    <div className={styles.title}>
+                      <h5>{city.name}</h5>
+                      <h5>{city.title}</h5>
+                    </div>
+                  </motion.a>
                 </>
               ))}
             </div>
           ) : (
             <div className={styles.boxes_container}>
-              {cities.map((city) => (
+              {dataHistoricalSites.map((city) => (
                 <>
-                  {city.id === 13 ? (
-                    <motion.a
-                      key={city.id}
-                      href={`/cities/${city?.id}/video`}
-                      className={styles.card}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.7, type: "tween" }}
-                    >
-                      <div className={styles.img_container}>
-                        <div className={styles.card_top}>
-                          <p>{city.region}</p>
-                        </div>
-                        <Image
-                          src={city.imgSrc}
-                          alt={city.name}
-                          width={271.91}
-                          height={384.14}
-                        />
+                  <motion.a
+                    key={city.id}
+                    href={`/cities/video/${city?.id}`}
+                    className={styles.card}
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                  >
+                    <div className={styles.img_container}>
+                      <div className={styles.card_top}>
+                        <p>{city.location.title}</p>
                       </div>
-                      <div className={styles.card_bottom}>
-                        <div className={styles.title}>
-                          <h6>
-                            <strong>{city.name}</strong>
-                          </h6>
-                        </div>
-                        <div className={styles.explore}>
-                          <div className={styles.icon_container}>
-                            <IoIosArrowBack />
-                          </div>
+                      <Image
+                        src={city.media}
+                        alt={city.name}
+                        width={271.91}
+                        height={384.14}
+                      />
+                    </div>
+                    <div className={styles.card_bottom}>
+                      <div className={styles.title}>
+                        <h6>
+                          <strong>{city.title}</strong>
+                        </h6>
+                      </div>
+                      <div className={styles.explore}>
+                        <div className={styles.icon_container}>
+                          <IoIosArrowBack />
                         </div>
                       </div>
-                    </motion.a>
-                  ) : (
-                    <motion.div
-                      key={city.id}
-                      className={styles.card}
-                      initial={{ opacity: 0 }}
-                      whileInView={{ opacity: 1 }}
-                      transition={{ duration: 0.7, type: "tween" }}
-                    >
-                      <div className={styles.img_container}>
-                        <div className={styles.card_top}>
-                          <p>{city.region}</p>
-                        </div>
-                        <Image
-                          src={city.imgSrc}
-                          alt={city.name}
-                          width={271.91}
-                          height={384.14}
-                        />
-                      </div>
-                      <div className={styles.card_bottom}>
-                        <div className={styles.title}>
-                          <h6>
-                            <strong>{city.name}</strong>
-                          </h6>
-                        </div>
-                        <div className={styles.explore}>
-                          <div className={styles.icon_container}>
-                            <IoIosArrowBack />
-                          </div>
-                        </div>
-                      </div>
-                    </motion.div>
-                  )}
+                    </div>
+                  </motion.a>
                 </>
               ))}
             </div>
@@ -690,210 +627,48 @@ const Cities = ({ cities }) => {
             centeredSlides={false}
             style={{ width: "100%" }}
           >
-            <SwiperSlide>
-              <motion.a
-                href="/cities/13/video"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.7, type: "tween" }}
-                className={styles.card}
-              >
-                <div className={styles.img_container}>
-                  <div className={styles.card_top}>
-                    <p>معالم</p>
-                  </div>
-                  <Image
-                    src="/assets/imgs/menu2/1.jpg"
-                    alt="Vercel logomark"
-                    width={271.91}
-                    height={384.14}
-                  />
-                </div>
-
-                <div className={styles.card_bottom}>
-                  <div className={styles.title}>
-                    <h6>
-                      <strong>بيت البيعة..</strong>
-                      <br />
-
-                      <span>شاهد تاريخي على مبايعة الملك المؤسس</span>
-                    </h6>
+            {dataAllLandmarks.map((land, idx) => (
+              <SwiperSlide key={idx}>
+                <motion.a
+                  href={`/cities/video/${land.id}`}
+                  initial={{ opacity: 0 }}
+                  whileInView={{ opacity: 1 }}
+                  transition={{ duration: 0.7, type: "tween" }}
+                  className={styles.card}
+                >
+                  <div className={styles.img_container}>
+                    <div className={styles.card_top}>
+                      <p>معالم</p>
+                    </div>
+                    <Image
+                      src={land.main_media}
+                      alt="Vercel logomark"
+                      width={271.91}
+                      height={384.14}
+                    />
                   </div>
 
-                  <div className={styles.explore}>
-                    <p>استكشف</p>
+                  <div className={styles.card_bottom}>
+                    <div className={styles.title}>
+                      <h6>
+                        <strong>{land.title}</strong>
+                        <br />
 
-                    <div className={styles.icon_container}>
-                      <IoIosArrowBack />
+                        <span>{land.desc}</span>
+                      </h6>
+                    </div>
+
+                    <div className={styles.explore}>
+                      <p>استكشف</p>
+
+                      <div className={styles.icon_container}>
+                        <IoIosArrowBack />
+                      </div>
                     </div>
                   </div>
-                </div>
-              </motion.a>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <motion.a
-                href="/cities/13/video"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.7, type: "tween" }}
-                className={styles.card}
-              >
-                <div className={styles.img_container}>
-                  <div className={styles.card_top}>
-                    <p> معالم</p>
-                  </div>
-                  <Image
-                    src="/assets/imgs/menu2/2.webp"
-                    alt="Vercel logomark"
-                    width={271.91}
-                    height={384.14}
-                  />
-                </div>
-
-                <div className={styles.card_bottom}>
-                  <div className={styles.title}>
-                    <h6>
-                      <strong>بيت البيعة.. </strong>
-                      <br />
-
-                      <span>شاهد تاريخي على مبايعة الملك المؤسس</span>
-                    </h6>
-                  </div>
-
-                  <div className={styles.explore}>
-                    <p>استكشف</p>
-
-                    <div className={styles.icon_container}>
-                      <IoIosArrowBack />
-                    </div>
-                  </div>
-                </div>
-              </motion.a>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <motion.a
-                href="/cities/13/video"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.7, type: "tween" }}
-                className={styles.card}
-              >
-                <div className={styles.img_container}>
-                  <div className={styles.card_top}>
-                    <p>معالم</p>
-                  </div>
-                  <Image
-                    src="/assets/imgs/menu2/3.jpg"
-                    alt="Vercel logomark"
-                    width={271.91}
-                    height={384.14}
-                  />
-                </div>
-
-                <div className={styles.card_bottom}>
-                  <div className={styles.title}>
-                    <h6>
-                      <strong>بيت البيعة..</strong>
-                      <br />
-
-                      <span>شاهد تاريخي على مبايعة الملك المؤسس</span>
-                    </h6>
-                  </div>
-
-                  <div className={styles.explore}>
-                    <p>استكشف</p>
-
-                    <div className={styles.icon_container}>
-                      <IoIosArrowBack />
-                    </div>
-                  </div>
-                </div>
-              </motion.a>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <motion.a
-                href="/cities/13/video"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.7, type: "tween" }}
-                className={styles.card}
-              >
-                <div className={styles.img_container}>
-                  <div className={styles.card_top}>
-                    <p>معالم</p>
-                  </div>
-                  <Image
-                    src="/assets/imgs/menu2/4.jpg"
-                    alt="Vercel logomark"
-                    width={271.91}
-                    height={384.14}
-                  />
-                </div>
-
-                <div className={styles.card_bottom}>
-                  <div className={styles.title}>
-                    <h6>
-                      <strong>بيت البيعة..</strong>
-                      <br />
-
-                      <span>شاهد تاريخي على مبايعة الملك المؤسس</span>
-                    </h6>
-                  </div>
-
-                  <div className={styles.explore}>
-                    <p>استكشف</p>
-
-                    <div className={styles.icon_container}>
-                      <IoIosArrowBack />
-                    </div>
-                  </div>
-                </div>
-              </motion.a>
-            </SwiperSlide>
-
-            <SwiperSlide>
-              <motion.a
-                href="/cities/13/video"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                transition={{ duration: 0.7, type: "tween" }}
-                className={styles.card}
-              >
-                <div className={styles.img_container}>
-                  <div className={styles.card_top}>
-                    <p>معالم</p>
-                  </div>
-                  <Image
-                    src="/assets/imgs/menu2/5.webp"
-                    alt="Vercel logomark"
-                    width={271.91}
-                    height={384.14}
-                  />
-                </div>
-
-                <div className={styles.card_bottom}>
-                  <div className={styles.title}>
-                    <h6>
-                      <strong>بيت البيعة..</strong>
-                      <br />
-
-                      <span>شاهد تاريخي على مبايعة الملك المؤسس</span>
-                    </h6>
-                  </div>
-
-                  <div className={styles.explore}>
-                    <p>استكشف</p>
-
-                    <div className={styles.icon_container}>
-                      <IoIosArrowBack />
-                    </div>
-                  </div>
-                </div>
-              </motion.a>
-            </SwiperSlide>
+                </motion.a>
+              </SwiperSlide>
+            ))}
           </Swiper>
         </div>
       </motion.div>
