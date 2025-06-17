@@ -158,7 +158,9 @@ section.hero {
       .shape {
         position: absolute;
         bottom: -20px;
-        left: 0;
+        left: 50%;
+        right: 50%;
+        transform: translateX(-50%, -505);
 
         img {
           height: 10px;
