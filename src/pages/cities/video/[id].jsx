@@ -188,7 +188,7 @@ export async function getStaticPaths() {
   try {
     const resAllLandmarks = await fetch(`${apiDomain}/landmarks`, {
       method: "GET",
-      headers: { "Accept-Language": locale },
+      headers: { " locale": locale },
     });
 
     if (!resAllLandmarks.ok) {
@@ -235,7 +235,7 @@ export async function getStaticProps({ params, locale }) {
   const { id } = params;
 
   const resAllLandmark = await fetch(`${apiDomain}/landmarks/${id}`, {
-    headers: { "Accept-Language": locale },
+    headers: { locale: locale },
   });
   const dataAllLandmark = await resAllLandmark.json();
 

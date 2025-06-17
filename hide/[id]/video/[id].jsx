@@ -47,13 +47,12 @@ export default function VidoDetails() {
         console.error("❌ Invalid seek time:", seekTime);
         return;
       }
-      console.log("📢 Jumping to:", seekTime);
 
       if (videoRef.current) {
         videoRef.current.currentTime = seekTime;
-        videoRef.current.play(); // ✅ تشغيل الفيديو بعد التغيير
-        setIsPlaying(true); // ✅ تحديث الحالة
-        setShowNewMenu(false); // ✅ إغلاق القوائم
+        videoRef.current.play();
+        setIsPlaying(true);
+        setShowNewMenu(false);
       }
     };
 
@@ -80,7 +79,6 @@ export default function VidoDetails() {
     : "لم يتم العثور على الفيديو";
   const videoURL = city ? city.videoURL : "";
   const siteURL = "https://alrawi2.suwa.com.sa/";
-  console.log(isDialog, "isDialog");
   return (
     <>
       <Head>

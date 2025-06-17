@@ -27,12 +27,15 @@ export default function FullScreenVideo() {
 
   useEffect(() => {
     if (videoRef.current && city) {
-      videoRef.current.play().then(() => {
-        setIsPlaying(true);
-      }).catch((error) => {
-        console.error("Autoplay blocked:", error);
-        setIsPlaying(false);
-      });
+      videoRef.current
+        .play()
+        .then(() => {
+          setIsPlaying(true);
+        })
+        .catch((error) => {
+          console.error("Autoplay blocked:", error);
+          setIsPlaying(false);
+        });
     }
   }, [city]); // ✅ التأكد من تشغيل الفيديو عند تغيير `city`
 
@@ -44,13 +47,12 @@ export default function FullScreenVideo() {
         console.error("❌ Invalid seek time:", seekTime);
         return;
       }
-      console.log("📢 Jumping to:", seekTime);
 
       if (videoRef.current) {
         videoRef.current.currentTime = seekTime;
-        videoRef.current.play(); // ✅ تشغيل الفيديو بعد التغيير
-        setIsPlaying(true); // ✅ تحديث الحالة
-        setShowNewMenu(false); // ✅ إغلاق القوائم
+        videoRef.current.play();
+        setIsPlaying(true);
+        setShowNewMenu(false);
       }
     };
 
@@ -72,17 +74,21 @@ export default function FullScreenVideo() {
   };
 
   const siteName = `الراوي | ${city?.name || "غير موجود"}`;
-  const siteDescrription = city ? `استكشف ${city.name} في منطقة ${city.region}` : "لم يتم العثور على الفيديو";
+  const siteDescrription = city
+    ? `استكشف ${city.name} في منطقة ${city.region}`
+    : "لم يتم العثور على الفيديو";
   const videoURL = city ? city.videoURL : "";
   const siteURL = "https://alrawi2.suwa.com.sa/";
-  console.log(isDialog, "isDialog")
   return (
     <>
       <Head>
         <title>{siteName}</title>
         <meta charSet="UTF-8" />
         <link rel="icon" href="/assets/imgs/rawi.png" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
 
         <meta name="title" content={siteName} />
@@ -125,7 +131,10 @@ export default function FullScreenVideo() {
                   className={styles.play_btn_container}
                 >
                   {!isPlaying && (
-                    <Link href={`/cities/${id}/video/challenge`} className={styles.openShowMenu}>
+                    <Link
+                      href={`/cities/${id}/video/challenge`}
+                      className={styles.openShowMenu}
+                    >
                       <IoChevronForwardOutline />
                     </Link>
                   )}
@@ -133,17 +142,23 @@ export default function FullScreenVideo() {
               )}
             </AnimatePresence>
 
-            <Menu setIsPlaying={setIsPlaying} id={id} isVideoPlaying={isPlaying} setPause={setPause} showNewMenu={showNewMenu} setShowNewMenu={setShowNewMenu} />
+            <Menu
+              setIsPlaying={setIsPlaying}
+              id={id}
+              isVideoPlaying={isPlaying}
+              setPause={setPause}
+              showNewMenu={showNewMenu}
+              setShowNewMenu={setShowNewMenu}
+            />
             <Menu2 showNewMenu={showNewMenu} setShowNewMenu={setShowNewMenu} />
 
-            {isDialog &&
-              <Dialog setIsDialog={setIsDialog} />
-            }
-
-
+            {isDialog && <Dialog setIsDialog={setIsDialog} />}
 
             {!isPlaying && !showNewMenu && (
-              <div className={styles.openShowMenu} onClick={() => setIsDialog(true)}>
+              <div
+                className={styles.openShowMenu}
+                onClick={() => setIsDialog(true)}
+              >
                 <IoChevronForwardOutline />
               </div>
             )}

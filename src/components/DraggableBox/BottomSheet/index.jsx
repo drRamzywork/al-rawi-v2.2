@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { motion, useAnimation } from 'framer-motion';
-import { IoClose } from 'react-icons/io5';
-import { RiArrowUpSLine, RiArrowDownSLine, } from 'react-icons/ri';
-import styles from './index.module.scss'
-import CorrectMenu from '../CorrectMenu';
+import React, { useState, useRef, useEffect } from "react";
+import { motion, useAnimation } from "framer-motion";
+import { IoClose } from "react-icons/io5";
+import { RiArrowUpSLine, RiArrowDownSLine } from "react-icons/ri";
+import styles from "./index.module.scss";
+import CorrectMenu from "../CorrectMenu";
 
 function usePrevious(value) {
   const previousValueRef = useRef();
@@ -13,16 +13,14 @@ function usePrevious(value) {
   return previousValueRef.current;
 }
 
-
-const BottomSheet = ({ isClosed, setIsClosed, }) => {
+const BottomSheet = ({ isClosed, setIsClosed }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false); //Change it to false
 
-
   const handleClickAnser = () => {
-    setIsClosed(true)
+    setIsClosed(true);
     // setIsCorrect(true)
-  }
+  };
 
   function onClose() {
     setIsOpen(false);
@@ -40,7 +38,8 @@ const BottomSheet = ({ isClosed, setIsClosed, }) => {
   const controls = useAnimation();
 
   function onDragEnd(event, info) {
-    const shouldClose = info.velocity.y > 20 || (info.velocity.y >= 0 && info.point.y > 45);
+    const shouldClose =
+      info.velocity.y > 20 || (info.velocity.y >= 0 && info.point.y > 45);
     if (shouldClose) {
       controls.start("hidden");
       setIsCorrect(true);
@@ -49,10 +48,6 @@ const BottomSheet = ({ isClosed, setIsClosed, }) => {
       onOpen(false);
     }
   }
-
-
-
-
 
   useEffect(() => {
     if (prevIsOpen && !isOpen) {
@@ -66,11 +61,9 @@ const BottomSheet = ({ isClosed, setIsClosed, }) => {
     }
   }, [controls, isOpen, isClosed, prevIsOpen]);
 
-
   const handleDoubleClick = (e) => {
     switch (e.detail) {
       case 1:
-        // console.log("click");
         break;
       case 2:
         if (!prevIsOpen && isOpen) {
@@ -90,26 +83,25 @@ const BottomSheet = ({ isClosed, setIsClosed, }) => {
 
   return (
     <>
-
-      {isCorrect === true &&
-        <CorrectMenu controls={controls} isCorrect={isCorrect} setIsCorrect={setIsCorrect} />
-
-      }
-
-
-
+      {isCorrect === true && (
+        <CorrectMenu
+          controls={controls}
+          isCorrect={isCorrect}
+          setIsCorrect={setIsCorrect}
+        />
+      )}
 
       <motion.div
         drag="y"
         onDragEnd={onDragEnd}
         initial="hidden"
         animate={controls}
-        className={''}
-        id='menu'
+        className={""}
+        id="menu"
         transition={{
           type: "spring",
           damping: 40,
-          stiffness: 400
+          stiffness: 400,
         }}
         variants={{
           // hidden: { y: "calc(100% - 256px)" },
@@ -117,9 +109,7 @@ const BottomSheet = ({ isClosed, setIsClosed, }) => {
           visible: { y: 104 },
           // hidden: { y: "70%" },
           hidden: { y: "80%" },
-          closed: { y: "100%" }
-
-
+          closed: { y: "100%" },
         }}
         dragConstraints={{ top: 0 }}
         dragElastic={0.2}
@@ -133,7 +123,7 @@ const BottomSheet = ({ isClosed, setIsClosed, }) => {
             "0px 2px 5px rgba(0, 0, 0, 0.06), 0px 2px 13px rgba(0, 0, 0, 0.12)",
           borderRadius: "13px 13px 0px 0px",
           overflow: "hidden",
-          zIndex: 1000
+          zIndex: 1000,
         }}
       >
         <div className="DragHandleEdge" onClick={handleDoubleClick}>
@@ -142,7 +132,10 @@ const BottomSheet = ({ isClosed, setIsClosed, }) => {
         <div className="Navbar">
           <div className="ButtonGroup">
             <span className="ButtonExpandCollapse" onClick={onToggle}>
-              <span className="IconExpandCollapse"> {isOpen ? <RiArrowDownSLine /> : <RiArrowUpSLine />}</span>
+              <span className="IconExpandCollapse">
+                {" "}
+                {isOpen ? <RiArrowDownSLine /> : <RiArrowUpSLine />}
+              </span>
               <span className="LabelExpandCollapse">
                 {isOpen ? "اغلاق" : "فتح"}
               </span>
@@ -151,14 +144,9 @@ const BottomSheet = ({ isClosed, setIsClosed, }) => {
               <IoClose />
             </span>
           </div>
-
-
-
         </div>
 
-
         <div className={styles.menu_container}>
-
           <div className={styles.question}>
             <h2> اختبار المعلومات</h2>
 
@@ -167,37 +155,21 @@ const BottomSheet = ({ isClosed, setIsClosed, }) => {
 
           <div className={styles.options}>
             <ul>
-
               <li onClick={handleClickAnser}>
-
-                <button >تبوك</button>
-
-              </li >
-              <li onClick={handleClickAnser}>
-
-
-                <button >المدينة المنورة</button>
-
-
+                <button>تبوك</button>
               </li>
               <li onClick={handleClickAnser}>
-
-
-                <button >الطائف</button>
-
-
+                <button>المدينة المنورة</button>
               </li>
-
+              <li onClick={handleClickAnser}>
+                <button>الطائف</button>
+              </li>
             </ul>
           </div>
-
         </div>
-      </motion.div >
-
-
-
+      </motion.div>
     </>
-  )
-}
+  );
+};
 
-export default BottomSheet
+export default BottomSheet;

@@ -16,6 +16,7 @@ const Home = ({ cities, sliders, dataHistoricalSites, dataAllLandmarks }) => {
     }, 2000);
     return () => clearTimeout(timer);
   }, []);
+
   return (
     <>
       <div className={styles.page}>

@@ -19,8 +19,6 @@ export default function HomePage({
   const imagePath = "/assets/imgs/rawi.png";
   const siteDescrription = "استكشف عالم الجمال في المملكة";
   const siteURL = "https://alrawi2.suwa.com.sa/";
-
-  console.log(dataAllLandmarks, "dataHistoricalSites 33");
   return (
     <>
       <Head>
@@ -48,7 +46,6 @@ export default function HomePage({
     </>
   );
 }
-
 // export async function getStaticProps() {
 
 //   return {
@@ -61,18 +58,18 @@ export default function HomePage({
 
 export async function getStaticProps({ locale }) {
   const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
-
+  console.log(locale);
   const resSlider = await fetch(`${apiDomain}/sliders`, {
-    headers: { "Accept-Language": locale },
+    headers: { locale: locale },
   });
   const dataSlider = await resSlider.json();
   const resHistoricalSites = await fetch(`${apiDomain}/historical-sites`, {
-    headers: { "Accept-Language": locale },
+    headers: { locale: locale },
   });
   const dataHistoricalSites = await resHistoricalSites.json();
 
   const resAllLandmarks = await fetch(`${apiDomain}/landmarks`, {
-    headers: { "Accept-Language": locale },
+    headers: { locale: locale },
   });
   const dataAllLandmarks = await resAllLandmarks.json();
 
