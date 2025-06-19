@@ -115,7 +115,11 @@ export default function LandmarkVideo({
                     href={{
                       pathname: `/landmarks/${id}/video/challenge`,
                       query: {
-                        questions: JSON.stringify(landmark.questions || []),
+                        questions: JSON.stringify(
+                          Array.isArray(landmark?.questions)
+                            ? landmark.questions
+                            : []
+                        ),
                       },
                     }}
                     className={styles.openShowMenu}
@@ -127,6 +131,7 @@ export default function LandmarkVideo({
             </AnimatePresence>
 
             <Menu
+              dataTranslations={dataTranslations}
               id={id}
               isVideoPlaying={isPlaying}
               setIsPlaying={setIsPlaying}

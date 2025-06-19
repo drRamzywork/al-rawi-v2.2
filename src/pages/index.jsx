@@ -16,7 +16,6 @@ export default function HomePage({
   console.log(dataSettings, "dataSettings");
   const siteURL = "https://alrawi2.suwa.com.sa/";
 
-  console.log(dataSettings, "dataSettings");
   return (
     <>
       <Head>

@@ -152,7 +152,12 @@ export default function VidoDetails() {
             />
             <Menu2 showNewMenu={showNewMenu} setShowNewMenu={setShowNewMenu} />
 
-            {isDialog && <Dialog setIsDialog={setIsDialog} />}
+            {isDialog && (
+              <Dialog
+                setIsDialog={setIsDialog}
+                questions={landmark.questions || []}
+              />
+            )}
 
             {!isPlaying && !showNewMenu && (
               <div
