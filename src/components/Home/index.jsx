@@ -1,71 +1,152 @@
+// pages/index.js
 import { useState, useEffect } from "react";
-import Head from "next/head";
 import Image from "next/image";
 import styles from "@/styles/Home.module.scss";
+
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Cities from "@/components/cities";
 import Footer from "@/components/Footer";
 
-const Home = ({ cities, sliders, dataHistoricalSites, dataAllLandmarks }) => {
+const SplashScreen = () => (
+  <>
+    <div className={styles.shape_container}>
+      <Image
+        src="/assets/svgs/shape.svg"
+        alt="Shape"
+        width={100}
+        height={100}
+      />
+    </div>
+
+    <div className={styles.logo}>
+      <Image
+        src="/assets/imgs/rawi.png"
+        alt="Rawi Logo"
+        width={100}
+        height={100}
+      />
+    </div>
+
+    <div className={styles.logo2}>
+      <Image
+        src="/assets/svgs/logoColored.svg"
+        alt="Colored Logo"
+        width={100}
+        height={100}
+      />
+    </div>
+  </>
+);
+
+const Home = ({
+  cities,
+  sliders,
+  dataHistoricalSites,
+  dataAllLandmarks,
+  dataTranslations,
+  dataSettings,
+}) => {
   const [showSplash, setShowSplash] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowSplash(false);
-    }, 2000);
+    const timer = setTimeout(() => setShowSplash(false), 2000);
     return () => clearTimeout(timer);
   }, []);
 
   return (
-    <>
-      <div className={styles.page}>
-        <main className={styles.main}>
-          <div className={styles.shape_container}>
-            <Image
-              src="/assets/svgs/shape.svg"
-              alt="Shape"
-              width={100}
-              height={100}
+    <div className={styles.page}>
+      <main className={styles.main}>
+        {showSplash ? (
+          <SplashScreen />
+        ) : (
+          <div className={styles.homeContent}>
+            <Navbar isHome={true} dataSettings={dataSettings} />
+            <Hero sliders={sliders} />
+            <Cities
+              dataTranslations={dataTranslations}
+              dataAllLandmarks={dataAllLandmarks}
+              cities={cities}
+              dataHistoricalSites={dataHistoricalSites}
             />
           </div>
+        )}
 
-          {showSplash ? (
-            <>
-              <div className={styles.logo}>
-                <Image
-                  src="/assets/imgs/rawi.png"
-                  alt="Logo"
-                  width={100}
-                  height={100}
-                />
-              </div>
-              <div className={styles.logo2}>
-                <Image
-                  src="/assets/svgs/logoColored.svg"
-                  alt="Colored Logo"
-                  width={100}
-                  height={100}
-                />
-              </div>
-            </>
-          ) : (
-            <div className={styles.homeContent}>
-              <Navbar isHome={true} />
-              <Hero sliders={sliders} />
-              <Cities
-                dataAllLandmarks={dataAllLandmarks}
-                cities={cities}
-                dataHistoricalSites={dataHistoricalSites}
-              />
-            </div>
-          )}
-
-          <Footer />
-        </main>
-      </div>
-    </>
+        <Footer />
+      </main>
+    </div>
   );
 };
 
 export default Home;
+// import { useState, useEffect } from "react";
+// import Head from "next/head";
+// import Image from "next/image";
+// import styles from "@/styles/Home.module.scss";
+// import Navbar from "@/components/Navbar";
+// import Hero from "@/components/Hero";
+// import Cities from "@/components/cities";
+// import Footer from "@/components/Footer";
+
+// const Home = ({ cities, sliders, dataHistoricalSites, dataAllLandmarks }) => {
+//   const [showSplash, setShowSplash] = useState(true);
+
+//   useEffect(() => {
+//     const timer = setTimeout(() => {
+//       setShowSplash(false);
+//     }, 2000);
+//     return () => clearTimeout(timer);
+//   }, []);
+
+//   return (
+//     <>
+//       <div className={styles.page}>
+//         <main className={styles.main}>
+//           <div className={styles.shape_container}>
+//             <Image
+//               src="/assets/svgs/shape.svg"
+//               alt="Shape"
+//               width={100}
+//               height={100}
+//             />
+//           </div>
+
+//           {showSplash ? (
+//             <>
+//               <div className={styles.logo}>
+//                 <Image
+//                   src="/assets/imgs/rawi.png"
+//                   alt="Logo"
+//                   width={100}
+//                   height={100}
+//                 />
+//               </div>
+//               <div className={styles.logo2}>
+//                 <Image
+//                   src="/assets/svgs/logoColored.svg"
+//                   alt="Colored Logo"
+//                   width={100}
+//                   height={100}
+//                 />
+//               </div>
+//             </>
+//           ) : (
+//             <div className={styles.homeContent}>
+//               <Navbar isHome={true} />
+//               <Hero sliders={sliders} />
+//               <Cities
+//                 dataAllLandmarks={dataAllLandmarks}
+//                 cities={cities}
+//                 dataHistoricalSites={dataHistoricalSites}
+//               />
+//             </div>
+//           )}
+
+//           <Footer />
+//         </main>
+//       </div>
+//     </>
+//   );
+// };
+
+// export default Home;

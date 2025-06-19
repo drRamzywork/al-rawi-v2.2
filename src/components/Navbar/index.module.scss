@@ -39,6 +39,7 @@ nav.navbar {
     .icon_container2 {
       right: unset;
       left: 0;
+      cursor: pointer;
     }
 
     .logo {
@@ -48,38 +49,6 @@ nav.navbar {
     }
   }
 }
-
-// .header {
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   width: 100%;
-//   height: 100vh;
-//   background-color: var(--main-green);
-//   z-index: 9999;
-//   overflow: hidden;
-
-//   .header_container {
-//     width: 100%;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center; /* Center all items initially */
-//     padding-top: 30px;
-//   }
-
-//   .back_btn {
-//     background-color: #f7f7f9;
-//     border-radius: 16px;
-//     width: 37.51px;
-//     height: 37.51px;
-//     display: flex;
-
-//     svg {
-//       margin: auto;
-//       color: #6f6f6f;
-//     }
-//   }
-// }
 
 .header {
   position: fixed;
@@ -192,6 +161,7 @@ nav.navbar {
         align-items: center;
         // justify-content: space-between;
         gap: 65px;
+        cursor: pointer;
         .title {
           p {
             color: white;

@@ -1,11 +1,4 @@
-import { useState, useEffect } from "react";
 import Head from "next/head";
-import Image from "next/image";
-import styles from "@/styles/Home.module.scss";
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import Cities from "@/components/cities";
-import Footer from "@/components/Footer";
 import cityData from "@/data/cities";
 import Home from "@/components/Home";
 
@@ -14,11 +7,16 @@ export default function HomePage({
   dataSlider,
   dataHistoricalSites,
   dataAllLandmarks,
+  dataTranslations,
+  dataSettings,
 }) {
-  const siteName = "الراوي";
-  const imagePath = "/assets/imgs/rawi.png";
-  const siteDescrription = "استكشف عالم الجمال في المملكة";
+  const siteName = dataSettings?.site_title;
+  const imagePath = dataSettings?.site_title;
+  const siteDescrription = dataSettings.site_desc;
+  console.log(dataSettings, "dataSettings");
   const siteURL = "https://alrawi2.suwa.com.sa/";
+
+  console.log(dataSettings, "dataSettings");
   return (
     <>
       <Head>
@@ -38,6 +36,8 @@ export default function HomePage({
       </Head>
 
       <Home
+        dataSettings={dataSettings}
+        dataTranslations={dataTranslations}
         cities={cities}
         sliders={dataSlider}
         dataHistoricalSites={dataHistoricalSites}
@@ -46,15 +46,6 @@ export default function HomePage({
     </>
   );
 }
-// export async function getStaticProps() {
-
-//   return {
-//     props: {
-//       cities: cityData,
-
-//     },
-//   };
-// }
 
 export async function getStaticProps({ locale }) {
   const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
@@ -73,12 +64,24 @@ export async function getStaticProps({ locale }) {
   });
   const dataAllLandmarks = await resAllLandmarks.json();
 
+  const resTranslations = await fetch(`${apiDomain}/translations`, {
+    headers: { locale: locale },
+  });
+  const dataTranslations = await resTranslations.json();
+
+  const resSettings = await fetch(`${apiDomain}/settings`, {
+    headers: { locale: locale },
+  });
+  const dataSettings = await resSettings.json();
+
   return {
     props: {
       cities: cityData,
       dataSlider: dataSlider?.data || null,
       dataHistoricalSites: dataHistoricalSites?.data || null,
       dataAllLandmarks: dataAllLandmarks?.data || null,
+      dataTranslations: dataTranslations?.data || null,
+      dataSettings: dataSettings?.data || null,
     },
     revalidate: 10,
   };

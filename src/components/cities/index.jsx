@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import { IoLocationOutline } from "react-icons/io5";
 import styles from "./index.module.scss";
 import homeStyles from "@/styles/Home.module.scss";
 import "swiper/css";
@@ -10,13 +9,16 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, FreeMode, Autoplay } from "swiper/modules";
 import { IoIosArrowBack } from "react-icons/io";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { CiGrid32, CiGrid2V } from "react-icons/ci";
 
 const getRandomWidth = (min, max) =>
   Math.floor(Math.random() * (max - min + 40)) + min;
 
-const Cities = ({ cities, dataHistoricalSites, dataAllLandmarks }) => {
+const Cities = ({
+  dataTranslations,
+  dataHistoricalSites,
+  dataAllLandmarks,
+}) => {
   const [changeShapes, setChangeShapes] = useState(true);
 
   return (
@@ -37,7 +39,7 @@ const Cities = ({ cities, dataHistoricalSites, dataAllLandmarks }) => {
           transition={{ duration: 0.7, type: "tween" }}
           className={styles.sec_title}
         >
-          <h3>أهم المواقع التاريخية</h3>
+          <h3>{dataTranslations["the-most-important-historical-sites"]}</h3>
         </motion.div>
 
         <div className={styles.icons_container}>
@@ -62,7 +64,7 @@ const Cities = ({ cities, dataHistoricalSites, dataAllLandmarks }) => {
                 <>
                   <motion.a
                     key={city?.id}
-                    href={`/cities/video/${city?.id}`}
+                    href={`/dataHistoricalSites/video/${city?.id}`}
                     className={styles.box}
                     style={{
                       width: `100%`,
@@ -160,7 +162,7 @@ const Cities = ({ cities, dataHistoricalSites, dataAllLandmarks }) => {
             {dataAllLandmarks.map((land, idx) => (
               <SwiperSlide key={idx}>
                 <motion.a
-                  href={`/cities/video/${land.id}`}
+                  href={`/landmarks/video/${land.id}`}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.7, type: "tween" }}
