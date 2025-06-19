@@ -192,6 +192,13 @@ export default function Quiz() {
   const router = useRouter();
 
   useEffect(() => {
+    if (!router.query.questions) {
+      router.replace("/"); // يرجع المستخدم للصفحة الرئيسية لو مفيش أسئلة
+    }
+  }, []);
+  
+
+  useEffect(() => {
     if (router.query.questions) {
       try {
         const parsedQuestions = JSON.parse(router.query.questions);
