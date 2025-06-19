@@ -220,7 +220,7 @@ export default function Quiz() {
         pathname: "/result",
         query: {
           answers: JSON.stringify(selectedAnswers),
-          questions: JSON.stringify(questions), // ✅ كده تمام
+          questions: JSON.stringify(router.query.questions),
         },
       });
     }
