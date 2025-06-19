@@ -47,7 +47,6 @@ export default function HomePage({
 
 export async function getStaticProps({ locale }) {
   const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
-  console.log(locale);
   const resSlider = await fetch(`${apiDomain}/sliders`, {
     headers: { locale: locale },
   });

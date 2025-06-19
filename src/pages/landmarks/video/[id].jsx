@@ -28,8 +28,6 @@ export default function LandmarkVideo({
 
   const gallery = landmark?.media || [];
 
-  console.log(landmark, "landmark");
-
   useEffect(() => {
     if (videoRef.current && videoURL) {
       videoRef.current
