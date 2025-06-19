@@ -41,7 +41,9 @@ const Dialog = ({ setIsDialog, questions }) => {
               href={{
                 pathname: "/challenge",
                 query: {
-                  questions: JSON.stringify(questions),
+                  questions: Array.isArray(questions)
+                    ? JSON.stringify(questions)
+                    : "[]",
                 },
               }}
             >
