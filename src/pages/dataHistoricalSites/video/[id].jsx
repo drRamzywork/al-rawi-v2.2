@@ -10,7 +10,11 @@ import Link from "next/link";
 import Head from "next/head";
 import { IoChevronForwardOutline } from "react-icons/io5";
 
-export default function VideoDetails({ dataHistoricalSites, dataSettings }) {
+export default function VideoDetails({
+  dataHistoricalSites,
+  dataSettings,
+  dataTranslations,
+}) {
   const router = useRouter();
   const { id } = router.query;
   const videoRef = useRef(null);
@@ -114,6 +118,7 @@ export default function VideoDetails({ dataHistoricalSites, dataSettings }) {
             </AnimatePresence>
 
             <Menu
+              dataTranslations={dataTranslations}
               id={id}
               isVideoPlaying={isPlaying}
               setIsPlaying={setIsPlaying}

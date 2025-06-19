@@ -12,6 +12,7 @@ const Menu = ({
   setIsPlaying,
   setShowNewMenu,
   dataAllLandmark,
+  dataTranslations,
 }) => {
   const [readMore, setReadMore] = useState(false);
   const [questions, setQuestions] = useState(false);
@@ -51,7 +52,7 @@ const Menu = ({
 
   const links = [
     {
-      title: "الصور",
+      title: dataTranslations["imgs"],
       img: "/assets/svgs/navbar/gallery.svg",
       onClick: () => {
         setCurrentState("Gallery");
@@ -61,7 +62,7 @@ const Menu = ({
       },
     },
     {
-      title: "تعرف أكثر",
+      title: dataTranslations["learn-more"],
       img: "/assets/svgs/navbar/square.svg",
       onClick: () => {
         setCurrentState("LearnMore");
@@ -80,7 +81,7 @@ const Menu = ({
       },
     },
     {
-      title: "الموقع",
+      title: dataTranslations["location"],
       img: "/assets/svgs/navbar/location.svg",
       onClick: () => {
         setCurrentState("Location");
@@ -88,7 +89,7 @@ const Menu = ({
       },
     },
     {
-      title: "المشاركة",
+      title: dataTranslations["share"],
       img: "/assets/svgs/navbar/share.svg",
       onClick: handleShare,
     },
