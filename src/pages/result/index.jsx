@@ -430,22 +430,55 @@ export default function ResultPage() {
   const [userAnswers, setUserAnswers] = useState({});
   const [questions, setQuestions] = useState([]);
 
-  useEffect(() => {
-    const { answers, questions: questionsQuery } = router.query;
+  // useEffect(() => {
+  //   const { answers, questions: questionsQuery } = router.query;
 
-    if (!answers || !questionsQuery) {
+  //   if (!answers || !questionsQuery) {
+  //     router.replace("/");
+  //     return;
+  //   }
+
+  //   try {
+  //     const parsedAnswers = JSON.parse(answers);
+  //     const parsedQuestions = JSON.parse(questionsQuery);
+
+  //     const formattedQuestions = parsedQuestions.map((q) => ({
+  //       question: q.question, // لاحظ هنا كانت title لو جاية من challenge
+  //       options: q.options,
+  //       correct: q.correct,
+  //     }));
+
+  //     setQuestions(formattedQuestions);
+  //     setUserAnswers(parsedAnswers);
+
+  //     let correct = 0;
+  //     formattedQuestions.forEach((q, index) => {
+  //       if (parsedAnswers[index] === q.correct) correct++;
+  //     });
+
+  //     setCorrectCount(correct);
+  //   } catch (error) {
+  //     console.error("Error parsing result data:", error);
+  //     router.replace("/");
+  //   }
+  // }, [router.query]);
+
+  useEffect(() => {
+    const { answers, questions } = router.query;
+
+    if (!answers || !questions) {
       router.replace("/");
       return;
     }
 
     try {
       const parsedAnswers = JSON.parse(answers);
-      const parsedQuestions = JSON.parse(questionsQuery);
+      const originalQuestions = JSON.parse(JSON.parse(questions)); // ⬅️ لاحظ دي
 
-      const formattedQuestions = parsedQuestions.map((q) => ({
-        question: q.question, // لاحظ هنا كانت title لو جاية من challenge
-        options: q.options,
-        correct: q.correct,
+      const formattedQuestions = originalQuestions.map((q) => ({
+        question: q.title,
+        options: q.answers.map((a) => a.answer),
+        correct: q.answers.findIndex((a) => a.is_correct),
       }));
 
       setQuestions(formattedQuestions);
