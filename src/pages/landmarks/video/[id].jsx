@@ -28,6 +28,8 @@ export default function LandmarkVideo({
 
   const gallery = landmark?.media || [];
 
+  console.log(landmark, "landmark");
+
   useEffect(() => {
     if (videoRef.current && videoURL) {
       videoRef.current
@@ -149,6 +151,7 @@ export default function LandmarkVideo({
 
             {isDialog && (
               <Dialog
+                landmarkId={landmark.id}
                 setIsDialog={setIsDialog}
                 questions={landmark?.questions}
               />

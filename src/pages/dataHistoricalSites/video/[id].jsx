@@ -27,8 +27,6 @@ export default function VideoDetails({
   // const videoURL = "https://suwa.com.sa/v/rawai/vr.mp4";
   const notFound = !city;
 
-  console.log(dataHistoricalSites, "dataHistoricalSites");
-
   useEffect(() => {
     if (videoRef.current && city) {
       videoRef.current

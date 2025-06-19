@@ -192,13 +192,6 @@ export default function Quiz() {
   const router = useRouter();
 
   useEffect(() => {
-    if (!router.query.questions) {
-      router.replace("/"); // يرجع المستخدم للصفحة الرئيسية لو مفيش أسئلة
-    }
-  }, []);
-  
-
-  useEffect(() => {
     if (router.query.questions) {
       try {
         const parsedQuestions = JSON.parse(router.query.questions);
@@ -207,6 +200,7 @@ export default function Quiz() {
           options: q.answers.map((a) => a.answer),
           correct: q.answers.findIndex((a) => a.is_correct),
         }));
+
         setQuestions(formatted);
       } catch (error) {
         console.error("Failed to parse questions:", error);
@@ -226,6 +220,7 @@ export default function Quiz() {
         pathname: "/result",
         query: {
           answers: JSON.stringify(selectedAnswers),
+          questions: JSON.stringify(questions), // ✅ كده تمام
         },
       });
     }

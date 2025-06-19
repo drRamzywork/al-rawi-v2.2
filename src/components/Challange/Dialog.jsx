@@ -4,7 +4,7 @@ import styles from "../DraggableBox/Menu3/index.module.scss";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
 
-const Dialog = ({ setIsDialog, questions }) => {
+const Dialog = ({ setIsDialog, questions, landmarkId }) => {
   return (
     <>
       <motion.div
@@ -36,7 +36,6 @@ const Dialog = ({ setIsDialog, questions }) => {
             <Link href={`/`}>
               <p>لا</p>
             </Link>
-
             <Link
               href={{
                 pathname: "/challenge",

@@ -12,7 +12,6 @@ const Questions = ({ questions, id, setQuestions, setShowNewMenu, setPause, setI
   }, [questions, controls]);
 
   const handleClick = (time) => {
-    console.log("📢 Dispatching seekVideo event with time:", time); // ✅ تأكد أن القيمة صحيحة
     if (typeof window !== "undefined") {
       window.dispatchEvent(new CustomEvent("seekVideo", { detail: time }));
       console.log(window, "time")
