@@ -23,7 +23,7 @@ export default function VideoDetails({
   const [isDialog, setIsDialog] = useState(false);
 
   const city = dataHistoricalSites || [];
-  const videoURL = city?.videos?.media || "https://suwa.com.sa/v/rawai/vr.mp4";
+  const videoURL = city?.video || "https://suwa.com.sa/v/rawai/vr.mp4";
   // const videoURL = "https://suwa.com.sa/v/rawai/vr.mp4";
   const notFound = !city;
 

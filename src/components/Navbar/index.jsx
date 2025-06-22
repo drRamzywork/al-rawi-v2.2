@@ -7,61 +7,66 @@ import { useRouter } from "next/router";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Mousewheel, FreeMode } from "swiper/modules";
 import { motion } from "framer-motion";
+import { useLangs } from "@/context/LangContext";
+
+// ثم:
 
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import "swiper/css/scrollbar";
 
-const langs = [
-  {
-    code: "ar",
-    native: "Arabic",
-    name: "العـــربــيـة",
-    img: "/assets/imgs/langs/ar.png",
-  },
-  {
-    code: "en",
-    native: "English",
-    name: "الإنجليزيــة",
-    img: "/assets/imgs/langs/en.png",
-  },
-  {
-    code: "fr",
-    native: "Français",
-    name: "الـفـرنـسية",
-    img: "/assets/imgs/langs/fr.png",
-  },
-  {
-    code: "ch",
-    native: "汉语",
-    name: "الصـيـنـيــة",
-    img: "/assets/imgs/langs/ch.png",
-  },
-  {
-    code: "ru",
-    native: "Русский",
-    name: "الــروسـيـة",
-    img: "/assets/imgs/langs/ru.png",
-  },
-  {
-    code: "es",
-    native: "Español",
-    name: "الإسـبانيـة",
-    img: "/assets/imgs/langs/es.png",
-  },
-];
+// const langs = [
+//   {
+//     code: "ar",
+//     native: "Arabic",
+//     name: "العـــربــيـة",
+//     img: "/assets/imgs/langs/ar.png",
+//   },
+//   {
+//     code: "en",
+//     native: "English",
+//     name: "الإنجليزيــة",
+//     img: "/assets/imgs/langs/en.png",
+//   },
+//   {
+//     code: "fr",
+//     native: "Français",
+//     name: "الـفـرنـسية",
+//     img: "/assets/imgs/langs/fr.png",
+//   },
+//   {
+//     code: "ch",
+//     native: "汉语",
+//     name: "الصـيـنـيــة",
+//     img: "/assets/imgs/langs/ch.png",
+//   },
+//   {
+//     code: "ru",
+//     native: "Русский",
+//     name: "الــروسـيـة",
+//     img: "/assets/imgs/langs/ru.png",
+//   },
+//   {
+//     code: "es",
+//     native: "Español",
+//     name: "الإسـبانيـة",
+//     img: "/assets/imgs/langs/es.png",
+//   },
+// ];
 
 const Navbar = ({ isHome, dataSettings }) => {
   const [LangsWindow, setLangsWindow] = useState(false);
   const router = useRouter();
   const { pathname, asPath, query } = router;
+  const { langs } = useLangs();
 
   const handleLanguageChange = (langCode) => {
     router.push({ pathname, query }, asPath, { locale: langCode });
     setLangsWindow(false);
   };
 
+  console.log(langs, "langs");
   return (
     <>
       <nav className={styles.navbar}>

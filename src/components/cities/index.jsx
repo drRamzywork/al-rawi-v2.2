@@ -10,6 +10,7 @@ import { Navigation, FreeMode, Autoplay } from "swiper/modules";
 import { IoIosArrowBack } from "react-icons/io";
 import { motion } from "framer-motion";
 import { CiGrid32, CiGrid2V } from "react-icons/ci";
+import { useRouter } from "next/router";
 
 const getRandomWidth = (min, max) =>
   Math.floor(Math.random() * (max - min + 40)) + min;
@@ -20,9 +21,14 @@ const Cities = ({
   dataAllLandmarks,
 }) => {
   const [changeShapes, setChangeShapes] = useState(true);
+  const { locale } = useRouter();
 
   return (
-    <section id="cities" className={styles.cities}>
+    <section
+      id="cities"
+      className={styles.cities}
+      dir={locale === "ar" ? "rtl" : "ltr"}
+    >
       <div className={homeStyles.shape_container3}>
         <Image
           src="/assets/svgs/shape.svg"

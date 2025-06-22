@@ -12,7 +12,7 @@ export default function HomePage({
 }) {
   const siteName = dataSettings?.site_title;
   const imagePath = dataSettings?.site_title;
-  const siteDescrription = dataSettings.site_desc;
+  const siteDescrription = dataSettings?.site_desc;
   const siteURL = "https://alrawi2.suwa.com.sa/";
 
   return (
