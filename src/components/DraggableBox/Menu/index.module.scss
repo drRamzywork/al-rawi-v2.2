@@ -266,3 +266,46 @@
   height: 100%;
   z-index: 2;
 }
+
+// LTR
+
+.content[dir="ltr"] {
+  .close_icon {
+    position: absolute;
+    left: unset;
+    right: 8px;
+
+    svg {
+    }
+  }
+
+  .sec_title {
+    h1 {
+      text-align: left;
+    }
+  }
+
+  .imgs_container {
+    .main_img {
+      img {
+      }
+    }
+
+    .sec_imgs {
+      img {
+      }
+    }
+  }
+
+  .title {
+    h3 {
+      text-align: left;
+    }
+  }
+
+  .desc {
+    p {
+      text-align: left;
+    }
+  }
+}

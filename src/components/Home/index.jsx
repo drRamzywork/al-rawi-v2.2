@@ -62,7 +62,7 @@ const Home = ({
         ) : (
           <div className={styles.homeContent}>
             <Navbar isHome={true} dataSettings={dataSettings} />
-            <Hero sliders={sliders} />
+            <Hero sliders={sliders} dataTranslations={dataTranslations} />
             <Cities
               dataTranslations={dataTranslations}
               dataAllLandmarks={dataAllLandmarks}
@@ -72,7 +72,7 @@ const Home = ({
           </div>
         )}
 
-        <Footer />
+        <Footer dataTranslations={dataTranslations} />
       </main>
     </div>
   );

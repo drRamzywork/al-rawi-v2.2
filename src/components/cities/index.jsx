@@ -11,6 +11,7 @@ import { IoIosArrowBack } from "react-icons/io";
 import { motion } from "framer-motion";
 import { CiGrid32, CiGrid2V } from "react-icons/ci";
 import { useRouter } from "next/router";
+import { getDir } from "@/utils/dir";
 
 const getRandomWidth = (min, max) =>
   Math.floor(Math.random() * (max - min + 40)) + min;
@@ -24,11 +25,7 @@ const Cities = ({
   const { locale } = useRouter();
 
   return (
-    <section
-      id="cities"
-      className={styles.cities}
-      dir={locale === "ar" ? "rtl" : "ltr"}
-    >
+    <section id="cities" className={styles.cities} dir={getDir(locale)}>
       <div className={homeStyles.shape_container3}>
         <Image
           src="/assets/svgs/shape.svg"
@@ -188,12 +185,10 @@ const Cities = ({
 
                   <div className={styles.card_bottom}>
                     <div className={styles.title}>
-                      <h6>
-                        <strong>{land.title}</strong>
-                        <br />
-
-                        <span>{land.desc}</span>
-                      </h6>
+                      <h6>{land.title}</h6>
+                    </div>
+                    <div className={styles.desc}>
+                      <p>{land.desc}</p>
                     </div>
 
                     <div className={styles.explore}>

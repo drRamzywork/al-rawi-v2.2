@@ -411,34 +411,42 @@ section.cities {
         border-radius: 12px;
         padding: 12px;
 
-        display: flex;
-        align-items: center;
-        flex-direction: row;
-        justify-content: space-between;
-
         .title {
           display: flex;
           flex-direction: row;
           align-items: flex-end;
           gap: 8px;
           h6 {
+            width: 100%;
             margin: 0;
             color: white;
-            font-size: 14px;
-            font-weight: 600;
-
-            span {
-              display: flex;
-              flex-direction: row-reverse;
-              margin-top: 6.2px;
-              align-items: center;
-              gap: 5.38px;
-            }
+            font-size: 16px;
+            font-weight: bold;
+            gap: 4px;
+            text-align: start;
           }
-          svg {
+        }
+        .desc {
+          p {
+            font-size: 14px;
             color: white;
-            width: 15.38px;
-            height: 19.1px;
+            font-weight: 500;
+            // margin-top: 6.2px;
+
+            // display: -webkit-box;
+            // -webkit-line-clamp: 4;
+            // -webkit-box-orient: vertical;
+            // overflow: hidden;
+            // text-overflow: ellipsis;
+
+            // white-space: normal;
+
+            display: -webkit-box;
+            -webkit-line-clamp: 4;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: normal;
           }
         }
 
@@ -473,4 +481,174 @@ section.cities {
 
 .container {
   padding-left: 0 !important;
+}
+
+// LTR
+
+section.cities[dir="ltr"] {
+  .sec_container {
+    .sec_title {
+      h3 {
+      }
+
+      .shape_container {
+        img {
+        }
+      }
+    }
+    .boxes_container {
+      .box {
+        .img_container {
+          right: unset;
+          left: 0;
+          img {
+          }
+        }
+        .title {
+          h6 {
+          }
+          svg {
+          }
+        }
+      }
+
+      .card {
+        .card_top {
+          p {
+          }
+        }
+        .img_container {
+          img {
+          }
+        }
+        .card_bottom {
+          .title {
+            align-items: flex-start;
+            h6 {
+              text-align: start;
+
+              span {
+              }
+            }
+            svg {
+            }
+          }
+
+          .explore {
+            p {
+            }
+
+            .icon_container {
+              svg {
+                transform: rotate(180deg);
+              }
+            }
+          }
+        }
+      }
+    }
+
+    .icons_container {
+      .icon {
+        svg {
+        }
+
+        &.active {
+          svg {
+          }
+        }
+      }
+    }
+
+    .boxes_container_mobile {
+      .box {
+        a {
+        }
+        .img_container {
+          img {
+          }
+        }
+        .title {
+          h5 {
+            text-align: left;
+          }
+        }
+
+        .desc {
+          text-align: left;
+        }
+      }
+    }
+
+    .boxes_container_mobile {
+      a.box {
+      }
+
+      .box {
+        .card_top {
+          p {
+          }
+        }
+
+        .img_container {
+          img {
+          }
+        }
+
+        .title {
+          h5 {
+          }
+        }
+      }
+    }
+  }
+  .swiper_container {
+    .card {
+      .card_top {
+        p {
+        }
+      }
+      .img_container {
+        img {
+        }
+      }
+      .card_bottom {
+        text-align: left;
+        align-self: flex-end;
+
+        background: #95433fdd;
+
+        .title {
+          h6 {
+            text-align: left;
+          }
+        }
+        .desc {
+          p {
+            direction: ltr;
+            text-align: left;
+
+            text-align: left !important;
+          }
+        }
+
+        .explore {
+          p {
+          }
+
+          .icon_container {
+            border-radius: 50%;
+            background-color: white;
+            width: 28px;
+            height: 28px;
+            display: flex;
+
+            svg {
+              margin: auto;
+            }
+          }
+        }
+      }
+    }
+  }
 }

@@ -3,6 +3,8 @@ import { motion, useAnimation } from "framer-motion";
 import styles from "./index.module.scss";
 import { IoClose } from "react-icons/io5";
 import Questions from "../Questions";
+import { getDir } from "@/utils/dir";
+import { useRouter } from "next/router";
 
 const Menu = ({
   isVideoPlaying,
@@ -13,12 +15,13 @@ const Menu = ({
   setShowNewMenu,
   dataAllLandmark,
   dataTranslations,
+  city,
 }) => {
   const [readMore, setReadMore] = useState(false);
   const [questions, setQuestions] = useState(false);
   const [currentState, setCurrentState] = useState("");
   const [isClient, setIsClient] = useState(false);
-
+  const { locale } = useRouter();
   const controls = useAnimation();
   useEffect(() => {
     setIsClient(typeof window !== "undefined");
@@ -132,7 +135,7 @@ const Menu = ({
         dir="rtl"
       >
         {readMore && (
-          <div className={styles.content}>
+          <div className={styles.content} dir={getDir(locale)}>
             <div
               className={styles.close_icon}
               onClick={() => setReadMore(false)}
@@ -145,7 +148,7 @@ const Menu = ({
             </div>
             <div className={styles.imgs_container}>
               <div className={styles.main_img}>
-                <img src="/assets/imgs/menu2/2.webp" alt="" />
+                <img src={city.media} alt="" />
               </div>
             </div>
 

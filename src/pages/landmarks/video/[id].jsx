@@ -149,6 +149,7 @@ export default function LandmarkVideo({
 
             {isDialog && (
               <Dialog
+                dataTranslations={dataTranslations}
                 landmarkId={landmark.id}
                 setIsDialog={setIsDialog}
                 questions={landmark?.questions}

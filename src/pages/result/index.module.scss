@@ -69,6 +69,62 @@
   }
 }
 
+.resultContainer[dir="ltr"] {
+  text-align: left;
+
+  p {
+  }
+
+  hr {
+  }
+
+  ul {
+    li {
+      display: flex;
+      flex-direction: column;
+      .question {
+        p {
+          margin: 0;
+        }
+
+        .user_answer {
+          margin-top: 8px;
+          p {
+            color: #ffffff80;
+            font-size: 12px;
+            margin: 0;
+          }
+        }
+
+        .correct_question {
+          P {
+            color: #f49d41;
+          }
+
+          .user_answer {
+            margin-top: 8px;
+            p {
+            }
+          }
+        }
+      }
+      .icons_wrong,
+      .icons_container {
+        align-self: flex-start;
+        svg {
+        }
+      }
+
+      .icons_wrong {
+        svg {
+          path {
+          }
+        }
+      }
+    }
+  }
+}
+
 // Animation
 
 $particles: 50;

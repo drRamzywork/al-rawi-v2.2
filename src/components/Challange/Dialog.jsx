@@ -1,68 +1,10 @@
-// import React from "react";
-// import { motion } from "framer-motion";
-// import styles from "../DraggableBox/Menu3/index.module.scss";
-// import { IoClose } from "react-icons/io5";
-// import Link from "next/link";
-
-// const Dialog = ({ setIsDialog, questions, landmarkId }) => {
-//   return (
-//     <>
-//       <motion.div
-//         className={styles.container}
-//         transition={{
-//           type: "spring",
-//           damping: 40,
-//           stiffness: 400,
-//         }}
-//         initial={{ scale: 0.9, opacity: 0 }}
-//         whileInView={{ opacity: 1, scale: 1 }}
-//         id="dialog"
-//         dir="rtl"
-//       >
-//         <motion.div
-//           initial={{ scale: 0.9, opacity: 0 }}
-//           animate={{ scale: 1, opacity: 1 }}
-//           exit={{ scale: 0 }}
-//           transition={{ duration: 0.5, type: "tween" }}
-//           className={styles.box_container}
-//         >
-//           <div className={styles.close_icon} onClick={() => setIsDialog(false)}>
-//             <IoClose />
-//           </div>
-//           <div className={styles.title}>
-//             <p>استكشف معلوماتك حول هذا المعلم؟</p>
-//           </div>
-//           <div className={styles.btns_container}>
-//             <Link href={`/`}>
-//               <p>لا</p>
-//             </Link>
-//             <Link
-//               href={{
-//                 pathname: "/challenge",
-//                 query: {
-//                   questions: Array.isArray(questions)
-//                     ? JSON.stringify(questions)
-//                     : "[]",
-//                 },
-//               }}
-//             >
-//               <p>نعم</p>
-//             </Link>
-//           </div>
-//         </motion.div>
-//       </motion.div>
-//     </>
-//   );
-// };
-
-// export default Dialog;
 import React from "react";
 import { motion } from "framer-motion";
 import styles from "../DraggableBox/Menu3/index.module.scss";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
 
-const Dialog = ({ setIsDialog, questions, landmarkId }) => {
+const Dialog = ({ setIsDialog, questions, landmarkId, dataTranslations }) => {
   const isValid =
     Array.isArray(questions) &&
     questions.length > 0 &&
@@ -100,11 +42,11 @@ const Dialog = ({ setIsDialog, questions, landmarkId }) => {
             <IoClose />
           </div>
           <div className={styles.title}>
-            <p>استكشف معلوماتك حول هذا المعلم؟</p>
+            <p>{dataTranslations?.ask1}</p>
           </div>
           <div className={styles.btns_container}>
             <Link href="/" scroll={false}>
-              <p>لا</p>
+              <p>{dataTranslations?.no}</p>
             </Link>
             {isValid ? (
               <Link
@@ -115,7 +57,7 @@ const Dialog = ({ setIsDialog, questions, landmarkId }) => {
                   },
                 }}
               >
-                <p>نعم</p>
+                <p>{dataTranslations?.yes}</p>
               </Link>
             ) : (
               <a
@@ -125,7 +67,7 @@ const Dialog = ({ setIsDialog, questions, landmarkId }) => {
                 }}
                 href="#"
               >
-                <p>نعم</p>
+                <p>{dataTranslations?.yes}</p>
               </a>
             )}
           </div>

@@ -67,6 +67,7 @@ export default function VideoDetails({
 
   const siteURL = "https://alrawi2.suwa.com.sa/";
 
+  console.log(city, "city");
   return (
     <>
       <Head>
@@ -116,6 +117,7 @@ export default function VideoDetails({
             </AnimatePresence>
 
             <Menu
+              city={city}
               dataTranslations={dataTranslations}
               id={id}
               isVideoPlaying={isPlaying}
@@ -138,6 +140,7 @@ export default function VideoDetails({
 
             {isDialog && (
               <Dialog
+                dataTranslations={dataTranslations}
                 setIsDialog={setIsDialog}
                 questions={
                   Array.isArray(dataHistoricalSites?.questions)

@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 
-const Hero = ({ sliders }) => {
+const Hero = ({ sliders, dataTranslations }) => {
   const swiperRef = useRef(null);
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -121,7 +121,7 @@ const Hero = ({ sliders }) => {
           className={styles.btn_container}
         >
           <Link href={"#cities"}>
-            <p>تعرف الآن</p>
+            <p>{dataTranslations?.start}</p>
             <div className={styles.icon_container}>
               <IoIosArrowDown />
             </div>

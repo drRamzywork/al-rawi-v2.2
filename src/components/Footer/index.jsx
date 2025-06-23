@@ -1,14 +1,13 @@
-import React from 'react'
-import styles from './index.module.scss'
-import Image from 'next/image'
-const Footer = () => {
+import React from "react";
+import styles from "./index.module.scss";
+import Image from "next/image";
+const Footer = ({ dataTranslations }) => {
   return (
-    <footer id='footer' className={styles.footer}>
+    <footer id="footer" className={styles.footer}>
       <div className="container">
         <hr />
 
-        <p>جميع الحقوق محفوظة ٢٠٢٥ ©
-        </p>
+        <p>{dataTranslations?.rights}</p>
 
         <div className={styles.shape_container}>
           <Image
@@ -19,12 +18,8 @@ const Footer = () => {
           />
         </div>
       </div>
-
-
-
-
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
