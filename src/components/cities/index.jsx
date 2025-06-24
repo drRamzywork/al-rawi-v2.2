@@ -10,9 +10,9 @@ import { Navigation, FreeMode, Autoplay } from "swiper/modules";
 import { IoIosArrowBack } from "react-icons/io";
 import { motion } from "framer-motion";
 import { CiGrid32, CiGrid2V } from "react-icons/ci";
-import { useRouter } from "next/router";
 import { getDir } from "@/utils/dir";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 const getRandomWidth = (min, max) =>
   Math.floor(Math.random() * (max - min + 40)) + min;

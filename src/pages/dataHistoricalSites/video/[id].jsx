@@ -171,23 +171,56 @@ export default function VideoDetails({
   );
 }
 
+// export async function getStaticPaths() {
+//   const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
+
+//   try {
+//     const res = await fetch(`${apiDomain}/historical-sites`);
+//     const json = await res.json();
+
+//     const paths =
+//       json?.data?.map((item) => ({
+//         params: { id: item.id.toString() },
+//       })) || [];
+
+//     return { paths, fallback: "blocking" };
+//   } catch (error) {
+//     console.error("Error loading paths", error);
+//     return { paths: [], fallback: "blocking" };
+//   }
+// }
+
 export async function getStaticPaths() {
   const apiDomain = process.env.NEXT_PUBLIC_API_DOMAIN;
 
-  try {
-    const res = await fetch(`${apiDomain}/historical-sites`);
-    const json = await res.json();
+  const [langsRes, citiesRes] = await Promise.all([
+    fetch(`${apiDomain}/languages`),
+    fetch(`${apiDomain}/historical-sites`),
+  ]);
 
-    const paths =
-      json?.data?.map((item) => ({
-        params: { id: item.id.toString() },
-      })) || [];
+  const langsJson = await langsRes.json();
+  const citiesJson = await citiesRes.json();
 
-    return { paths, fallback: "blocking" };
-  } catch (error) {
-    console.error("Error loading paths", error);
-    return { paths: [], fallback: "blocking" };
-  }
+  const langs = langsJson?.data || [];
+  const cities = citiesJson?.data || [];
+
+  const paths = [];
+
+  langs.forEach((lang) => {
+    cities.forEach((city) => {
+      paths.push({
+        params: {
+          locale: lang.code,
+          id: city.id.toString(),
+        },
+      });
+    });
+  });
+
+  return {
+    paths,
+    fallback: "blocking",
+  };
 }
 
 export async function getStaticProps({ params, locale }) {

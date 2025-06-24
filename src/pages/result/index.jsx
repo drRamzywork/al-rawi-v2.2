@@ -6,7 +6,6 @@ import { IoChevronForwardOutline } from "react-icons/io5";
 import Image from "next/image";
 import { CiCircleCheck } from "react-icons/ci";
 import { IoIosCloseCircleOutline } from "react-icons/io";
-import Head from "next/head";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 import { getDir } from "@/utils/dir";
