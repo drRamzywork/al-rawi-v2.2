@@ -11,7 +11,7 @@ async function updateLocales() {
 
     if (!locales?.length) throw new Error("No locales returned");
 
-    const configPath = path.join(__dirname, "../next.config.js");
+    const configPath = path.join(__dirname, "../next.config.mjs");
     const fileContent = `
 /** Auto-generated from API */
 const nextConfig = {
