@@ -239,14 +239,16 @@ const Navbar = ({
         </motion.div>
       )}
 
-      <SearchOverlay
-        visible={isSearchOpen}
-        value={searchValue}
-        onClose={() => setIsSearchOpen(false)}
-        onSearch={handleSearch}
-        results={searchResults}
-        onSelect={handleSelect}
-      />
+      {isSearchOpen && (
+        <SearchOverlay
+          visible={isSearchOpen}
+          value={searchValue}
+          onClose={() => setIsSearchOpen(false)}
+          onSearch={handleSearch}
+          results={searchResults}
+          onSelect={handleSelect}
+        />
+      )}
     </>
   );
 };
