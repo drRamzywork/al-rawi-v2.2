@@ -15,6 +15,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import "swiper/css/scrollbar";
+import { SearchOverlay } from "@/utils/SearchOverlay";
 
 // const langs = [
 //   {
@@ -55,7 +56,16 @@ import "swiper/css/scrollbar";
 //   },
 // ];
 
-const Navbar = ({ isHome, dataSettings }) => {
+const Navbar = ({
+  isHome,
+  dataSettings,
+  dataHistoricalSites,
+  dataAllLandmarks,
+}) => {
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [searchValue, setSearchValue] = useState("");
+  const [searchResults, setSearchResults] = useState([]);
+
   const [LangsWindow, setLangsWindow] = useState(false);
   const router = useRouter();
   const { pathname, asPath, query } = router;
@@ -66,7 +76,36 @@ const Navbar = ({ isHome, dataSettings }) => {
     setLangsWindow(false);
   };
 
-  console.log(langs, "langs");
+  console.log(dataHistoricalSites, "dataHistoricalSites");
+  const handleSearch = (text) => {
+    setSearchValue(text);
+    if (!text) return setSearchResults([]);
+
+    const lower = text.toLowerCase();
+
+    const fromHistorical = dataHistoricalSites
+      .filter((item) => item?.title?.toLowerCase().includes(lower))
+      .map((item) => ({ ...item, source: "historical-sites" }));
+
+    const fromLandmarks = dataAllLandmarks
+      .filter((item) => item?.title?.toLowerCase().includes(lower))
+      .map((item) => ({ ...item, source: "landmarks" }));
+
+    setSearchResults([
+      { title: "المواقع التاريخية", items: fromHistorical },
+      { title: "العالم", items: fromLandmarks },
+    ]);
+  };
+
+  const handleSelect = (item) => {
+    const base =
+      item.source === "historical-sites"
+        ? "/dataHistoricalSites/video"
+        : "/landmarks/video";
+    router.push(`${base}/${item.id}`);
+    setIsSearchOpen(false);
+    setSearchValue("");
+  };
   return (
     <>
       <nav className={styles.navbar}>
@@ -74,13 +113,14 @@ const Navbar = ({ isHome, dataSettings }) => {
           <div className={styles.nav_container}>
             <div className={styles.icon_container}>
               {isHome ? (
-                <Image
-                  src="/assets/svgs/search.svg"
-                  alt="Search"
-                  width={24}
-                  height={24}
-                  onClick={() => console.log("Search clicked")}
-                />
+                <div onClick={() => setIsSearchOpen(true)}>
+                  <Image
+                    src="/assets/svgs/search.svg"
+                    alt="Search"
+                    width={24}
+                    height={24}
+                  />
+                </div>
               ) : (
                 <Link href="/" className={styles.back_btn}>
                   <IoChevronForwardOutline />
@@ -116,13 +156,7 @@ const Navbar = ({ isHome, dataSettings }) => {
       </nav>
 
       {LangsWindow && (
-        <motion.div
-          initial={{ opacity: 0, translateY: -100 }}
-          animate={{ opacity: 1, translateY: 0 }}
-          transition={{ duration: 0.7, type: "tween" }}
-          className={styles.header}
-          id="header"
-        >
+        <motion.div className={styles.header} id="header">
           <div className="container">
             <div className={styles.header_container}>
               <button
@@ -204,6 +238,15 @@ const Navbar = ({ isHome, dataSettings }) => {
           </div>
         </motion.div>
       )}
+
+      <SearchOverlay
+        visible={isSearchOpen}
+        value={searchValue}
+        onClose={() => setIsSearchOpen(false)}
+        onSearch={handleSearch}
+        results={searchResults}
+        onSelect={handleSelect}
+      />
     </>
   );
 };

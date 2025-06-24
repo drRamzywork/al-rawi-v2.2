@@ -12,6 +12,7 @@ import { motion } from "framer-motion";
 import { CiGrid32, CiGrid2V } from "react-icons/ci";
 import { useRouter } from "next/router";
 import { getDir } from "@/utils/dir";
+import Link from "next/link";
 
 const getRandomWidth = (min, max) =>
   Math.floor(Math.random() * (max - min + 40)) + min;
@@ -64,10 +65,12 @@ const Cities = ({
           {changeShapes ? (
             <div className={styles.boxes_container_mobile}>
               {dataHistoricalSites?.map((city) => (
-                <>
-                  <motion.a
-                    key={city?.id}
-                    href={`/dataHistoricalSites/video/${city?.id}`}
+                <Link
+                  key={city?.id}
+                  locale={locale}
+                  href={`/dataHistoricalSites/video/${city?.id}`}
+                >
+                  <motion.div
                     className={styles.box}
                     style={{
                       width: `100%`,
@@ -92,17 +95,21 @@ const Cities = ({
                       <h5>{city?.name}</h5>
                       <h5>{city?.title}</h5>
                     </div>
-                  </motion.a>
-                </>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           ) : (
             <div className={styles.boxes_container}>
               {dataHistoricalSites?.map((city) => (
-                <>
-                  <motion.a
+                <Link
+                  key={city?.id}
+                  locale={locale}
+                  href={`/dataHistoricalSites/video/${city?.id}`}
+                >
+                  <motion.div
                     key={city?.id}
-                    href={`/cities/video/${city?.id}`}
+                    locale={locale}
                     className={styles.card}
                     initial={{ opacity: 0 }}
                     whileInView={{ opacity: 1 }}
@@ -130,8 +137,8 @@ const Cities = ({
                         </div>
                       </div>
                     </div>
-                  </motion.a>
-                </>
+                  </motion.div>
+                </Link>
               ))}
             </div>
           )}
@@ -163,43 +170,44 @@ const Cities = ({
             style={{ width: "100%" }}
           >
             {dataAllLandmarks.map((land, idx) => (
-              <SwiperSlide key={idx}>
-                <motion.a
-                  href={`/landmarks/video/${land.id}`}
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ duration: 0.7, type: "tween" }}
-                  className={styles.card}
-                >
-                  <div className={styles.img_container}>
-                    <div className={styles.card_top}>
-                      <p>معالم</p>
-                    </div>
-                    <Image
-                      src={land.main_media}
-                      alt="Vercel logomark"
-                      width={271.91}
-                      height={384.14}
-                    />
-                  </div>
-
-                  <div className={styles.card_bottom}>
-                    <div className={styles.title}>
-                      <h6>{land.title}</h6>
-                    </div>
-                    <div className={styles.desc}>
-                      <p>{land.desc}</p>
+              <SwiperSlide key={land?.id}>
+                <Link locale={locale} href={`/landmarks/video/${land.id}`}>
+                  <motion.div
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{ duration: 0.7, type: "tween" }}
+                    className={styles.card}
+                  >
+                    <div className={styles.img_container}>
+                      <div className={styles.card_top}>
+                        <p>معالم</p>
+                      </div>
+                      <Image
+                        src={land.main_media}
+                        alt="Vercel logomark"
+                        width={271.91}
+                        height={384.14}
+                      />
                     </div>
 
-                    <div className={styles.explore}>
-                      <p>استكشف</p>
+                    <div className={styles.card_bottom}>
+                      <div className={styles.title}>
+                        <h6>{land.title}</h6>
+                      </div>
+                      <div className={styles.desc}>
+                        <p>{land.desc}</p>
+                      </div>
 
-                      <div className={styles.icon_container}>
-                        <IoIosArrowBack />
+                      <div className={styles.explore}>
+                        <p>استكشف</p>
+
+                        <div className={styles.icon_container}>
+                          <IoIosArrowBack />
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </motion.a>
+                  </motion.div>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

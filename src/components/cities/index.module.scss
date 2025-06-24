@@ -35,6 +35,11 @@ section.cities {
       justify-items: center;
       margin-bottom: 50px;
 
+      a {
+        text-decoration: none;
+        color: unset;
+      }
+
       .box {
         text-decoration: none;
         position: relative;
@@ -230,6 +235,10 @@ section.cities {
     }
 
     .boxes_container_mobile {
+      a {
+        text-decoration: none;
+        color: unset;
+      }
       .box {
         margin-left: 0px;
 
@@ -359,6 +368,10 @@ section.cities {
     }
   }
   .swiper_container {
+    a {
+      text-decoration: none;
+      color: unset;
+    }
     .card {
       position: relative;
       width: 100%;
@@ -427,7 +440,9 @@ section.cities {
           }
         }
         .desc {
+          margin-top: 8px;
           p {
+            margin: 0;
             font-size: 14px;
             color: white;
             font-weight: 500;
@@ -442,7 +457,7 @@ section.cities {
             // white-space: normal;
 
             display: -webkit-box;
-            -webkit-line-clamp: 4;
+            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
             text-overflow: ellipsis;

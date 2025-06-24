@@ -39,6 +39,8 @@ const SplashScreen = () => (
   </>
 );
 
+
+
 const Home = ({
   cities,
   sliders,
@@ -61,7 +63,12 @@ const Home = ({
           <SplashScreen />
         ) : (
           <div className={styles.homeContent}>
-            <Navbar isHome={true} dataSettings={dataSettings} />
+            <Navbar
+              dataAllLandmarks={dataAllLandmarks}
+              dataHistoricalSites={dataHistoricalSites}
+              isHome={true}
+              dataSettings={dataSettings}
+            />
             <Hero sliders={sliders} dataTranslations={dataTranslations} />
             <Cities
               dataTranslations={dataTranslations}
