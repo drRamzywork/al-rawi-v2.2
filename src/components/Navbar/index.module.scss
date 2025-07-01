@@ -1,9 +1,192 @@
+// nav.navbar {
+//   position: fixed;
+//   width: 100%;
+//   z-index: 9999;
+//   background: linear-gradient(#035746, hsla(0, 0%, 100%, 0));
+
+//   max-width: 450px;
+
+//   .nav_container {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     width: 100%;
+//     position: relative;
+//     .icon_container2,
+//     .icon_container {
+//       position: absolute;
+//       right: 0;
+
+//       img {
+//         width: 24px;
+//         height: 24px;
+//       }
+
+//       .back_btn {
+//         background-color: #f7f7f9;
+//         border-radius: 16px;
+//         width: 37.51px;
+//         height: 37.51px;
+//         display: flex;
+
+//         svg {
+//           margin: auto;
+//           color: #6f6f6f;
+//         }
+//       }
+//     }
+
+//     .icon_container2 {
+//       right: unset;
+//       left: 0;
+//       cursor: pointer;
+//     }
+
+//     .logo {
+//       // margin-left: 28px;
+//       img {
+//       }
+//     }
+//   }
+// }
+
+// .header {
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   width: 100%;
+//   height: 100vh;
+//   background-color: var(--main-green);
+//   z-index: 9999;
+
+//   .header_container {
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     padding-top: 30px;
+//   }
+
+//   .back_btn {
+//     background-color: #f7f7f9;
+//     border-radius: 16px;
+//     width: 37.51px;
+//     height: 37.51px;
+//     display: flex;
+//     margin-left: auto; /* Pushes the button to the right */
+//     svg {
+//       margin: auto;
+//       color: #6f6f6f;
+//     }
+//   }
+
+//   .logo {
+//     flex: 1; /* Takes up remaining space to center the logo */
+//     display: flex;
+//     justify-content: center; /* Center logo within its flex space */
+//     margin-left: 38px;
+//   }
+
+//   .box_container {
+//     border-radius: 12px;
+//     border: 1px solid rgba(255, 255, 255, 0.46);
+//     backdrop-filter: blur(18px);
+//     background-color: rgba(255, 255, 255, 0.041);
+//     display: flex;
+//     flex-direction: column;
+//     align-items: center;
+//     justify-content: center;
+//     padding: 25px 4px;
+//     max-width: 400px;
+//     margin: auto;
+
+//     .header_box {
+//       background-color: white;
+//       border-radius: 36.5px;
+//       height: 58px;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: center;
+//       gap: 0px;
+//       width: 234px;
+//       margin-bottom: 37px;
+//       .title {
+//         display: flex;
+//         align-items: center;
+//         gap: 5px;
+//         .icon_container {
+//           img {
+//             width: 24px;
+//             height: 19px;
+//             object-fit: contain;
+//           }
+//         }
+//         p {
+//           margin: 0;
+//           color: var(--main-red);
+//           font-weight: 600;
+//           font-size: 16px;
+//         }
+//       }
+
+//       .desc {
+//         p {
+//           margin: 0;
+//           color: black;
+//           font-weight: 700;
+//           font-size: 13.87px;
+//         }
+//       }
+//     }
+
+//     .boxes_container {
+//       width: 100%;
+//       display: flex;
+//       flex-direction: column;
+//       align-items: center;
+//       justify-content: center;
+//       // gap: 16px;
+//       // overflow: scroll;
+//       // max-height: 300px;
+//       height: 290px;
+
+//       .swiper {
+//         width: 100%;
+//         padding: 20px;
+//       }
+
+//       .box {
+//         width: 100%;
+//         display: flex;
+//         align-items: center;
+//         // justify-content: space-between;
+//         gap: 65px;
+//         cursor: pointer;
+//         .title {
+//           p {
+//             color: white;
+//             font-weight: 400;
+//             font-size: 20.03px;
+//             text-align: left;
+//           }
+//         }
+
+//         .flag_container {
+//           img {
+//             width: 28px;
+//             height: 27px;
+//             object-fit: contain;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
 nav.navbar {
   position: fixed;
   width: 100%;
   z-index: 9999;
   background: linear-gradient(#035746, hsla(0, 0%, 100%, 0));
-
   max-width: 450px;
 
   .nav_container {
@@ -12,6 +195,7 @@ nav.navbar {
     align-items: center;
     width: 100%;
     position: relative;
+
     .icon_container2,
     .icon_container {
       position: absolute;
@@ -43,9 +227,9 @@ nav.navbar {
     }
 
     .logo {
-      // margin-left: 28px;
-      img {
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
@@ -72,7 +256,8 @@ nav.navbar {
     width: 37.51px;
     height: 37.51px;
     display: flex;
-    margin-left: auto; /* Pushes the button to the right */
+    margin-left: auto;
+
     svg {
       margin: auto;
       color: #6f6f6f;
@@ -80,9 +265,9 @@ nav.navbar {
   }
 
   .logo {
-    flex: 1; /* Takes up remaining space to center the logo */
+    flex: 1;
     display: flex;
-    justify-content: center; /* Center logo within its flex space */
+    justify-content: center;
     margin-left: 38px;
   }
 
@@ -102,18 +287,21 @@ nav.navbar {
     .header_box {
       background-color: white;
       border-radius: 36.5px;
-      height: 58px;
+      height: auto;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      gap: 0px;
+      gap: 5px;
       width: 234px;
       margin-bottom: 37px;
+      padding: 10px 0;
+
       .title {
         display: flex;
         align-items: center;
         gap: 5px;
+
         .icon_container {
           img {
             width: 24px;
@@ -121,6 +309,7 @@ nav.navbar {
             object-fit: contain;
           }
         }
+
         p {
           margin: 0;
           color: var(--main-red);
@@ -145,38 +334,79 @@ nav.navbar {
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      // gap: 16px;
-      // overflow: scroll;
-      // max-height: 300px;
       height: 290px;
 
       .swiper {
         width: 100%;
-        padding: 20px;
+        padding: 20px 0;
       }
 
+      // .box {
+      //   width: 100%;
+      //   display: flex;
+      //   flex-direction: row;
+      //   align-items: center;
+      //   justify-content: center;
+      //   gap: 28px;
+      //   cursor: pointer;
+      //   padding: 8px 0;
+      //   transition: transform 0.2s ease;
+
+      //   &:hover {
+      //     transform: scale(1.05);
+      //   }
+
+      //   .title,
+      //   .flag_container {
+      //     display: flex;
+      //     flex-direction: column;
+      //     align-items: center;
+      //     justify-content: center;
+      //     gap: 6px;
+      //   }
+
+      //   .title p {
+      //     color: white;
+      //     font-weight: 400;
+      //     font-size: 18px;
+      //     margin: 0;
+      //     text-align: center;
+      //   }
+
+      //   .flag_container img {
+      //     width: 36px;
+      //     height: 34px;
+      //     object-fit: contain;
+      //   }
+      // }
+
       .box {
-        width: 100%;
-        display: flex;
-        align-items: center;
-        // justify-content: space-between;
-        gap: 65px;
-        cursor: pointer;
-        .title {
-          p {
-            color: white;
-            font-weight: 400;
-            font-size: 20.03px;
-            text-align: left;
-          }
+        display: flex; // صف العناصر بجانب بعض
+        flex-direction: row;
+        justify-content: center;
+        align-items: flex-start;
+        gap: 32px;
+
+        .title,
+        .flag_container {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 6px;
         }
 
-        .flag_container {
-          img {
-            width: 28px;
-            height: 27px;
-            object-fit: contain;
-          }
+        .title p {
+          color: white;
+          font-size: 16px;
+          margin: 0;
+          font-weight: 400;
+          text-align: center;
+        }
+
+        .flag_container img {
+          width: 32px;
+          height: 32px;
+          object-fit: contain;
         }
       }
     }

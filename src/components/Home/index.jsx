@@ -39,12 +39,9 @@ const SplashScreen = () => (
   </>
 );
 
-
-
 const Home = ({
   cities,
   sliders,
-  dataHistoricalSites,
   dataAllLandmarks,
   dataTranslations,
   dataSettings,
@@ -65,7 +62,6 @@ const Home = ({
           <div className={styles.homeContent}>
             <Navbar
               dataAllLandmarks={dataAllLandmarks}
-              dataHistoricalSites={dataHistoricalSites}
               isHome={true}
               dataSettings={dataSettings}
             />
@@ -74,7 +70,7 @@ const Home = ({
               dataTranslations={dataTranslations}
               dataAllLandmarks={dataAllLandmarks}
               cities={cities}
-              dataHistoricalSites={dataHistoricalSites}
+              dataHistoricalSites={[]}
             />
           </div>
         )}

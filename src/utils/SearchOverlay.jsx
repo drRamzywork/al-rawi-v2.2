@@ -132,8 +132,8 @@ export const SearchOverlay = ({
                     layout
                   >
                     <Image
-                      src={item.media}
-                      alt={item.title}
+                      src={item?.main_media}
+                      alt={item?.title}
                       width={48}
                       height={48}
                     />

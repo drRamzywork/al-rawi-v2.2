@@ -1,0 +1,29 @@
+
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" style="font-family: 'Segoe UI', sans-serif;">
+  <!-- خلفية دائرية -->
+  <circle cx="100" cy="100" r="70" fill="#f9f9f9" stroke="#ccc" stroke-width="2" filter="url(#shadow)" />
+
+  <!-- زر التشغيل بحواف ناعمة -->
+  <path d="M90 85 Q90 80, 95 83 L120 97 Q125 100, 120 103 L95 117 Q90 120, 90 115 Z" 
+        fill="#aaa" opacity="0.25">
+    <animate attributeName="opacity" values="0.25;0.5;0.25" dur="1.5s" repeatCount="2" />
+  </path>
+
+  <!-- دائرة تحميل -->
+  <circle cx="100" cy="100" r="45" stroke="#bbb" stroke-width="4" fill="none" stroke-dasharray="282.6" stroke-dashoffset="282.6">
+    <animateTransform attributeName="transform" type="rotate" from="0 100 100" to="360 100 100" dur="2s" repeatCount="1"/>
+  </circle>
+
+  <!-- خط أحمر مائل يظهر بعد 2 ثانية -->
+  <line x1="75" y1="75" x2="125" y2="125" stroke="#e74c3c" stroke-width="6" stroke-linecap="round" opacity="0">
+    <animate attributeName="opacity" from="0" to="1" begin="2s" dur="0.5s" fill="freeze"/>
+    <animateTransform attributeName="transform" type="scale" begin="2s" dur="0.5s" values="0.9;1.1;1" fill="freeze"/>
+  </line>
+
+  <!-- ظل -->
+  <defs>
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#bbb"/>
+    </filter>
+  </defs>
+</svg>

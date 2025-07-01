@@ -5,7 +5,6 @@ import Home from "@/components/Home";
 export default function HomePage({
   cities,
   dataSlider,
-  dataHistoricalSites,
   dataAllLandmarks,
   dataTranslations,
   dataSettings,
@@ -38,7 +37,6 @@ export default function HomePage({
         dataTranslations={dataTranslations}
         cities={cities}
         sliders={dataSlider}
-        dataHistoricalSites={dataHistoricalSites}
         dataAllLandmarks={dataAllLandmarks}
       />
     </>
@@ -51,10 +49,10 @@ export async function getStaticProps({ locale }) {
     headers: { locale: locale },
   });
   const dataSlider = await resSlider.json();
-  const resHistoricalSites = await fetch(`${apiDomain}/historical-sites`, {
-    headers: { locale: locale },
-  });
-  const dataHistoricalSites = await resHistoricalSites.json();
+  // const resHistoricalSites = await fetch(`${apiDomain}/historical-sites`, {
+  //   headers: { locale: locale },
+  // });
+  // const dataHistoricalSites = await resHistoricalSites.json();
 
   const resAllLandmarks = await fetch(`${apiDomain}/landmarks`, {
     headers: { locale: locale },
@@ -75,7 +73,6 @@ export async function getStaticProps({ locale }) {
     props: {
       cities: cityData,
       dataSlider: dataSlider?.data || null,
-      dataHistoricalSites: dataHistoricalSites?.data || null,
       dataAllLandmarks: dataAllLandmarks?.data || null,
       dataTranslations: dataTranslations?.data || null,
       dataSettings: dataSettings?.data || null,

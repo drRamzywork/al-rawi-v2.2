@@ -22,7 +22,7 @@ export default function VideoDetails({
   const [showNewMenu, setShowNewMenu] = useState(false);
   const [isDialog, setIsDialog] = useState(false);
 
-  const city = dataHistoricalSites || [];
+  const city = [];
   const videoURL = city?.video || "";
   // const videoURL = "https://suwa.com.sa/v/rawai/vr.mp4";
   const notFound = !city;
@@ -240,16 +240,14 @@ export async function getStaticProps({ params, locale }) {
       }),
     ]);
 
-    const [dataHistoricalSites, dataTranslations, dataSettings] =
-      await Promise.all([
-        resData.json(),
-        resTranslations.json(),
-        resSettings.json(),
-      ]);
+    const [dataTranslations, dataSettings] = await Promise.all([
+      resData.json(),
+      resTranslations.json(),
+      resSettings.json(),
+    ]);
 
     return {
       props: {
-        dataHistoricalSites: dataHistoricalSites?.data || null,
         dataTranslations: dataTranslations?.data || null,
         dataSettings: dataSettings?.data || null,
       },
@@ -259,7 +257,6 @@ export async function getStaticProps({ params, locale }) {
     console.error("Error loading props:", error);
     return {
       props: {
-        dataHistoricalSites: null,
         dataTranslations: null,
         dataSettings: null,
       },

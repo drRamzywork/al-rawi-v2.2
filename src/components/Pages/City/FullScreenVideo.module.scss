@@ -128,3 +128,19 @@
 
   z-index: 9999;
 }
+
+.noVideoContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background-color: #000;
+}
+
+.noVideoIcon {
+  width: 100px;
+  height: auto;
+  opacity: 0.6;
+}

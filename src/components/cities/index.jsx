@@ -19,7 +19,7 @@ const getRandomWidth = (min, max) =>
 
 const Cities = ({
   dataTranslations,
-  dataHistoricalSites,
+
   dataAllLandmarks,
 }) => {
   const [changeShapes, setChangeShapes] = useState(true);
@@ -27,6 +27,7 @@ const Cities = ({
 
   return (
     <section id="cities" className={styles.cities} dir={getDir(locale)}>
+
       <div className={homeStyles.shape_container3}>
         <Image
           src="/assets/svgs/shape.svg"
@@ -64,11 +65,11 @@ const Cities = ({
         <div className="container">
           {changeShapes ? (
             <div className={styles.boxes_container_mobile}>
-              {dataHistoricalSites?.map((city) => (
+              {dataAllLandmarks?.map((city) => (
                 <Link
                   key={city?.id}
                   locale={locale}
-                  href={`/dataHistoricalSites/video/${city?.id}`}
+                  href={`/landmarks/video/${city?.id}`}
                 >
                   <motion.div
                     className={styles.box}
@@ -82,7 +83,7 @@ const Cities = ({
                   >
                     <div className={styles.img_container}>
                       <Image
-                        src={city?.media}
+                        src={city?.main_media}
                         alt={city?.title}
                         width={205}
                         height={`${getRandomWidth(144, 340)}`}
@@ -101,11 +102,11 @@ const Cities = ({
             </div>
           ) : (
             <div className={styles.boxes_container}>
-              {dataHistoricalSites?.map((city) => (
+              {dataAllLandmarks?.map((city) => (
                 <Link
                   key={city?.id}
                   locale={locale}
-                  href={`/dataHistoricalSites/video/${city?.id}`}
+                  href={`/landmarks/video/${city?.id}`}
                 >
                   <motion.div
                     key={city?.id}
@@ -119,7 +120,7 @@ const Cities = ({
                         <p>{city?.location.title}</p>
                       </div>
                       <Image
-                        src={city?.media}
+                        src={city?.main_media}
                         alt={city?.name}
                         width={271.91}
                         height={384.14}
@@ -138,12 +139,14 @@ const Cities = ({
                       </div>
                     </div>
                   </motion.div>
+                  
                 </Link>
               ))}
             </div>
           )}
         </div>
       </div>
+
       <motion.div
         initial={{ opacity: 0, translateX: 40 }}
         whileInView={{ opacity: 1, translateX: 0 }}
@@ -169,7 +172,7 @@ const Cities = ({
             centeredSlides={false}
             style={{ width: "100%" }}
           >
-            {dataAllLandmarks.map((land, idx) => (
+            {dataAllLandmarks?.map((land, idx) => (
               <SwiperSlide key={land?.id}>
                 <Link locale={locale} href={`/landmarks/video/${land.id}`}>
                   <motion.div
@@ -183,7 +186,7 @@ const Cities = ({
                         <p>معالم</p>
                       </div>
                       <Image
-                        src={land.main_media}
+                        src={land?.main_media}
                         alt="Vercel logomark"
                         width={271.91}
                         height={384.14}
@@ -192,10 +195,10 @@ const Cities = ({
 
                     <div className={styles.card_bottom}>
                       <div className={styles.title}>
-                        <h6>{land.title}</h6>
+                        <h6>{land?.title}</h6>
                       </div>
                       <div className={styles.desc}>
-                        <p>{land.desc}</p>
+                        <p>{land?.desc}</p>
                       </div>
 
                       <div className={styles.explore}>

@@ -3,8 +3,11 @@ import { motion } from "framer-motion";
 import styles from "../DraggableBox/Menu3/index.module.scss";
 import { IoClose } from "react-icons/io5";
 import Link from "next/link";
+import { getDir } from "@/utils/dir";
+import { useRouter } from "next/router";
 
 const Dialog = ({ setIsDialog, questions, landmarkId, dataTranslations }) => {
+  const { locale } = useRouter();
   const isValid =
     Array.isArray(questions) &&
     questions.length > 0 &&
@@ -29,7 +32,7 @@ const Dialog = ({ setIsDialog, questions, landmarkId, dataTranslations }) => {
         initial={{ scale: 0.9, opacity: 0 }}
         whileInView={{ opacity: 1, scale: 1 }}
         id="dialog"
-        dir="rtl"
+        dir={getDir(locale)}
       >
         <motion.div
           initial={{ scale: 0.9, opacity: 0 }}

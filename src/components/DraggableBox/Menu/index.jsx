@@ -15,6 +15,7 @@ const Menu = ({
   setShowNewMenu,
   dataAllLandmark,
   dataTranslations,
+  landmark,
   city,
 }) => {
   const [readMore, setReadMore] = useState(false);
@@ -144,16 +145,25 @@ const Menu = ({
             </div>
 
             <div className={styles.sec_title}>
-              <h1>{dataAllLandmark.title}</h1>
+              <h1>{dataAllLandmark?.title}</h1>
             </div>
             <div className={styles.imgs_container}>
               <div className={styles.main_img}>
-                <img src={city.media} alt="" />
+                <img src={city?.media} alt={city?.title} />
               </div>
             </div>
 
             <div className={styles.title}>
-              <h3>{dataAllLandmark.long_desc} </h3>
+              <p>
+                {dataAllLandmark?.long_desc?.split("\n").map((line, index) => (
+                  <React.Fragment key={index}>
+                    <br />
+                    {line}
+                    <br />
+                    <br />
+                  </React.Fragment>
+                ))}
+              </p>
             </div>
 
             {/* <div className={styles.desc}>
@@ -231,8 +241,10 @@ const Menu = ({
       )}
 
       <Questions
+        landmark={landmark}
         questions={questions}
         id={id}
+        dataTranslations={dataTranslations}
         setQuestions={setQuestions}
         setShowNewMenu={setShowNewMenu}
         setPause={setPause}
