@@ -21,7 +21,7 @@ const Hero = ({ sliders, dataTranslations }) => {
       <Swiper
         slidesPerView={1}
         spaceBetween={0}
-        // autoplay={{ delay: 8000, disableOnInteraction: false }}
+        autoplay={{ delay: 8000, disableOnInteraction: false }}
         pagination={pagination}
         modules={[Pagination, Autoplay]}
         className="mySwiper"
