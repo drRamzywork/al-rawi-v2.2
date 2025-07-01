@@ -69,18 +69,44 @@ a {
   }
 }
 
+// #hero {
+//   .swiper {
+//     overflow: unset;
+//   }
+//   .swiper-pagination {
+//     top: unset;
+//     bottom: -100px;
+//   }
+//   .swiper-pagination-bullet {
+//     width: 27px;
+//     height: 6px;
+//     border-radius: 2px;
+//     background: #ffffff80;
+//   }
+// }
+
 #hero {
   .swiper {
-    overflow: unset;
+    overflow: visible;
   }
+
   .swiper-pagination {
-    top: unset;
-    bottom: -100px;
+    position: absolute;
+    bottom: 40px; // ✅ فوق الزر
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 4; // فوق الفيديو
   }
+
   .swiper-pagination-bullet {
     width: 27px;
     height: 6px;
     border-radius: 2px;
     background: #ffffff80;
+    opacity: 1;
+
+    &.swiper-pagination-bullet-active {
+      background: #fff;
+    }
   }
 }
