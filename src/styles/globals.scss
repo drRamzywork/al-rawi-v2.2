@@ -14,11 +14,42 @@
   --main-yellow: #f49d41;
 }
 
+@font-face {
+  font-family: "Tajawal-Medium";
+  src: url("/fonts/Tajawal-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Saudi-SemiBold";
+  src: url("/fonts/Saudi-SemiBold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+body {
+  font-family: "Tajawal-Medium", sans-serif;
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --background: var(--main-green);
     --foreground: #ededed;
   }
+}
+
+.title-1 h1,
+h2,
+h3,
+h3,
+h4,
+h5,
+h6 {
+  & * {
+    font-family: "Saudi-SemiBold", sans-serif !important;
+  }
+  font-family: "Saudi-SemiBold", sans-serif !important;
 }
 
 html,
@@ -32,7 +63,9 @@ body {
 body {
   color: var(--foreground);
   background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Saudi-SemiBold", sans-serif;
+
+  // font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   scroll-behavior: smooth;

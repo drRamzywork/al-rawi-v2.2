@@ -34,14 +34,36 @@ const Menu2 = ({ showNewMenu, setShowNewMenu, media }) => {
   const swiperRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
+  // const handleSlideChange = (swiper) => {
+  //   setActiveSlide(swiper.activeIndex);
+  // };
+
   const handleSlideChange = (swiper) => {
-    setActiveSlide(swiper.activeIndex);
+    const realIndex = swiper.realIndex; // يتجاوز النسخ المكررة في loop
+    setActiveSlide(realIndex);
   };
 
+  // const handleSlideClick = (index) => {
+  //   swiperRef?.current?.slideTo(index);
+  //   setActiveSlide(index);
+  // };
+
   const handleSlideClick = (index) => {
-    swiperRef?.current?.slideTo(index);
-    setActiveSlide(index);
+    const swiper = swiperRef.current;
+    if (!swiper) return;
+
+    const loopedIndex = Array.from(swiper.slides).findIndex(
+      (slide) => parseInt(slide.dataset.swiperSlideIndex) === index
+    );
+
+    if (loopedIndex !== -1) {
+      swiper.slideTo(loopedIndex, 0);
+      swiper.autoplay?.stop();
+      swiper.autoplay?.start();
+      setActiveSlide(index);
+    }
   };
+
   return (
     <>
       {showNewMenu && (
@@ -99,13 +121,26 @@ const Menu2 = ({ showNewMenu, setShowNewMenu, media }) => {
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             onSlideChange={handleSlideChange}
           >
-            {media?.map((box, index) => (
+            {/* {media?.map((box, index) => (
               <SwiperSlide key={index}>
                 <motion.div
                   onClick={() => handleSlideClick(index)}
                   initial={{ opacity: 0 }}
                   whileInView={{ opacity: 1 }}
                   transition={{ duration: 0.7, type: "tween" }}
+                  className={`${styles.img_container} ${
+                    activeSlide === index ? styles.active : ""
+                  }`}
+                >
+                  <Image src={box} alt="" width={53} height={51} />
+                </motion.div>
+              </SwiperSlide>
+            ))} */}
+
+            {media?.map((box, index) => (
+              <SwiperSlide key={index}>
+                <motion.div
+                  onClick={() => handleSlideClick(index)}
                   className={`${styles.img_container} ${
                     activeSlide === index ? styles.active : ""
                   }`}

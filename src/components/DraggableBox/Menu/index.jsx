@@ -24,6 +24,7 @@ const Menu = ({
   const [isClient, setIsClient] = useState(false);
   const { locale } = useRouter();
   const controls = useAnimation();
+
   useEffect(() => {
     setIsClient(typeof window !== "undefined");
   }, []);
@@ -149,7 +150,10 @@ const Menu = ({
             </div>
             <div className={styles.imgs_container}>
               <div className={styles.main_img}>
-                <img src={city?.media} alt={city?.title} />
+                <img
+                  src={dataAllLandmark?.media}
+                  alt={dataAllLandmark?.title}
+                />
               </div>
             </div>
 
@@ -220,7 +224,7 @@ const Menu = ({
 
       {/* Navigation links */}
       {!isVideoPlaying && !showNewMenu && (
-        <div className={styles.nav_container}>
+        <div className={styles.nav_container} dir={getDir(locale)}>
           <div className="container">
             <div className={styles.sec_container}>
               <ul>

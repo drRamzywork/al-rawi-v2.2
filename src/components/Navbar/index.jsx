@@ -487,6 +487,7 @@ import "swiper/css/pagination";
 import "swiper/css/free-mode";
 import "swiper/css/scrollbar";
 import { SearchOverlay } from "@/utils/SearchOverlay";
+import { i18n } from "../../../next.config";
 
 const Navbar = ({ isHome, dataSettings, dataAllLandmarks }) => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
@@ -498,8 +499,18 @@ const Navbar = ({ isHome, dataSettings, dataAllLandmarks }) => {
   const { pathname, asPath, query } = router;
   const { langs } = useLangs();
 
+  // const handleLanguageChange = (langCode) => {
+  //   router.push({ pathname, query }, asPath, { locale: langCode });
+  //   setLangsWindow(false);
+  // };
   const handleLanguageChange = (langCode) => {
+    // 1. احفظ اللغة في الكوكي يدويًا (آمن جدًا ومتاح في SSR والـ Client)
+    document.cookie = `NEXT_LOCALE=${langCode}; path=/; max-age=31536000`;
+
+    // 2. غير اللغة باستخدام next/router (يدعم SSR)
     router.push({ pathname, query }, asPath, { locale: langCode });
+
+    // 3. قفل نافذة اللغات
     setLangsWindow(false);
   };
 

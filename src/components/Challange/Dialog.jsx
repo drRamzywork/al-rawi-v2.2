@@ -8,16 +8,18 @@ import { useRouter } from "next/router";
 
 const Dialog = ({ setIsDialog, questions, landmarkId, dataTranslations }) => {
   const { locale } = useRouter();
+  console.log(questions, "questions");
   const isValid =
     Array.isArray(questions) &&
     questions.length > 0 &&
-    questions.every(
+    questions.some(
       (q) =>
-        q &&
-        typeof q.title === "string" &&
+        typeof q?.title === "string" &&
+        q.title.trim() !== "" &&
         Array.isArray(q.answers) &&
-        q.answers.length > 0 &&
-        q.answers.every((a) => a && typeof a.answer === "string")
+        q.answers.some(
+          (a) => typeof a?.answer === "string" && a.answer.trim() !== ""
+        )
     );
 
   return (
@@ -66,7 +68,7 @@ const Dialog = ({ setIsDialog, questions, landmarkId, dataTranslations }) => {
               <a
                 onClick={(e) => {
                   e.preventDefault();
-                  alert("لا توجد أسئلة متاحة لهذا المعلم.");
+                  alert(dataTranslations?.no_questions_available);
                 }}
                 href="#"
               >

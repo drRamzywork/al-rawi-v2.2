@@ -27,7 +27,6 @@ const Cities = ({
 
   return (
     <section id="cities" className={styles.cities} dir={getDir(locale)}>
-
       <div className={homeStyles.shape_container3}>
         <Image
           src="/assets/svgs/shape.svg"
@@ -139,7 +138,6 @@ const Cities = ({
                       </div>
                     </div>
                   </motion.div>
-                  
                 </Link>
               ))}
             </div>
@@ -198,7 +196,7 @@ const Cities = ({
                         <h6>{land?.title}</h6>
                       </div>
                       <div className={styles.desc}>
-                        <p>{land?.desc}</p>
+                        <p>{land?.title2}</p>
                       </div>
 
                       <div className={styles.explore}>

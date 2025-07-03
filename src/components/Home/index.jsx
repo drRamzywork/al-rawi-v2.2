@@ -48,9 +48,20 @@ const Home = ({
 }) => {
   const [showSplash, setShowSplash] = useState(true);
 
+  // useEffect(() => {
+  //   const timer = setTimeout(() => setShowSplash(false), 2000);
+  //   return () => clearTimeout(timer);
+  // }, []);
   useEffect(() => {
-    const timer = setTimeout(() => setShowSplash(false), 2000);
-    return () => clearTimeout(timer);
+    const hasVisited = localStorage.getItem("hasVisited");
+
+    if (hasVisited) {
+      setShowSplash(false); // لا تعرض الـ Splash إذا زار من قبل
+    } else {
+      localStorage.setItem("hasVisited", "true");
+      const timer = setTimeout(() => setShowSplash(false), 2000);
+      return () => clearTimeout(timer);
+    }
   }, []);
 
   return (

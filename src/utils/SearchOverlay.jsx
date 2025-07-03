@@ -123,7 +123,6 @@ export const SearchOverlay = ({
           <motion.div layout className={styles.resultsWrapper}>
             {results.map((group) => (
               <div key={group.title} className={styles.group}>
-                <h4>{group.title}</h4>
                 {group.items.map((item) => (
                   <motion.div
                     key={item.id}

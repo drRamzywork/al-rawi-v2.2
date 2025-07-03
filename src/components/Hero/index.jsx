@@ -8,8 +8,11 @@ import "swiper/css";
 import "swiper/css/pagination";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
+import { useRouter } from "next/router";
+import { getDir } from "@/utils/dir";
 
 const Hero = ({ sliders, dataTranslations }) => {
+  const { locale } = useRouter();
   const pagination = {
     clickable: true,
     type: "bullets",
@@ -17,7 +20,7 @@ const Hero = ({ sliders, dataTranslations }) => {
   };
 
   return (
-    <section id="hero" className={styles.hero}>
+    <section id="hero" className={styles.hero} dir={getDir(locale)}>
       <Swiper
         slidesPerView={1}
         spaceBetween={0}

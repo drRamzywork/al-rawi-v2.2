@@ -53,7 +53,7 @@ export default function ResultPage({ dataTranslations }) {
     const { answers, questions } = router.query;
 
     if (!answers || !questions) {
-      router.replace("/");
+      // router.replace("/");
       return;
     }
 
