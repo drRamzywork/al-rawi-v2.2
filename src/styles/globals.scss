@@ -47,9 +47,9 @@ h4,
 h5,
 h6 {
   & * {
-    font-family: "Saudi-SemiBold", sans-serif !important;
+    font-family: "Saudi-SemiBold", sans-serif;
   }
-  font-family: "Saudi-SemiBold", sans-serif !important;
+  font-family: "Saudi-SemiBold", sans-serif;
 }
 
 html,
@@ -58,6 +58,9 @@ body {
   overflow-x: hidden;
   background-color: var(--main-green) !important;
   scroll-behavior: smooth;
+}
+*[dir="ltr"] {
+  font-family: "Cairo", "Cairo Fallback" !important;
 }
 
 body {
@@ -102,44 +105,44 @@ a {
   }
 }
 
-// #hero {
-//   .swiper {
-//     overflow: unset;
-//   }
-//   .swiper-pagination {
-//     top: unset;
-//     bottom: -100px;
-//   }
-//   .swiper-pagination-bullet {
-//     width: 27px;
-//     height: 6px;
-//     border-radius: 2px;
-//     background: #ffffff80;
-//   }
-// }
-
 #hero {
   .swiper {
-    overflow: visible;
+    overflow: unset;
   }
-
   .swiper-pagination {
-    position: absolute;
-    bottom: 40px; // ✅ فوق الزر
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 4; // فوق الفيديو
+    top: unset;
+    bottom: -100px;
   }
-
   .swiper-pagination-bullet {
     width: 27px;
     height: 6px;
     border-radius: 2px;
     background: #ffffff80;
-    opacity: 1;
-
-    &.swiper-pagination-bullet-active {
-      background: #fff;
-    }
   }
 }
+
+// #hero {
+//   .swiper {
+//     overflow: visible;
+//   }
+
+//   .swiper-pagination {
+//     position: absolute;
+//     bottom: 40px; // ✅ فوق الزر
+//     left: 50%;
+//     transform: translateX(-50%);
+//     z-index: 4; // فوق الفيديو
+//   }
+
+//   .swiper-pagination-bullet {
+//     width: 27px;
+//     height: 6px;
+//     border-radius: 2px;
+//     background: #ffffff80;
+//     opacity: 1;
+
+//     &.swiper-pagination-bullet-active {
+//       background: #fff;
+//     }
+//   }
+// }

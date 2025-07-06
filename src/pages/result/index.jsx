@@ -171,7 +171,7 @@ export default function ResultPage({ dataTranslations }) {
 
                         {!isCorrect && (
                           <div className={styles3.correct_question}>
-                            <p>الإجابة الصحيحة:</p>
+                            <p>{dataTranslations?.correct_answer}</p>
                             <div className={styles3.user_answer}>
                               <p>{q.options[q.correct]}</p>
                             </div>
@@ -204,7 +204,7 @@ export default function ResultPage({ dataTranslations }) {
                 whileHover={{ scale: 1.1 }}
                 whileTap={{ scale: 0.9 }}
               >
-                العودة للرئيسية
+                {dataTranslations?.back_home}
               </motion.button>
             </div>
           </div>

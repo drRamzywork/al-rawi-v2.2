@@ -92,7 +92,6 @@ const Cities = ({
                       <p>{city?.location?.title}</p>
                     </div>
                     <div className={styles.title}>
-                      <h5>{city?.name}</h5>
                       <h5>{city?.title}</h5>
                     </div>
                   </motion.div>
@@ -164,7 +163,7 @@ const Cities = ({
               },
             }}
             pagination={{ clickable: true }}
-            dir="rtl"
+            dir={getDir(locale)}
             modules={[Navigation, FreeMode, Autoplay]}
             className={styles.swiper_contain}
             centeredSlides={false}

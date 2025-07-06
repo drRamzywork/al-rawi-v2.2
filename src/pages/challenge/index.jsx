@@ -105,6 +105,7 @@ export default function Quiz({ dataTranslations }) {
           <div className={styles2.box_container}>
             <div className={styles2.header_box}>
               <ProgressCircle
+                dataTranslations={dataTranslations}
                 current={currentStep + 1}
                 total={questions.length}
               />

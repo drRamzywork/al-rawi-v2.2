@@ -3,6 +3,8 @@ import { motion, useAnimation } from "framer-motion";
 import styles from "./index.module.scss";
 import { IoIosArrowBack } from "react-icons/io";
 import Link from "next/link";
+import { getDir } from "@/utils/dir";
+import { useRouter } from "next/router";
 
 const Questions = ({
   questions,
@@ -14,6 +16,7 @@ const Questions = ({
   setIsPlaying,
   dataTranslations,
 }) => {
+  const { locale } = useRouter();
   const controls = useAnimation();
 
   useEffect(() => {
@@ -34,6 +37,7 @@ const Questions = ({
   return (
     <>
       <motion.div
+      
         initial="hidden"
         animate={controls}
         className={styles.container}
@@ -48,7 +52,7 @@ const Questions = ({
           hidden: { y: "-150%", opacity: 0 },
         }}
         id="menu2"
-        dir="rtl"
+        dir={getDir(locale)}
         style={{
           position: "fixed",
           top: "10%",
@@ -66,6 +70,96 @@ const Questions = ({
         }}
       >
         {questions && (
+          <div className={styles.content}>
+            <div className={styles.boxes_container}>
+              {/* {landmark?.videos?.map((video, vIndex) =>
+                video.video_attrs?.map((vid, index) => {
+                  const [min, sec] = vid?.time?.split(":").map(Number);
+                  const timeInSeconds = (min || 0) * 60 + (sec || 0);
+
+                  return (
+                    <div
+                      key={`${vIndex}-${index}`}
+                      className={styles.box}
+                      onClick={() => {
+                        handleClick(timeInSeconds);
+                      }}
+                    >
+                      <div className={styles.info_container}>
+                        <div className={styles.img_container}>
+                          <img
+                            src={video?.icon || "/assets/imgs/questions/1.png"}
+                            alt=""
+                          />
+                        </div>
+                        <div className={styles.text_container}>
+                          <div className={styles.title}>
+                            <h3>
+                              {vid.title} ({vid.time})
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div className={styles.link_container}>
+                        <p>{dataTranslations?.skip_to_time}</p>
+                        <div className={styles.icon_container}>
+                          <IoIosArrowBack />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+              )} */}
+
+              {landmark?.videos?.map((video, vIndex) =>
+                video.video_attrs?.map((vid, index) => {
+                  const timeString =
+                    typeof vid?.time === "string" && vid.time.includes(":")
+                      ? vid.time
+                      : "0:0";
+
+                  const parts = timeString.split(":");
+                  const min = parseInt(parts[0], 10) || 0;
+                  const sec = parseInt(parts[1], 10) || 0;
+                  const timeInSeconds = min * 60 + sec;
+
+                  return (
+                    <div
+                      key={`${vIndex}-${index}`}
+                      className={styles.box}
+                      onClick={() => handleClick(timeInSeconds)}
+                    >
+                      <div className={styles.info_container}>
+                        <div className={styles.img_container}>
+                          <img
+                            src={video?.icon || "/assets/imgs/questions/1.png"}
+                            alt=""
+                          />
+                        </div>
+                        <div className={styles.text_container}>
+                          <div className={styles.title}>
+                            <h3>
+                              {vid.title} ({min}:
+                              {sec.toString().padStart(2, "0")})
+                            </h3>
+                          </div>
+                        </div>
+                      </div>
+                      <div className={styles.link_container}>
+                        <p>{dataTranslations?.skip_to_time}</p>
+                        <div className={styles.icon_container}>
+                          <IoIosArrowBack />
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* {questions && (
           <div className={styles.content}>
             <div className={styles.boxes_container}>
               <Link
@@ -121,60 +215,10 @@ const Questions = ({
                 )}
               </Link>
 
-              {/* <Link
-                href={`/cities/${id}/video`}
-                className={styles.box}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick(20); // ✅ Jump to 00:20
-                }}
-              >
-                <div className={styles.info_container}>
-                  <div className={styles.img_container}>
-                    <img src="/assets/imgs/questions/1.png" alt="" />
-                  </div>
-                  <div className={styles.text_container}>
-                    <div className={styles.title}>
-                      <h3> حدث تاريخي (00:20)</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.link_container}>
-                  <p>تعرف</p>
-                  <div className={styles.icon_container}>
-                    <IoIosArrowBack />
-                  </div>
-                </div>
-              </Link>
-
-              <Link
-                href={`/cities/${id}/video`}
-                className={styles.box}
-                onClick={(e) => {
-                  e.preventDefault();
-                  handleClick(108); // ✅ Jump to 01:48
-                }}
-              >
-                <div className={styles.info_container}>
-                  <div className={styles.img_container}>
-                    <img src="/assets/imgs/questions/1.png" alt="" />
-                  </div>
-                  <div className={styles.text_container}>
-                    <div className={styles.title}>
-                      <h3> 1203هـ.. البداية (01:48)</h3>
-                    </div>
-                  </div>
-                </div>
-                <div className={styles.link_container}>
-                  <p>تعرف</p>
-                  <div className={styles.icon_container}>
-                    <IoIosArrowBack />
-                  </div>
-                </div>
-              </Link> */}
+            
             </div>
           </div>
-        )}
+        )} */}
       </motion.div>
     </>
   );

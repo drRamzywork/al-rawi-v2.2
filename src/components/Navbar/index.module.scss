@@ -412,3 +412,15 @@ nav.navbar {
     }
   }
 }
+
+.header[dir="ltr"] {
+  .logo {
+    margin: 0 !important;
+  }
+
+  .back_btn {
+    svg {
+      transform: rotate(180deg);
+    }
+  }
+}
