@@ -70,18 +70,18 @@ section.hero {
   .btn_container {
     a {
       margin: auto;
-      width: 188.6px;
+      width: fit-content;
       text-decoration: none;
       background-color: var(--main-red);
       border: none;
       display: flex;
       align-items: center;
-      padding: 11.2px;
+      padding: 8px 12px;
       border: 1px solid #ffffff80;
       border-radius: 60px;
       gap: 14px;
-      padding-right: 44px;
-      padding-left: 27px;
+      // padding-right: 44px;
+      // padding-left: 27px;
       color: white;
 
       p {
@@ -280,19 +280,19 @@ section.hero {
 //   .btn_container {
 //     a {
 //       margin: auto;
-//       // width: 188.6px;
-//       text-decoration: none;
-//       background-color: var(--main-red);
-//       border: none;
-//       display: flex;
-//       align-items: center;
-//       // padding: 11.2px;
-//       border: 1px solid #ffffff80;
-//       border-radius: 60px;
-//       gap: 14px;
-//       // padding-right: 44px;
-//       // padding-left: 27px;
-//       color: white;
+// // width: 188.6px;
+// text-decoration: none;
+// background-color: var(--main-red);
+// border: none;
+// display: flex;
+// align-items: center;
+// // padding: 11.2px;
+// border: 1px solid #ffffff80;
+// border-radius: 60px;
+// gap: 14px;
+// // padding-right: 44px;
+// // padding-left: 27px;
+// color: white;
 
 //       p {
 //         margin: 0;
