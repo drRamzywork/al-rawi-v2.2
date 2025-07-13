@@ -151,9 +151,15 @@ const Menu = ({
             <div className={styles.imgs_container}>
               <div className={styles.main_img}>
                 <img
-                  src={dataAllLandmark?.media}
+                  src={
+                    Array.isArray(dataAllLandmark?.media)
+                      ? dataAllLandmark.media[0]
+                      : dataAllLandmark?.media
+                  }
                   alt={dataAllLandmark?.title}
                 />
+
+                {console.log(dataAllLandmark, "dataAllLandmark")}
               </div>
             </div>
 

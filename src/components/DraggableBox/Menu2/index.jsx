@@ -34,19 +34,12 @@ const Menu2 = ({ showNewMenu, setShowNewMenu, media }) => {
   const swiperRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
-  // const handleSlideChange = (swiper) => {
-  //   setActiveSlide(swiper.activeIndex);
-  // };
 
   const handleSlideChange = (swiper) => {
-    const realIndex = swiper.realIndex; // يتجاوز النسخ المكررة في loop
+    const realIndex = swiper.realIndex; 
     setActiveSlide(realIndex);
   };
 
-  // const handleSlideClick = (index) => {
-  //   swiperRef?.current?.slideTo(index);
-  //   setActiveSlide(index);
-  // };
 
   const handleSlideClick = (index) => {
     const swiper = swiperRef.current;

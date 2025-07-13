@@ -19,13 +19,11 @@ const City = ({ landmark, dataTranslations }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
 
-  // احصل على رابط الفيديو
   const videoData = landmark?.videos?.[0];
   const videoURL = videoData?.media || "";
   const isValidVideoURL =
     videoURL && !videoURL.endsWith("/storage/") && videoURL.includes(".mp4");
 
-  // فورمات للوقت mm:ss
   const formatTime = (t) => {
     const m = Math.floor(t / 60)
       .toString()
@@ -36,7 +34,6 @@ const City = ({ landmark, dataTranslations }) => {
     return `${m}:${s}`;
   };
 
-  // تشغيل تلقائي وإعادة التشغيل عند تغيير الرابط
   useEffect(() => {
     if (videoRef.current && isValidVideoURL) {
       videoRef.current
@@ -59,7 +56,7 @@ const City = ({ landmark, dataTranslations }) => {
   const [showNewMenu, setShowNewMenu] = useState(false);
   const [isDialog, setIsDialog] = useState(false);
 
-  // دالة التشغيل/الإيقاف
+  //  التشغيل/الإيقاف
   const handlePlayPause = () => {
     if (!videoRef.current) return;
     if (isPlaying) videoRef.current.pause();
