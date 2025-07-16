@@ -144,6 +144,14 @@ const Hero = ({ sliders, dataTranslations }) => {
   };
 
   const currentSlide = sliders[currentIndex];
+  const citiesRef = useRef(null);
+
+  const handleScroll = () => {
+    const target = document.getElementById("cities");
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
   return (
     <section id="hero" className={styles.hero}>
@@ -233,7 +241,7 @@ const Hero = ({ sliders, dataTranslations }) => {
           ))}
         </Swiper>
 
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, translateY: -50 }}
           whileInView={{ opacity: 1, translateY: 0 }}
           transition={{ duration: 0.7, type: "tween" }}
@@ -245,6 +253,20 @@ const Hero = ({ sliders, dataTranslations }) => {
               <IoIosArrowDown />
             </div>
           </Link>
+        </motion.div> */}
+
+        <motion.div
+          initial={{ opacity: 0, translateY: -50 }}
+          whileInView={{ opacity: 1, translateY: 0 }}
+          transition={{ duration: 0.7, type: "tween" }}
+          className={styles.btn_container}
+        >
+          <button onClick={handleScroll} className={styles.scroll_button}>
+            <p>{dataTranslations?.start}</p>
+            <div className={styles.icon_container}>
+              <IoIosArrowDown />
+            </div>
+          </button>
         </motion.div>
       </div>
     </section>

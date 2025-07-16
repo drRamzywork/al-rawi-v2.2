@@ -9,7 +9,14 @@ import Link from "next/link";
 import { IoChevronForwardOutline } from "react-icons/io5";
 import { getDir } from "@/utils/dir";
 
-const City = ({ landmark, dataTranslations }) => {
+// const [isDialog, setIsDialog] = useState(false);
+
+const City = ({ landmark, dataTranslations, isDialog, setIsDialog }) => {
+  useEffect(() => {
+    // نحط علامة إن المستخدم دخل صفحة الفيديو
+    sessionStorage.setItem("justVisitedVideo", "true");
+  }, []);
+
   const router = useRouter();
   const { locale } = useRouter();
   const { id } = router.query;
@@ -54,7 +61,6 @@ const City = ({ landmark, dataTranslations }) => {
 
   // باقي الحالات للقوائم والديايولوج
   const [showNewMenu, setShowNewMenu] = useState(false);
-  const [isDialog, setIsDialog] = useState(false);
 
   //  التشغيل/الإيقاف
   const handlePlayPause = () => {

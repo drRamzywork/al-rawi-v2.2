@@ -8,7 +8,6 @@ import { useRouter } from "next/router";
 
 const Dialog = ({ setIsDialog, questions, landmarkId, dataTranslations }) => {
   const { locale } = useRouter();
-  console.log(questions, "questions");
   const isValid =
     Array.isArray(questions) &&
     questions.length > 0 &&

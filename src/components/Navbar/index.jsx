@@ -153,7 +153,7 @@ const Navbar = ({ isHome, dataSettings, dataAllLandmarks }) => {
                   mousewheel={true}
                   freeMode={true}
                   modules={[Pagination, Mousewheel, FreeMode]}
-                  dir="rtl"
+                  dir={getDir(locale)}
                   className={styles.swiper}
                 >
                   {langs.map((lang) => (

@@ -32,26 +32,45 @@ const Menu = ({
     controls.start(readMore ? "visible" : "hidden");
   }, [readMore, controls]);
 
+  // const handleShare = async () => {
+  //   if (navigator.share) {
+  //     try {
+  //       await navigator.share({
+  //         title: "Check this out!",
+  //         url: window.location.href,
+  //       });
+  //     } catch (error) {
+  //       console.error("Error sharing:", error);
+  //     }
+  //   } else {
+  //     // Fallback: Copy the URL to clipboard
+  //     navigator.clipboard
+  //       .writeText(window.location.href)
+  //       .then(() => {
+  //         alert("Link copied to clipboard! You can share it manually.");
+  //       })
+  //       .catch((err) => {
+  //         console.error("Could not copy link:", err);
+  //       });
+  //   }
+  // };
+
   const handleShare = async () => {
+    const title = landmark?.title || "Check this out!";
+    const text = landmark?.desc || "Amazing landmark video";
+    const url = window.location.href;
+
     if (navigator.share) {
       try {
-        await navigator.share({
-          title: "Check this out!",
-          url: window.location.href,
-        });
-      } catch (error) {
-        console.error("Error sharing:", error);
+        await navigator.share({ title, text, url });
+      } catch (err) {
+        console.error("Error sharing:", err);
       }
     } else {
-      // Fallback: Copy the URL to clipboard
-      navigator.clipboard
-        .writeText(window.location.href)
-        .then(() => {
-          alert("Link copied to clipboard! You can share it manually.");
-        })
-        .catch((err) => {
-          console.error("Could not copy link:", err);
-        });
+      // fallback: copy to clipboard
+      navigator.clipboard.writeText(url).then(() => {
+        alert("Link copied to clipboard!");
+      });
     }
   };
 
