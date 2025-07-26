@@ -1,12 +1,11 @@
 import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import styles from "@/styles/quiz.module.scss";
-import styles2 from "./index.module.scss";
+import styles2 from "@/styles/Challange.module.scss";
 import Question from "../../components/Challange/Question";
 import ProgressCircle from "../../components/Challange/ProgressCircle";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { IoChevronForwardOutline } from "react-icons/io5";
 import Link from "next/link";
 import Head from "next/head";
 

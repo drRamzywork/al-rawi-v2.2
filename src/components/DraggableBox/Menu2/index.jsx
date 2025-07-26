@@ -34,12 +34,10 @@ const Menu2 = ({ showNewMenu, setShowNewMenu, media }) => {
   const swiperRef = useRef(null);
   const [activeSlide, setActiveSlide] = useState(0);
 
-
   const handleSlideChange = (swiper) => {
-    const realIndex = swiper.realIndex; 
+    const realIndex = swiper.realIndex;
     setActiveSlide(realIndex);
   };
-
 
   const handleSlideClick = (index) => {
     const swiper = swiperRef.current;

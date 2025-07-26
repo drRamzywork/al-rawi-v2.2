@@ -1,6 +1,7 @@
 import styles from "@/styles/quiz.module.scss";
 import { motion } from "framer-motion";
-import styles2 from "../challenge/index.module.scss";
+// import styles2 from "../challenge/index.module.scss";
+import styles2 from "@/styles/Challange.module.scss";
 import styles3 from "./index.module.scss";
 import { IoChevronForwardOutline } from "react-icons/io5";
 import Image from "next/image";
@@ -95,7 +96,7 @@ export default function ResultPage({ dataTranslations }) {
       </div>
 
       <div className="container d-flex flex-column justify-content-center align-items-center">
-        <div className={styles2.header_container}>
+        <div className={styles2.header_container} dir={getDir(locale)}>
           <button onClick={() => router.push("/")} className={styles2.back_btn}>
             <IoChevronForwardOutline />
           </button>
@@ -165,7 +166,7 @@ export default function ResultPage({ dataTranslations }) {
                         <div className={styles3.user_answer}>
                           <p>
                             {q.options[userAnswerIndex] ||
-                              "لم يتم اختيار إجابة"}
+                              dataTranslations?.no_answer_selected}
                           </p>
                         </div>
 
@@ -198,6 +199,29 @@ export default function ResultPage({ dataTranslations }) {
               </ul>
             </div>
 
+            <div className={styles.buttons} style={{ marginTop: "30px" }}>
+              <motion.button
+                onClick={() => {
+                  // Fix: decode if double-encoded JSON string
+                  let questionsParam = router.query.questions;
+                  if (questionsParam) {
+                    try {
+                      // If it's a stringified string, parse it once
+                      if (typeof questionsParam === "string" && questionsParam.startsWith('"') && questionsParam.endsWith('"')) {
+                        questionsParam = JSON.parse(questionsParam);
+                      }
+                    } catch (e) {}
+                    router.push(`/challenge?questions=${encodeURIComponent(questionsParam)}`);
+                  } else {
+                    router.push("/challenge");
+                  }
+                }}
+                whileHover={{ scale: 1.1 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                {dataTranslations?.try_again}
+              </motion.button>
+            </div>
             <div className={styles.buttons} style={{ marginTop: "30px" }}>
               <motion.button
                 onClick={() => router.push("/")}

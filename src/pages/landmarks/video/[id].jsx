@@ -65,20 +65,7 @@ export default function LandmarkVideo({
         <meta name="twitter:image" content={`${siteURL}/logo.png`} />
       </Head>
 
-      {/* <Head>
-        <title>{siteName}</title>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content={siteDescription} />
-        <meta property="og:title" content={siteName} />
-        <meta property="og:description" content={siteDescription} />
-        <meta property="og:video" content={videoURL} />
-        <meta property="og:video:type" content="video/mp4" />
-        <meta
-          property="og:image"
-          content={landmark?.main_media || `${siteURL}/video-thumbnail.jpg`}
-        />
-      </Head> */}
+  
 
       <City
         isDialog={isDialog}

@@ -45,8 +45,8 @@
     display: flex;
     align-items: center;
     padding-top: 30px;
+    position: relative;
   }
-
   .back_btn {
     background-color: #f7f7f9;
     border-radius: 16px;
@@ -54,6 +54,9 @@
     height: 37.51px;
     display: flex;
     margin-left: auto;
+    position: absolute;
+    top: 50%;
+    right: 0;
     svg {
       margin: auto;
       color: #6f6f6f;
@@ -172,5 +175,16 @@
   .box_container {
     margin: 0 !important;
     padding: 0 !important;
+  }
+}
+
+.header_container[dir="ltr"] {
+  .back_btn {
+    right: unset;
+    left: 0;
+
+    svg {
+      transform: rotate(180deg);
+    }
   }
 }

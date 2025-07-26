@@ -67,7 +67,6 @@ const Menu = ({
         console.error("Error sharing:", err);
       }
     } else {
-      // fallback: copy to clipboard
       navigator.clipboard.writeText(url).then(() => {
         alert("Link copied to clipboard!");
       });
@@ -177,8 +176,6 @@ const Menu = ({
                   }
                   alt={dataAllLandmark?.title}
                 />
-
-                {console.log(dataAllLandmark, "dataAllLandmark")}
               </div>
             </div>
 
